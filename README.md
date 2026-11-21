@@ -4,9 +4,21 @@ Collects public vulnerability intelligence on a schedule and commits clean, vali
 
 A separate private repository reads the `data` branch and scores it against an inventory. This repository holds nothing private.
 
+## What keeps it running: the relay
+
+GitHub's `schedule` trigger did not fire at all in this repository after it was created, a problem other new repositories have reported too. So the pipeline keeps its own clock in `relay.yml`:
+
+1. A relay run waits 14 minutes. The wait is a timer on the `timer` environment, and waiting costs no runner time.
+2. It then starts a `collect` run and the next relay run, and finishes.
+3. The next relay run waits 14 minutes, and so on. Exactly one is ever waiting.
+
+If the chain breaks, it repairs itself: every `collect` run starts the relay when none is waiting. The cron line in `collect.yml` is kept as an hourly safety net for the day GitHub's trigger works. To restart everything by hand, run the `relay` workflow once from the Actions tab. Starting it twice is harmless; extra chains merge back into one.
+
+After every second collection, the `notify-scorer` job pushes an empty commit to the `trigger` branch of the separate scoring repository, which starts a scoring run there about every 30 minutes. Its SSH key and the repository's name are secrets of the `scorer` environment, which only the `main` branch may use.
+
 ## How a run works
 
-Every 15 minutes the `collect` workflow runs three jobs. Each job gets a fresh virtual machine that GitHub destroys afterwards, and each has only the access it needs.
+About every 15 minutes the `collect` workflow runs three jobs. Each job gets a fresh virtual machine that GitHub destroys afterwards, and each has only the access it needs.
 
 | Job | Network | Token | What it does |
 |---|---|---|---|
