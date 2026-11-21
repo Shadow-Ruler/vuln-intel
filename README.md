@@ -23,8 +23,11 @@ Listed in `config/sources.json`, each with its own interval. A source is fetched
 - **Backbone:** CVE.org cvelistV5 (changed records only).
 - **Exploitation:** CISA KEV, FIRST EPSS, CISA's SSVC decisions inside CVE records.
 - **Ecosystem:** GitHub Advisory Database.
-- **News and early signal:** Hacker News search, BleepingComputer, The Hacker News, Unit 42, Talos, watchTowr, Wiz, Rapid7.
-- **Vendors:** CISA advisories, Ubuntu, Debian, PHP, NGINX, Microsoft.
+- **News and early signal:** Hacker News search, BleepingComputer, The Hacker News, Unit 42, Talos, watchTowr, Wiz, Rapid7, the oss-security list, CERT/CC, Zero Day Initiative, CERT-FR.
+- **Linux distributions:** Red Hat, Ubuntu, Debian and Debian LTS, AlmaLinux, Amazon Linux, Arch Linux.
+- **Network and infrastructure vendors:** Cisco, Fortinet, Palo Alto Networks, Kubernetes, Microsoft, PHP, NGINX, CISA advisories and CISA industrial-control advisories.
+
+Linux kernel CVEs arrive through the CVE list itself, where the kernel project publishes them. Juniper, F5, VMware and SonicWall publish no machine-readable feed; their bugs still arrive through the CVE list and the news sources.
 
 To add a feed, add an entry with `"kind": "http"` and `"parser": "feed"` (RSS 2.0, Atom and RDF all work). The collector only contacts hosts that appear in this file, and refuses redirects to any other host. The one exception is a source marked `"redirects": "any-https"` (EPSS, which is served through a redirect to a CDN).
 

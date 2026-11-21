@@ -1,0 +1,8 @@
+# Proposes updates to the pinned GitHub Actions, so the pins do not go stale.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
