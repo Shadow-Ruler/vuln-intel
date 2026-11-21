@@ -38,7 +38,10 @@ epss/current.json               CVEs at or above the 80th and 95th EPSS percenti
 news/<day>.jsonl                news items, by the day they were first seen
 state/heartbeat.json            last success and status of every source
 state/cursors.json              where each source left off
+state/wanted.json               CVE records to backfill, and CVEs confirmed unpublished
 ```
+
+**Backfill.** The CVE source only reports records that changed since the last run, so a CVE published before the pipeline started has no record. When news or a recent KEV entry names such a CVE, the commit job marks it `pending` in `state/wanted.json` and the next CVE run fetches it once. If cvelistV5 has no such record it becomes `missing`, which downstream means the CVE is not published yet.
 
 Every record carries `src`: the source, the URL, the fetch time and the SHA-256 of the raw document it came from. Raw documents are kept for 90 days as the `raw` artifact of each workflow run.
 
@@ -52,6 +55,7 @@ The tests use hand-written fixtures and never touch the network.
 
 ## Operations
 
+- To fetch one source immediately, run the `collect` workflow by hand with `only` set to its id (for example `cvelist`).
 - `keepalive.yml` re-enables the schedules weekly, because GitHub disables scheduled workflows in public repositories after 60 days without activity.
 - Actions are pinned to commit hashes. Update the hash and the version comment together.
 - A source that keeps failing shows in `state/heartbeat.json`; the private scorer turns that into an alert.
