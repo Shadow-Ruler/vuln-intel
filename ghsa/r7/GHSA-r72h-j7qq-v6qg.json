@@ -1,0 +1,32 @@
+{
+ "cve": "CVE-2026-58210",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-r72h-j7qq-v6qg",
+ "packages": [
+  {
+   "ecosystem": "go",
+   "name": "github.com/nats-io/nats-server/v2",
+   "patched": "2.12.12",
+   "range": "< 2.12.12"
+  },
+  {
+   "ecosystem": "go",
+   "name": "github.com/nats-io/nats-server/v2",
+   "patched": "2.14.3",
+   "range": ">= 2.14.0-RC.1, < 2.14.3"
+  }
+ ],
+ "published": "2026-11-20T00:04:46Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "NATS Server allows unauthenticated memory exhaustion through incomplete MQTT CONNECT packets",
+ "type": "ghsa",
+ "updated": "2026-11-20T00:04:47Z",
+ "withdrawn": false
+}

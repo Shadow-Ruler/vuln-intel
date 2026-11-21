@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-103035",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-66q9-mxf2-xqw6",
+ "packages": [
+  {
+   "ecosystem": "composer",
+   "name": "nilsteampassnet/TeamPass",
+   "patched": "3.2.2.0",
+   "range": "< 3.2.2.0"
+  }
+ ],
+ "published": "2026-11-20T14:45:04Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "TeamPass folder re-parenting authorization bypass",
+ "type": "ghsa",
+ "updated": "2026-11-20T14:45:06Z",
+ "withdrawn": false
+}

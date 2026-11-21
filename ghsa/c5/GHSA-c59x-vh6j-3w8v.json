@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-128136",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-c59x-vh6j-3w8v",
+ "packages": [
+  {
+   "ecosystem": "pip",
+   "name": "nltk",
+   "patched": "3.10.4",
+   "range": ">= 3.10.0, < 3.10.4"
+  }
+ ],
+ "published": "2026-11-19T23:58:53Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "NLTK: AllowlistUnpickler does not deny numpy submodule-local file-I/O sinks",
+ "type": "ghsa",
+ "updated": "2026-11-19T23:58:54Z",
+ "withdrawn": false
+}

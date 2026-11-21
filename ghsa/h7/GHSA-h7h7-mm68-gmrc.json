@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-27119",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-h7h7-mm68-gmrc",
+ "packages": [
+  {
+   "ecosystem": "npm",
+   "name": "svelte",
+   "patched": "5.51.5",
+   "range": ">= 5.39.3, < 5.51.5"
+  }
+ ],
+ "published": "2026-02-19T15:18:19Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Svelte affected by XSS in SSR `<option>` element",
+ "type": "ghsa",
+ "updated": "2026-11-20T23:52:22Z",
+ "withdrawn": false
+}

@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-77331",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-72jh-722p-rqr3",
+ "packages": [
+  {
+   "ecosystem": "pip",
+   "name": "memtomem-stm",
+   "patched": "0.1.34",
+   "range": ">= 0.1.2, <= 0.1.33"
+  }
+ ],
+ "published": "2026-11-20T23:38:15Z",
+ "severity": "low",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "memtomem-stm: Concurrent LTM recovery can duplicate reconnects or reuse a cancelled transport session",
+ "type": "ghsa",
+ "updated": "2026-11-20T23:38:16Z",
+ "withdrawn": false
+}

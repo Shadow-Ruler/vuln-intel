@@ -1,0 +1,32 @@
+{
+ "cve": "CVE-2026-58208",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-p957-7v2w-g93g",
+ "packages": [
+  {
+   "ecosystem": "go",
+   "name": "github.com/nats-io/nats-server/v2",
+   "patched": "2.12.12",
+   "range": "< 2.12.12"
+  },
+  {
+   "ecosystem": "go",
+   "name": "github.com/nats-io/nats-server/v2",
+   "patched": "2.14.3",
+   "range": ">= 2.14.0-RC.1, < 2.14.3"
+  }
+ ],
+ "published": "2026-11-20T00:05:17Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "NATS Server: MQTT-over-WebSocket Path Can Crash WebSocket-Only JetStream Servers Before MQTT Is Enabled",
+ "type": "ghsa",
+ "updated": "2026-11-20T00:05:17Z",
+ "withdrawn": false
+}

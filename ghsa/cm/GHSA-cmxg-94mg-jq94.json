@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-45325",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-cmxg-94mg-jq94",
+ "packages": [
+  {
+   "ecosystem": "npm",
+   "name": "@tmlmobilidade/utils",
+   "patched": "20260509.340.15",
+   "range": "< 20260509.340.15"
+  }
+ ],
+ "published": "2026-05-18T17:07:04Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "@tmlmobilidade/utils has prototype pollution in its setValueAtPath",
+ "type": "ghsa",
+ "updated": "2026-11-21T05:15:45Z",
+ "withdrawn": false
+}

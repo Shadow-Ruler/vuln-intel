@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-69133",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-cg26-4c6j-2x8h",
+ "packages": [
+  {
+   "ecosystem": "maven",
+   "name": "io.netty.incubator:netty-incubator-codec-ohttp",
+   "patched": "0.0.27.Final",
+   "range": ">= 0.0.20.Final, <= 0.0.26.Final"
+  }
+ ],
+ "published": "2026-11-20T16:22:09Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "netty-incubator-codec-ohttp: OHTTP codecs retain consumed outer cumulation buffers after completed exchanges",
+ "type": "ghsa",
+ "updated": "2026-11-20T16:22:10Z",
+ "withdrawn": false
+}

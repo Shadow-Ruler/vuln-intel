@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-63415",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-c3cj-3p6p-j822",
+ "packages": [
+  {
+   "ecosystem": "composer",
+   "name": "jane-php/open-api-3",
+   "patched": "7.12.0",
+   "range": "< 7.12.0"
+  }
+ ],
+ "published": "2026-11-20T00:07:32Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Jane: $ref resolution performs SSRF + LFI (path traversal) at code-generation time (jane-php)",
+ "type": "ghsa",
+ "updated": "2026-11-20T00:07:33Z",
+ "withdrawn": false
+}

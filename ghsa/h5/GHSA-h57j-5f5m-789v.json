@@ -1,0 +1,32 @@
+{
+ "cve": "CVE-2026-104884",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-h57j-5f5m-789v",
+ "packages": [
+  {
+   "ecosystem": "composer",
+   "name": "contao/core-bundle",
+   "patched": "5.3.50",
+   "range": ">= 4.9.0, < 5.3.50"
+  },
+  {
+   "ecosystem": "composer",
+   "name": "contao/core-bundle",
+   "patched": "5.7.12",
+   "range": ">= 5.4.0-RC1, < 5.7.12"
+  }
+ ],
+ "published": "2026-11-20T23:46:56Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "contao/core-bundle: Cross-site scripting in the frontend search results",
+ "type": "ghsa",
+ "updated": "2026-11-20T23:46:58Z",
+ "withdrawn": false
+}

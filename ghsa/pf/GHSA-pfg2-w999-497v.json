@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-77313",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-pfg2-w999-497v",
+ "packages": [
+  {
+   "ecosystem": "pip",
+   "name": "flyto-core",
+   "patched": "2.26.8",
+   "range": "<= 2.26.7"
+  }
+ ],
+ "published": "2026-11-20T00:09:23Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Flyto2 Core: SSRF guard validates the resolved IP but connects by hostname, allowing DNS-rebinding TOCTOU",
+ "type": "ghsa",
+ "updated": "2026-11-20T00:09:24Z",
+ "withdrawn": false
+}

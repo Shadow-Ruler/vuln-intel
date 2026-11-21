@@ -1,0 +1,44 @@
+{
+ "cve": "CVE-2022-24905",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-xmg8-99r8-jc2j",
+ "packages": [
+  {
+   "ecosystem": "go",
+   "name": "github.com/argoproj/argo-cd/v2",
+   "patched": "2.3.4",
+   "range": ">= 2.3.0, < 2.3.4"
+  },
+  {
+   "ecosystem": "go",
+   "name": "github.com/argoproj/argo-cd/v2",
+   "patched": "2.2.9",
+   "range": ">= 2.2.0, < 2.2.9"
+  },
+  {
+   "ecosystem": "go",
+   "name": "github.com/argoproj/argo-cd/v2",
+   "patched": "2.1.15",
+   "range": ">= 2.0.0, < 2.1.15"
+  },
+  {
+   "ecosystem": "go",
+   "name": "github.com/argoproj/argo-cd",
+   "patched": "2.1.15",
+   "range": "<= 1.8.7"
+  }
+ ],
+ "published": "2022-05-24T12:26:59Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Argo CD: Login screen allows message spoofing if SSO is enabled",
+ "type": "ghsa",
+ "updated": "2026-11-20T23:55:10Z",
+ "withdrawn": false
+}

@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-129303",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-w7wg-6q7v-44f2",
+ "packages": [
+  {
+   "ecosystem": "pip",
+   "name": "guard-core",
+   "patched": "3.13.0",
+   "range": ">= 1.0.0, < 3.13.0"
+  }
+ ],
+ "published": "2026-11-19T22:50:13Z",
+ "severity": "low",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Guard Core: Whitespace-collapse preprocessing permanently disables the CRLF-anchored http-splitting and command-injection detectors in the default detection mode",
+ "type": "ghsa",
+ "updated": "2026-11-19T22:50:14Z",
+ "withdrawn": false
+}

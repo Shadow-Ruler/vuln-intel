@@ -1,0 +1,205 @@
+{
+ "sources": {
+  "bleepingcomputer": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 15,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "cisa": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 30,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "vendor",
+   "status": "ok"
+  },
+  "cvelist": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 60,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "backbone",
+   "status": "ok"
+  },
+  "debian": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 30,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "vendor",
+   "status": "ok"
+  },
+  "epss": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 1440,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "exploitation",
+   "status": "ok"
+  },
+  "ghsa": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 60,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "ecosystem",
+   "status": "ok"
+  },
+  "hn-cve": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 15,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "hn-rce": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 15,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "hn-vuln": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 15,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "kev": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 60,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "exploitation",
+   "status": "ok"
+  },
+  "msrc": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 30,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "vendor",
+   "status": "ok"
+  },
+  "nginx": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 30,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "vendor",
+   "status": "ok"
+  },
+  "php": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 30,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "vendor",
+   "status": "ok"
+  },
+  "rapid7": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 15,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "talos": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 15,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "thehackernews": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 15,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "ubuntu": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 30,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "vendor",
+   "status": "ok"
+  },
+  "unit42": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 15,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "watchtowr": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 15,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "wiz": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 15,
+   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_change": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T16:19:22Z",
+   "role": "trend",
+   "status": "ok"
+  }
+ },
+ "updated": "2026-11-21T16:20:06Z"
+}

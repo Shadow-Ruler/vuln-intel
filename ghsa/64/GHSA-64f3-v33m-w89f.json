@@ -1,0 +1,38 @@
+{
+ "cve": "CVE-2026-55621",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-64f3-v33m-w89f",
+ "packages": [
+  {
+   "ecosystem": "go",
+   "name": "github.com/lxc/incus/v7",
+   "patched": "7.2.0",
+   "range": "< 7.2.0"
+  },
+  {
+   "ecosystem": "go",
+   "name": "github.com/lxc/incus/v6",
+   "patched": "",
+   "range": "<= 6.23.0"
+  },
+  {
+   "ecosystem": "go",
+   "name": "github.com/lxc/incus",
+   "patched": "",
+   "range": "<= 0.7.0"
+  }
+ ],
+ "published": "2026-08-28T18:52:05Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Incus has a project restriction bypass for custom volume copy across projects",
+ "type": "ghsa",
+ "updated": "2026-11-21T05:15:44Z",
+ "withdrawn": false
+}

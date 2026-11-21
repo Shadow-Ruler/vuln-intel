@@ -1,0 +1,32 @@
+{
+ "cve": "CVE-2026-104129",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-v9v2-98xq-627c",
+ "packages": [
+  {
+   "ecosystem": "go",
+   "name": "github.com/prest/prest",
+   "patched": "",
+   "range": "<= 1.5.5"
+  },
+  {
+   "ecosystem": "go",
+   "name": "github.com/prest/prest/v2",
+   "patched": "2.4.0",
+   "range": "<= 2.3.0"
+  }
+ ],
+ "published": "2026-11-20T14:41:42Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "pREST _groupby function-expression SQL injection (incomplete fix of CVE-2025-58450)",
+ "type": "ghsa",
+ "updated": "2026-11-20T14:41:43Z",
+ "withdrawn": false
+}

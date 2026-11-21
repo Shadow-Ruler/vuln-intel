@@ -1,0 +1,32 @@
+{
+ "cve": "CVE-2026-105802",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-xrgv-7vx6-5vx6",
+ "packages": [
+  {
+   "ecosystem": "go",
+   "name": "github.com/git-lfs/git-lfs",
+   "patched": "",
+   "range": ">= 0.6.0, <= 2.13.3"
+  },
+  {
+   "ecosystem": "go",
+   "name": "github.com/git-lfs/git-lfs/v3",
+   "patched": "3.8.1",
+   "range": ">= 3.0.0, < 3.8.1"
+  }
+ ],
+ "published": "2026-11-20T14:58:53Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Git LFS may execute arbitrary commands via crafted Git configurations",
+ "type": "ghsa",
+ "updated": "2026-11-20T14:58:55Z",
+ "withdrawn": false
+}

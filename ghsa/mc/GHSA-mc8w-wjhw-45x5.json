@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-114516",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-mc8w-wjhw-45x5",
+ "packages": [
+  {
+   "ecosystem": "npm",
+   "name": "ep_etherpad-lite",
+   "patched": "3.3.3",
+   "range": ">= 1.8.14, < 3.3.3"
+  }
+ ],
+ "published": "2026-11-20T00:23:45Z",
+ "severity": "critical",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Etherpad: Pre-auth arbitrary file read",
+ "type": "ghsa",
+ "updated": "2026-11-20T00:23:46Z",
+ "withdrawn": false
+}

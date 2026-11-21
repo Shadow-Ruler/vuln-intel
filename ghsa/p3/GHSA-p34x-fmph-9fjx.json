@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-77312",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-p34x-fmph-9fjx",
+ "packages": [
+  {
+   "ecosystem": "pip",
+   "name": "flyto-core",
+   "patched": "2.26.8",
+   "range": "<= 2.26.7"
+  }
+ ],
+ "published": "2026-11-20T00:09:02Z",
+ "severity": "critical",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429)",
+ "type": "ghsa",
+ "updated": "2026-11-20T00:09:03Z",
+ "withdrawn": false
+}

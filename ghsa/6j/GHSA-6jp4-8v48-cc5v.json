@@ -1,0 +1,26 @@
+{
+ "cve": "CVE-2026-117601",
+ "first_seen": "2026-11-21T16:20:06Z",
+ "id": "GHSA-6jp4-8v48-cc5v",
+ "packages": [
+  {
+   "ecosystem": "pip",
+   "name": "electrum",
+   "patched": "4.8.3",
+   "range": "< 4.8.3"
+  }
+ ],
+ "published": "2026-10-28T21:23:44Z",
+ "severity": "critical",
+ "src": {
+  "fetched_at": "2026-11-21T16:19:22Z",
+  "origin": "ghsa",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Electrum: Malicious server can replace a just-broadcast tx and try to trick user into RBF-ing it",
+ "type": "ghsa",
+ "updated": "2026-11-20T06:33:03Z",
+ "withdrawn": false
+}

@@ -1,0 +1,73 @@
+{
+ "bleepingcomputer": {
+  "etag": "036df5277bc6490e3b7a1d9bf0b73d6d",
+  "sha256": "d6ec8698014837adc6b3d12354639235a125cab65656caea3fa85c880aa3accb"
+ },
+ "cisa": {
+  "sha256": "5d76961cb5ba20f619a30bf51d1957972263f0115a42cea26935fd09527b9b88"
+ },
+ "cvelist": {
+  "fetch_time": "2026-11-21T15:48:51Z"
+ },
+ "debian": {
+  "etag": "\"400f-660c44815f53a;660c44816241a",
+  "sha256": "790eb91c5b0973863809446f3e8b6726bf4d9fcf056f144a59c4a274a6040851"
+ },
+ "epss": {
+  "etag": "\"beb1880aa31e24d959c16b7c564c5f26\"",
+  "sha256": "759a333907ec8b9aa8a31d6f3abbf182bdc9b3dc725d51053aa0c919b9a3241e"
+ },
+ "ghsa": {
+  "etag": "W/\"2306eecfbaa81eae6f7671cb202843952f8fccdafc611f85573381d6fe617a92\"",
+  "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89"
+ },
+ "hn-cve": {
+  "sha256": "3bb51b884e669ed43039a43d66cef7b8fe5d62182accedf8a5cb2e68a5ad26e0"
+ },
+ "hn-rce": {
+  "sha256": "6b500a85a9e8189dd4c77585f5f052c83f613e262b2bb8fd623ce7c83dc079a7"
+ },
+ "hn-vuln": {
+  "sha256": "0c842249989f336590b871002c306522573bf3aef13359c2a257cb752ed7b237"
+ },
+ "kev": {
+  "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
+  "sha256": "12c9ca4c5350ecacdf22bdce91b4ffcf06b8c8dc9c69b8bfb4c1a21be7a5fe50"
+ },
+ "msrc": {
+  "etag": "\"0x8DF46DCB13FB106\"",
+  "sha256": "45cce15b17cc62ea3c7ab10f7f5a5f4f90b55428aa6118ec9638750acb7e9330"
+ },
+ "nginx": {
+  "etag": "\"6b004f72-733\"",
+  "sha256": "6aff72b825cf45e79397a17537e1fabd7b201e9eea5c5c1bdf4ecc9bf771c7df"
+ },
+ "php": {
+  "etag": "W/\"171fe1-660b36e25668d\"",
+  "sha256": "8757d5522aba151780566892eaee6464d956e03d43c16b84ca71587ed1f2275c"
+ },
+ "rapid7": {
+  "sha256": "13a8a9550489e266cb5b2fcee010523d54fabf72180781e9c923d9d3b46eb734"
+ },
+ "talos": {
+  "etag": "W/\"1172a6-GMJVpoWCA0/Kfigy7jjWLaIX0WA\"",
+  "sha256": "7a79ec4c2bf8ed1d93d88b79da016a4548b64ca4f30d4b190fee46ec331ece1c"
+ },
+ "thehackernews": {
+  "sha256": "1e5e89d1ca839ef54bab77de46de432b93ef68e4af94affbdc1a3fa95f98c934"
+ },
+ "ubuntu": {
+  "sha256": "063eed49c71743441fac9476a584e51f5f5b06aec22192205aac934e80aebcfb"
+ },
+ "unit42": {
+  "etag": "\"04aed02b5ac55bf53e100909d2a56b4c-gzip\"",
+  "sha256": "1b52c6ab2308a8f9cd773ae6bfc29f53c0442fa51913647e095e1706daa09e72"
+ },
+ "watchtowr": {
+  "etag": "W/\"80040-gBIjeMlroSbdjqYwsFc3PkrxUOY\"",
+  "sha256": "b1d6dd885afd453c67b26591677daae54c227222ea621f824116677fbee619af"
+ },
+ "wiz": {
+  "sha256": "85981ed0c36bd491bbc204f7774fba9df1d6b777e4690830508c25d1001ff9a2"
+ }
+}
