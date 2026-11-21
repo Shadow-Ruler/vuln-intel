@@ -11,8 +11,8 @@
   "sha256": "21625a7da1ee9f4fa8d3f2d13f91afe3d6ee9cd39012e63e9523df585cdec8bd"
  },
  "bleepingcomputer": {
-  "etag": "899a54ff591a500ceeaf98f394b8b23d",
-  "sha256": "04ac5333bef876a24d021932efcaa4d81967f2eafa74c76a52db2e7a903e67cf"
+  "etag": "748f45ecb4b524b2c7e1d9502ee875f4",
+  "sha256": "dcd61fab7c7deef285c955acc7ad348ccf89d8414ae517e325ded0039e8f383b"
  },
  "cert-fr": {
   "etag": "\"bc7dcd0dcbeca3d9748eb9b492d57db8\"",
@@ -46,21 +46,21 @@
   "sha256": "759a333907ec8b9aa8a31d6f3abbf182bdc9b3dc725d51053aa0c919b9a3241e"
  },
  "fortinet": {
-  "etag": "\"6b020d5e-c705\"",
-  "sha256": "4d77a2acd4e9bf817e73815f85b3c5221d267c967b2eb02baee6d5e7b4de2686"
+  "etag": "\"6b021467-c705\"",
+  "sha256": "08d8c857ffa10e03265f7621e750017d521ac1820912fa94d637dac75220c1bb"
  },
  "ghsa": {
   "etag": "W/\"2306eecfbaa81eae6f7671cb202843952f8fccdafc611f85573381d6fe617a92\"",
   "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89"
  },
  "hn-cve": {
-  "sha256": "76a5f938e01f8be4fb4d95d03c21140cc7a04f65c2063597cdf41646108671f2"
+  "sha256": "9588cf847dd4807ef4200d824a81d302f7fa0678cfadc16c4bdb863b3aaba09e"
  },
  "hn-rce": {
-  "sha256": "41c044b0490844e480ae41593fbe78732acc090ae0d3d2450af0c0d5c801c7f0"
+  "sha256": "bb04c2c2522aa4b04877e5b1d83f34f700817b78b7a11ec2aad0a7129807f977"
  },
  "hn-vuln": {
-  "sha256": "d81740fe327d4180dd829e1aa39463b02860aadf9d60048e13c42a83870d993e"
+  "sha256": "e5a0224fed62b6facf104f9473fa26adab6686617ac7a76588fe214d805e1ecb"
  },
  "kev": {
   "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
@@ -102,10 +102,10 @@
   "sha256": "7a79ec4c2bf8ed1d93d88b79da016a4548b64ca4f30d4b190fee46ec331ece1c"
  },
  "thehackernews": {
-  "sha256": "ce4fa500612fd71d6545775dd9b08ffcd4b4a00ba0ca5cfb41d3514c7cfa9bbf"
+  "sha256": "cb62759d681bd210ac4f21347fd47fc034f7c50207be5c9fb18f3583e06de476"
  },
  "ubuntu": {
-  "sha256": "443a460f7469c2187546ff69363ef97d096c6d75df6e6d6ab4f1936b6ce53357"
+  "sha256": "da1be76f24e803cf630637156626016fb75e8a55ce03bd9a2999986c04bd757f"
  },
  "unit42": {
   "etag": "\"04aed02b5ac55bf53e100909d2a56b4c-gzip\"",
