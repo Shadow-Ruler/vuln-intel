@@ -8,7 +8,7 @@ name: collect
 on:
   schedule:
     # Off the hour on purpose: GitHub delays jobs scheduled at :00.
-    - cron: "7,22,37,52 * * * *"
+    - cron: "4,19,34,49 * * * *"
   workflow_dispatch:
     inputs:
       only:
