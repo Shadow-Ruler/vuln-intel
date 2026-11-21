@@ -10,6 +10,11 @@ on:
     # Off the hour on purpose: GitHub delays jobs scheduled at :00.
     - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
+    inputs:
+      only:
+        description: "Fetch just this source id now, ignoring its schedule (for example: cvelist)"
+        type: string
+        default: ""
 
 permissions: {}
 
@@ -34,7 +39,10 @@ jobs:
       - name: Fetch due sources
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 -m pipeline.collect --config config/sources.json --state _data/state --out _collected
+          ONLY: ${{ inputs.only }}
+        run: |
+          python3 -m pipeline.collect --config config/sources.json --state _data/state --out _collected \
+            ${ONLY:+--only "$ONLY"}
       - name: Split the report from the raw documents
         run: |
           mkdir -p _report

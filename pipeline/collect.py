@@ -253,7 +253,7 @@ def select_deltas(log: Any, cursor: dt.datetime, max_records: int):
     return list(ids), new_cursor
 
 
-def collect_cvelist(src, fetcher, cursor, writer, cfg, now):
+def collect_cvelist(src, fetcher, cursor, writer, cfg, now, wanted=()):
     start = common.parse_ts(cursor.get("fetch_time"))
     if start is None:
         start = now - dt.timedelta(hours=src.get("bootstrap_hours", 24))
@@ -276,11 +276,12 @@ def collect_cvelist(src, fetcher, cursor, writer, cfg, now):
             raise
         degraded = "change log unreadable (%s); fetched only the latest changes" % err
         ids, new_cursor = select_deltas(load(src["fallback_url"], 5000000), start, src.get("max_records", 1500))
-    if not ids:
-        if degraded:
-            return {"status": "error", "items": 0, "detail": degraded[:300]}, None
-        return {"status": "unchanged", "items": 0}, {"fetch_time": common.ts(new_cursor)}
-
+    # Backfill: records the commit stage asked for because news or KEV named a
+    # CVE the pipeline has no record of (usually one published before it started).
+    changed = set(ids)
+    backfill = [c for c in wanted if isinstance(c, str) and common.CVE_RE.match(c) and c not in changed]
+    backfill = backfill[: src.get("backfill_max", 300)]
+    asked = set(backfill)
     fetched_at = common.ts(now)
 
     def fetch(cve_id):
@@ -290,30 +291,45 @@ def collect_cvelist(src, fetcher, cursor, writer, cfg, now):
         except FetchError as err:
             return cve_id, url, None, str(err)
 
-    failures = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
-        for cve_id, url, record, error in pool.map(fetch, ids):
-            if record is None:
-                failures.append("%s (%s)" % (cve_id, error))
-            else:
-                writer.add(src, "cve", url, record, fetched_at, hint=cve_id)
-    done = len(ids) - len(failures)
+    failures, found, missing = [], [], []
+    if ids or backfill:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+            for cve_id, url, record, error in pool.map(fetch, list(ids) + backfill):
+                if record is not None:
+                    writer.add(src, "cve", url, record, fetched_at, hint=cve_id)
+                    if cve_id in asked:
+                        found.append(cve_id)
+                elif cve_id not in asked:
+                    failures.append("%s (%s)" % (cve_id, error))
+                elif error == "HTTP 404":
+                    missing.append(cve_id)  # not published; any other error is retried next run
+    done = len(ids) - len(failures) + len(found)
+
+    def result(status, cursor, detail=""):
+        report = {"status": status, "items": done, "backfill": {"found": found, "missing": missing}}
+        if detail:
+            report["detail"] = detail[:300]
+        return report, cursor
+
     if degraded:
-        return {"status": "error", "items": done, "detail": degraded[:300]}, None
+        return result("error", None, degraded)
     if len(failures) * 10 > len(ids):
         # Too many gaps: leave the cursor so the next run retries the window.
-        return {"status": "error", "items": done,
-                "detail": "%d of %d records failed, e.g. %s" % (len(failures), len(ids), failures[0])}, None
-    report = {"status": "ok", "items": done}
-    if failures:
-        report["detail"] = "%d records failed, e.g. %s" % (len(failures), failures[0])
-    return report, {"fetch_time": common.ts(new_cursor)}
+        return result("error", None, "%d of %d records failed, e.g. %s" % (len(failures), len(ids), failures[0]))
+    detail = "%d records failed, e.g. %s" % (len(failures), failures[0]) if failures else ""
+    return result("ok" if done else "unchanged", {"fetch_time": common.ts(new_cursor)}, detail)
 
 
 def run(cfg, state_dir, out_dir, token=None, only=None, now=None, fetcher=None):
     now = now or common.utcnow()
     heartbeat = (common.read_json(os.path.join(state_dir, "heartbeat.json"), {}) or {}).get("sources", {})
     cursors = common.read_json(os.path.join(state_dir, "cursors.json"), {}) or {}
+    wanted = common.read_json(os.path.join(state_dir, "wanted.json"), {})
+    wanted = wanted if isinstance(wanted, dict) else {}
+    # Newest requests first, so a burst of old ones cannot delay a fresh one.
+    pending = sorted((cve for cve, entry in wanted.items()
+                      if isinstance(entry, dict) and entry.get("status") == "pending"),
+                     key=lambda cve: str(wanted[cve].get("since", "")), reverse=True)
     fetcher = fetcher or Fetcher(cfg, token=token)
     writer = RawWriter(out_dir)
     report = {"at": common.ts(now), "sources": {}, "cursors": {}}
@@ -323,9 +339,12 @@ def run(cfg, state_dir, out_dir, token=None, only=None, now=None, fetcher=None):
             continue
         if not only and not is_due(src, heartbeat, now):
             continue
-        handler = collect_cvelist if src["kind"] == "cvelist_delta" else collect_http
         try:
-            entry, cursor = handler(src, fetcher, cursors.get(sid) or {}, writer, cfg, now)
+            if src["kind"] == "cvelist_delta":
+                entry, cursor = collect_cvelist(src, fetcher, cursors.get(sid) or {}, writer, cfg, now,
+                                                wanted=pending)
+            else:
+                entry, cursor = collect_http(src, fetcher, cursors.get(sid) or {}, writer, cfg, now)
         except FetchError as err:
             entry, cursor = {"status": "error", "items": 0, "detail": str(err)[:300]}, None
         entry["every_minutes"] = src["every_minutes"]

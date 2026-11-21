@@ -457,18 +457,72 @@ class EndToEndTests(unittest.TestCase):
             self.assertNotIn("evil", cursors)
             self.assertEqual(summary["rejected"], {"kev": 1})
 
-            # Second run: nothing is due except the failing sources, and the
-            # data files do not change.
+            # News named two CVEs the store has no record of: ask for them.
+            # CVE-2099-10001 is named too, but its record is already stored.
+            wanted = json.loads(files["state/wanted.json"])
+            self.assertEqual({cve: entry["status"] for cve, entry in wanted.items()},
+                             {"CVE-2099-10002": "pending", "CVE-2099-10003": "pending"})
+            self.assertEqual(summary["wanted"], {"pending": 2, "missing": 0})
+
+            # Second run: nothing is due except the failing sources, plus the
+            # two backfill requests. Upstream has no such records, so they are
+            # marked missing and not asked for again. Data files do not change.
             fetcher.calls.clear()
             self.run_pipeline(tmp, fetcher, data_dir)
             self.assertEqual(sorted(set(fetcher.calls) - {BASE + "deltaLog.json"}),
                              sorted([BASE + "2099/0xxx/CVE-2099-0462.json",
                                      BASE + "2099/10xxx/CVE-2099-10001.json",
+                                     BASE + "2099/10xxx/CVE-2099-10002.json",
+                                     BASE + "2099/10xxx/CVE-2099-10003.json",
                                      BASE + "2099/123xxx/CVE-2099-123456.json",
                                      "https://down.example/rss", "https://evil.example/rss"]))
             after = self.snapshot(data_dir)
             changed = sorted(name for name in after if after[name] != files.get(name))
-            self.assertEqual(changed, ["state/heartbeat.json"])
+            self.assertEqual(changed, ["state/heartbeat.json", "state/wanted.json"])
+            wanted = json.loads(after["state/wanted.json"])
+            self.assertEqual({entry["status"] for entry in wanted.values()}, {"missing"})
+
+            fetcher.calls.clear()
+            self.run_pipeline(tmp, fetcher, data_dir)
+            self.assertNotIn(BASE + "2099/10xxx/CVE-2099-10002.json", fetcher.calls)
+
+    def test_backfill_fetches_wanted_records_and_reports_what_is_missing(self):
+        class Fetcher(FakeFetcher):
+            def get(self, url, max_bytes, etag=None, auth=None, any_https_redirect=False):
+                if url.endswith("CVE-2099-0500.json"):
+                    raise collect.FetchError("HTTP 503")
+                return super().get(url, max_bytes)
+
+        fetcher = Fetcher()
+        fetcher.pages[BASE + "deltaLog.json"] = fx.dumps([])
+        fetcher.pages[BASE + "2099/0xxx/CVE-2099-0400.json"] = fx.dumps(fx.CVE_RECORD)
+        src = CONFIG["sources"][0]
+        with tempfile.TemporaryDirectory() as tmp:
+            writer = collect.RawWriter(tmp)
+            entry_, cursor = collect.collect_cvelist(
+                src, fetcher, {"fetch_time": "2099-01-04T09:30:00Z"}, writer, CONFIG, NOW,
+                wanted=["CVE-2099-0400", "CVE-2099-0401", "CVE-2099-0500", "not-a-cve"])
+        # Found records flow through the normal path; a 404 means unpublished;
+        # a server error is left pending for the next run; junk IDs are ignored.
+        self.assertEqual(entry_["backfill"], {"found": ["CVE-2099-0400"], "missing": ["CVE-2099-0401"]})
+        self.assertEqual((entry_["status"], entry_["items"]), ("ok", 1))
+        self.assertEqual([e["hint"] for e in writer.entries], ["CVE-2099-0400"])
+        self.assertEqual(cursor, {"fetch_time": "2099-01-04T09:30:00Z"})
+
+    def test_wanted_tracks_recent_kev_entries_and_expires(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            common.write_json_atomic(os.path.join(tmp, "kev.json"), {
+                "CVE-2099-7000": {"date_added": "2099-01-01"},      # recent, no record: wanted
+                "CVE-2090-7001": {"date_added": "2095-01-01"},      # added years ago: not wanted
+            })
+            common.write_json_atomic(os.path.join(tmp, "state", "wanted.json"), {
+                "CVE-2099-8000": {"status": "missing", "since": "2098-11-01T00:00:00Z"},  # expired
+                "bogus": {"status": "pending", "since": "2099-01-04T00:00:00Z"},
+            })
+            counts = commit.update_wanted(tmp, {"sources": {}}, NOW)
+            wanted = common.read_json(os.path.join(tmp, "state", "wanted.json"), {})
+            self.assertEqual(list(wanted), ["CVE-2099-7000"])
+            self.assertEqual(counts, {"pending": 1, "missing": 0})
 
     def test_store_is_idempotent_and_dedupes_news(self):
         with tempfile.TemporaryDirectory() as tmp:

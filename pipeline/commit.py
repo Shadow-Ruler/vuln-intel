@@ -9,6 +9,7 @@ Usage: python3 -m pipeline.commit --data DIR --collected DIR --parsed DIR
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import os
 import sys
@@ -17,6 +18,10 @@ from typing import Any, Dict
 from . import common, store, validate
 
 MAX_OBSERVATIONS = 300000
+WANTED_NEWS_DAYS = 7     # CVEs named in news this recently are worth a record
+WANTED_KEV_DAYS = 30     # and so are CVEs added to KEV this recently
+WANTED_KEEP_DAYS = 30
+WANTED_MAX = 3000
 
 
 def load_manifest(path: str) -> Dict[str, Dict[str, Any]]:
@@ -86,6 +91,60 @@ def update_state(data_dir, report, parse_report, rejected, now_stamp):
     return sources
 
 
+def update_wanted(data_dir: str, report: Dict[str, Any], now) -> Dict[str, int]:
+    """Keep the list of CVE records to backfill.
+
+    A CVE named in recent news or newly added to KEV, with no record in the
+    store, is marked pending. The collector tries it once: if the record
+    exists it arrives through the normal path and the entry is dropped; if
+    cvelistV5 has no such record the entry becomes "missing", which tells the
+    scorer the CVE really is unpublished.
+    """
+    path = os.path.join(data_dir, "state", "wanted.json")
+    wanted = common.read_json(path, {})
+    wanted = wanted if isinstance(wanted, dict) else {}
+    stamp = common.ts(now)
+
+    def has_record(cve: str) -> bool:
+        return os.path.exists(os.path.join(data_dir, common.cve_relpath(cve)))
+
+    named = set()
+    for back in range(WANTED_NEWS_DAYS + 1):
+        day = (now - dt.timedelta(days=back)).strftime("%Y-%m-%d")
+        for item in common.read_jsonl(os.path.join(data_dir, "news", day + ".jsonl")):
+            cves = item.get("cves")
+            named.update(c for c in (cves if isinstance(cves, list) else [])
+                         if isinstance(c, str) and common.CVE_RE.match(c))
+    kev = common.read_json(os.path.join(data_dir, "kev.json"), {})
+    cutoff = now - dt.timedelta(days=WANTED_KEV_DAYS)
+    for cve, entry in (kev.items() if isinstance(kev, dict) else []):
+        added = common.parse_ts(entry.get("date_added")) if isinstance(entry, dict) else None
+        if added and added >= cutoff and common.CVE_RE.match(cve):
+            named.add(cve)
+
+    for cve in named:
+        if cve not in wanted and not has_record(cve):
+            wanted[cve] = {"status": "pending", "since": stamp}
+    for entry in (report.get("sources") or {}).values():
+        backfill = entry.get("backfill") if isinstance(entry, dict) else None
+        for cve in (backfill.get("missing") or []) if isinstance(backfill, dict) else []:
+            if isinstance(wanted.get(cve), dict):
+                wanted[cve].update({"status": "missing", "checked": stamp})
+
+    oldest = now - dt.timedelta(days=WANTED_KEEP_DAYS)
+    for cve in list(wanted):
+        entry = wanted[cve]
+        since = common.parse_ts(entry.get("since")) if isinstance(entry, dict) else None
+        if not common.CVE_RE.match(cve) or since is None or since < oldest or has_record(cve):
+            del wanted[cve]
+    if len(wanted) > WANTED_MAX:
+        keep = sorted(wanted, key=lambda cve: wanted[cve]["since"], reverse=True)[:WANTED_MAX]
+        wanted = {cve: wanted[cve] for cve in keep}
+    common.write_json_atomic(path, wanted)
+    return {"pending": sum(1 for e in wanted.values() if e.get("status") == "pending"),
+            "missing": sum(1 for e in wanted.values() if e.get("status") == "missing")}
+
+
 def run(data_dir: str, collected_dir: str, parsed_dir: str, now=None) -> Dict[str, Any]:
     now = now or common.utcnow()
     report = common.read_json(os.path.join(collected_dir, "collect-report.json"), {}) or {}
@@ -107,7 +166,8 @@ def run(data_dir: str, collected_dir: str, parsed_dir: str, now=None) -> Dict[st
 
     stats = store.apply(data_dir, valid, now)
     update_state(data_dir, report, parse_report, rejected, common.ts(now))
-    summary = {"applied": stats, "rejected": rejected, "observations": len(valid)}
+    wanted = update_wanted(data_dir, report, now)
+    summary = {"applied": stats, "rejected": rejected, "observations": len(valid), "wanted": wanted}
     return summary
 
 
