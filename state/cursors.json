@@ -4,15 +4,15 @@
   "sha256": "754aa12379a673254eab1c36e61385348b98df029f54f816125c3ddef7078521"
  },
  "amazon-linux": {
-  "etag": "\"85a3ae228123c5fbd0d0ecd833d9f3d9\"",
-  "sha256": "524c9fa51594bad7e6671679bd75d91b597cd2096e2f2f90ac8088ddf665cac3"
+  "etag": "\"81fba9cbcba7b6e840fd3825bf966959\"",
+  "sha256": "262d59e5a8548fb608bc35649c61b25d9d89e6c2afee9771821cd053388d4acd"
  },
  "archlinux": {
-  "sha256": "8d01598d72379ec992486c3cdb3a80f00e24ec708ed3649bbc5cd515e1cd5e8a"
+  "sha256": "615b4aa928ad581a0d7dcda9919d520491ac4dfc243e7d57563c9954de7dcbdf"
  },
  "bleepingcomputer": {
-  "etag": "b9ec67d09153da5fab62079c1c5c38f0",
-  "sha256": "ad02625c3dec33cf70c8fdfb1a806af2f9e691d92d72c02c41b4154ceda17857"
+  "etag": "3e4131e4a5e97d3e0b9b7bdda77ce781",
+  "sha256": "91bf07d370faf3c60665417954b52960ca75e697873d20a3383ec83d5ae5bfbb"
  },
  "cert-fr": {
   "etag": "\"bc7dcd0dcbeca3d9748eb9b492d57db8\"",
@@ -31,7 +31,7 @@
   "sha256": "73fb6d8d5d78e14fd4c1a1769c222c11c4b4908bd4d24c5b6d1315ed89e0ff3c"
  },
  "cvelist": {
-  "fetch_time": "2026-11-21T21:00:37Z"
+  "fetch_time": "2026-11-21T23:09:24Z"
  },
  "debian": {
   "etag": "\"400f-660c44815f53a;660c44816241a",
@@ -54,13 +54,13 @@
   "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89"
  },
  "hn-cve": {
-  "sha256": "bc945cf08ed75055729e099bba416b64df9d3bcdd2d3755ac4a0894885e6e927"
+  "sha256": "788d394e1e4f98adf8862e954be9e7369e82b1594d6b0bd890225c027afd2a29"
  },
  "hn-rce": {
-  "sha256": "858ce0f8592077dd912ccf03051c2b63d80fa7e1bcfc36ea86e0e3439aacfc9d"
+  "sha256": "8446fa012d3917dd49e86144225d93e8f5546e8a4db880358cc4bddfc1e05dfa"
  },
  "hn-vuln": {
-  "sha256": "ddbadf3dda637b2fff6aae2f1556b778df870fa5a15fcc81a3eac1bb2d3729e3"
+  "sha256": "20b01fa399f4829fb024af05db40f42e46c3c2c0c29de3d03b6e1ce66d10fd46"
  },
  "kev": {
   "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
@@ -91,7 +91,7 @@
   "sha256": "c230ae722b1e1e701dfbd9662c91798b67d835a8616a78b291b3a33b610cdb57"
  },
  "rapid7": {
-  "sha256": "036c7828017a17b7d69f2c24f31ed516f88134185ef6991c928a8231e6424624"
+  "sha256": "aa06dbf6f67aea76900e556f648df1e02d48a6ff7954e633c6510d14eb49f46d"
  },
  "redhat": {
   "etag": "W/\"b8f3f99ee82533730c22349578816c89\"",
@@ -119,6 +119,6 @@
   "sha256": "56a3702cbc34bde4ac802d36586bbc4723c3d55a280e2fe9338a701a9e01d07f"
  },
  "zdi": {
-  "sha256": "cb75e001b3c6b8dc0897ca98ca5a01463ce73b8cb8e9c948b6b9792a700c3923"
+  "sha256": "0a570c1c2a0d90ea1dd9f57fb40974d5b8f86f3316b7dc0067dac81a6aa5237b"
  }
 }
