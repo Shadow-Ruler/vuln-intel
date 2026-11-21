@@ -129,3 +129,41 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: bash scripts/commit-data.sh _report _parsed
+
+  notify-scorer:
+    # Every second run, nudge the separate scoring repository by pushing an
+    # empty commit to its `trigger` branch. This job never sees downloaded
+    # content, has no token for this repository, and its key lives in an
+    # environment that only the main branch may use.
+    needs: commit
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    environment: scorer
+    permissions: {}
+    steps:
+      - name: Push a tick to the scorer
+        env:
+          SCORER_KEY: ${{ secrets.SCORER_KEY }}
+          SCORER_REPO: ${{ secrets.SCORER_REPO }}
+        run: |
+          if [ -z "$SCORER_KEY" ] || [ -z "$SCORER_REPO" ]; then
+            echo "No scorer configured; nothing to do."; exit 0
+          fi
+          if [ $((GITHUB_RUN_NUMBER % 2)) -ne 0 ]; then
+            echo "Odd run number: the scorer is nudged every second run."; exit 0
+          fi
+          case "$SCORER_REPO" in *[!A-Za-z0-9_./-]*) echo "Bad scorer repository name"; exit 1 ;; esac
+          umask 077
+          work="$RUNNER_TEMP/tick"
+          mkdir -p "$work"
+          printf '%s\n' "$SCORER_KEY" > "$work/key"
+          # GitHub's published SSH host key, pinned so the push cannot be redirected.
+          printf '%s\n' "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" > "$work/known_hosts"
+          export GIT_SSH_COMMAND="ssh -i $work/key -o IdentitiesOnly=yes -o UserKnownHostsFile=$work/known_hosts -o StrictHostKeyChecking=yes"
+          git clone --quiet --depth 1 --branch main "git@github.com:${SCORER_REPO}.git" "$work/repo"
+          git -C "$work/repo" -c user.name="vuln-intel relay" -c user.email="relay@users.noreply.github.com" \
+            commit --quiet --allow-empty -m "tick"
+          git -C "$work/repo" push --quiet --force origin HEAD:refs/heads/trigger
+          rm -rf "$work"
+          echo "Scorer nudged."
