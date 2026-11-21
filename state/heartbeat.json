@@ -1,12 +1,62 @@
 {
  "sources": {
+  "almalinux": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 60,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "vendor",
+   "status": "ok"
+  },
+  "amazon-linux": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 60,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "vendor",
+   "status": "ok"
+  },
+  "archlinux": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 60,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "vendor",
+   "status": "ok"
+  },
   "bleepingcomputer": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T16:19:22Z",
-   "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "cert-fr": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 60,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "certcc": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 30,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "trend",
    "status": "ok"
   },
@@ -14,9 +64,29 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 30,
-   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "vendor",
+   "status": "unchanged"
+  },
+  "cisa-ics": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 60,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "vendor",
+   "status": "ok"
+  },
+  "cisco": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 30,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "vendor",
    "status": "ok"
   },
@@ -24,9 +94,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T16:28:21Z",
-   "last_change": "2026-11-21T16:28:21Z",
-   "last_ok": "2026-11-21T16:28:21Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "backbone",
    "status": "ok"
   },
@@ -34,9 +104,19 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 30,
-   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "vendor",
+   "status": "unchanged"
+  },
+  "debian-lts": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 60,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "vendor",
    "status": "ok"
   },
@@ -50,23 +130,33 @@
    "role": "exploitation",
    "status": "ok"
   },
+  "fortinet": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 30,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "vendor",
+   "status": "ok"
+  },
   "ghsa": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "ecosystem",
-   "status": "ok"
+   "status": "unchanged"
   },
   "hn-cve": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T16:19:22Z",
-   "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "trend",
    "status": "ok"
   },
@@ -74,9 +164,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T16:19:22Z",
-   "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "trend",
    "status": "ok"
   },
@@ -84,9 +174,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T16:19:22Z",
-   "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "trend",
    "status": "ok"
   },
@@ -94,29 +184,59 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "exploitation",
+   "status": "unchanged"
+  },
+  "kubernetes": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 60,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "vendor",
    "status": "ok"
   },
   "msrc": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 30,
-   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "vendor",
-   "status": "ok"
+   "status": "unchanged"
   },
   "nginx": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 30,
-   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "vendor",
+   "status": "unchanged"
+  },
+  "oss-security": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 15,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "paloalto": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 30,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "vendor",
    "status": "ok"
   },
@@ -124,9 +244,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 30,
-   "last_attempt": "2026-11-21T16:19:22Z",
-   "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "vendor",
    "status": "ok"
   },
@@ -134,29 +254,39 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T16:19:22Z",
-   "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "trend",
+   "status": "ok"
+  },
+  "redhat": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 30,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "vendor",
    "status": "ok"
   },
   "talos": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "thehackernews": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T16:19:22Z",
-   "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "trend",
    "status": "ok"
   },
@@ -164,9 +294,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 30,
-   "last_attempt": "2026-11-21T16:19:22Z",
-   "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "vendor",
    "status": "ok"
   },
@@ -174,32 +304,42 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "watchtowr": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "wiz": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T16:19:22Z",
-   "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T16:19:22Z",
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
+   "role": "trend",
+   "status": "ok"
+  },
+  "zdi": {
+   "consecutive_errors": 0,
+   "detail": "",
+   "every_minutes": 60,
+   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_change": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T17:30:53Z",
    "role": "trend",
    "status": "ok"
   }
  },
- "updated": "2026-11-21T16:28:49Z"
+ "updated": "2026-11-21T17:31:40Z"
 }
