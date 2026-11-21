@@ -1,0 +1,44 @@
+name: relay
+
+# The pipeline's own clock.
+#
+# GitHub's `schedule` trigger does not fire reliably in new repositories, so
+# collection does not depend on it. Each relay run waits (the `timer`
+# environment has a wait timer, and waiting costs nothing), then starts a
+# collection and the next relay run. One run hands over to the next, so there
+# is always exactly one waiting.
+#
+# If the chain ever breaks, any collect run restarts it (see `ensure-relay` in
+# collect.yml), as does starting this workflow by hand.
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: relay
+  cancel-in-progress: false
+
+jobs:
+  tick:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    environment: timer
+    permissions:
+      actions: write
+    steps:
+      - name: Start a collection and hand over to the next relay run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run collect.yml --repo "$GITHUB_REPOSITORY" --ref main
+          # Hand over only if no other relay run is already waiting, so two
+          # chains started by accident merge back into one.
+          others=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow relay.yml --limit 30 \
+            --json databaseId,status \
+            --jq "[.[] | select(.status != \"completed\" and .databaseId != ${GITHUB_RUN_ID})] | length")
+          echo "other relay runs waiting: ${others}"
+          if [ "${others}" -eq 0 ]; then
+            gh workflow run relay.yml --repo "$GITHUB_REPOSITORY" --ref main
+          fi

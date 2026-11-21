@@ -6,9 +6,11 @@ name: collect
 #   commit   write token                   validates parser output, updates `data`
 
 on:
+  # Normally started every 15 minutes by relay.yml, the pipeline's own clock.
   schedule:
-    # Off the hour on purpose: GitHub delays jobs scheduled at :00.
-    - cron: "4,19,34,49 * * * *"
+    # Safety net only: GitHub's schedule trigger is unreliable in new
+    # repositories. If it does fire, this run restarts the relay if needed.
+    - cron: "23 * * * *"
   workflow_dispatch:
     inputs:
       only:
@@ -23,6 +25,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  ensure-relay:
+    # Every collect run, however it was started, makes sure the clock is running.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    permissions:
+      actions: write
+    steps:
+      - name: Restart the relay if no run of it is waiting
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          active=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow relay.yml --limit 30 \
+            --json status --jq '[.[] | select(.status != "completed")] | length')
+          echo "relay runs waiting: ${active}"
+          if [ "${active}" -eq 0 ]; then
+            gh workflow run relay.yml --repo "$GITHUB_REPOSITORY" --ref main
+            echo "relay restarted"
+          fi
+
   collect:
     runs-on: ubuntu-24.04
     timeout-minutes: 12
