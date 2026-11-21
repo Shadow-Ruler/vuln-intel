@@ -1,0 +1,102 @@
+name: collect
+
+# Three jobs, each on its own throwaway VM, with privileges split between them:
+#   collect  network, read-only token      fetches raw documents, never opens them
+#   parse    no token, no network sandbox  reads the untrusted documents
+#   commit   write token                   validates parser output, updates `data`
+
+on:
+  schedule:
+    # Off the hour on purpose: GitHub delays jobs scheduled at :00.
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - name: Load cursors and heartbeat from the data branch
+        run: |
+          git clone --quiet --depth 1 --branch data \
+            "https://github.com/${GITHUB_REPOSITORY}.git" _data || mkdir -p _data/state
+      - name: Fetch due sources
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -m pipeline.collect --config config/sources.json --state _data/state --out _collected
+      - name: Split the report from the raw documents
+        run: |
+          mkdir -p _report
+          cp _collected/manifest.jsonl _collected/collect-report.json _report/
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: raw
+          path: _collected
+          retention-days: 90
+          if-no-files-found: error
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: report
+          path: _report
+          retention-days: 7
+          if-no-files-found: error
+
+  parse:
+    needs: collect
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions: {}
+    steps:
+      - name: Fetch the code without a token
+        run: |
+          git init --quiet .
+          git fetch --quiet --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" "${GITHUB_SHA}"
+          git checkout --quiet FETCH_HEAD
+      - uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: raw
+          path: _in
+      - name: Parse inside the sandbox
+        run: sudo bash scripts/sandbox-parse.sh "$PWD" "$PWD/_in" "$PWD/_parsed"
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: parsed
+          path: |
+            _parsed/observations.jsonl
+            _parsed/parse-report.json
+          retention-days: 7
+          if-no-files-found: error
+
+  commit:
+    needs: parse
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: report
+          path: _report
+      - uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: parsed
+          path: _parsed
+      - name: Validate, apply and push
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: bash scripts/commit-data.sh _report _parsed

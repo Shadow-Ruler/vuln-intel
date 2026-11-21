@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+_data/
+_collected/
+_report/
+_in/
+_parsed/

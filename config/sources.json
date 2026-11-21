@@ -1,0 +1,92 @@
+{
+  "user_agent": "vuln-intel-pipeline/0.1",
+  "max_bytes": 20000000,
+  "sources": [
+    {
+      "id": "cvelist", "kind": "cvelist_delta", "role": "backbone", "every_minutes": 60,
+      "url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/deltaLog.json",
+      "fallback_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/delta.json",
+      "record_base": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/",
+      "max_bytes": 120000000, "max_records": 1500, "bootstrap_hours": 24
+    },
+    {
+      "id": "kev", "kind": "http", "parser": "kev", "role": "exploitation", "every_minutes": 60,
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+    },
+    {
+      "id": "epss", "kind": "http", "parser": "epss", "role": "exploitation", "every_minutes": 1440,
+      "url": "https://epss.empiricalsecurity.com/epss_scores-current.csv.gz",
+      "max_bytes": 60000000, "redirects": "any-https"
+    },
+    {
+      "id": "ghsa", "kind": "http", "parser": "ghsa", "role": "ecosystem", "every_minutes": 60, "auth": "github",
+      "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+    },
+
+    {
+      "id": "hn-cve", "kind": "http", "parser": "hn", "role": "trend", "origin": "hackernews", "every_minutes": 15,
+      "url": "https://hn.algolia.com/api/v1/search_by_date?tags=story&query=CVE&hitsPerPage=100"
+    },
+    {
+      "id": "hn-vuln", "kind": "http", "parser": "hn", "role": "trend", "origin": "hackernews", "every_minutes": 15,
+      "url": "https://hn.algolia.com/api/v1/search_by_date?tags=story&query=vulnerability&hitsPerPage=100"
+    },
+    {
+      "id": "hn-rce", "kind": "http", "parser": "hn", "role": "trend", "origin": "hackernews", "every_minutes": 15,
+      "url": "https://hn.algolia.com/api/v1/search_by_date?tags=story&query=RCE&hitsPerPage=100"
+    },
+    {
+      "id": "bleepingcomputer", "kind": "http", "parser": "feed", "role": "trend", "every_minutes": 15,
+      "url": "https://www.bleepingcomputer.com/feed/"
+    },
+    {
+      "id": "thehackernews", "kind": "http", "parser": "feed", "role": "trend", "every_minutes": 15,
+      "url": "https://feeds.feedburner.com/TheHackersNews"
+    },
+    {
+      "id": "unit42", "kind": "http", "parser": "feed", "role": "trend", "every_minutes": 15,
+      "url": "https://unit42.paloaltonetworks.com/feed/"
+    },
+    {
+      "id": "talos", "kind": "http", "parser": "feed", "role": "trend", "every_minutes": 15,
+      "url": "https://blog.talosintelligence.com/rss/"
+    },
+    {
+      "id": "watchtowr", "kind": "http", "parser": "feed", "role": "trend", "every_minutes": 15,
+      "url": "https://labs.watchtowr.com/rss/"
+    },
+    {
+      "id": "wiz", "kind": "http", "parser": "feed", "role": "trend", "every_minutes": 15,
+      "url": "https://www.wiz.io/feed/rss.xml"
+    },
+    {
+      "id": "rapid7", "kind": "http", "parser": "feed", "role": "trend", "every_minutes": 15,
+      "url": "https://www.rapid7.com/blog/rss/"
+    },
+
+    {
+      "id": "cisa", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 30,
+      "url": "https://www.cisa.gov/cybersecurity-advisories/all.xml"
+    },
+    {
+      "id": "ubuntu", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 30,
+      "url": "https://ubuntu.com/security/notices/rss.xml"
+    },
+    {
+      "id": "debian", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 30,
+      "url": "https://www.debian.org/security/dsa"
+    },
+    {
+      "id": "php", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 30,
+      "url": "https://www.php.net/feed.atom"
+    },
+    {
+      "id": "nginx", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 30,
+      "url": "https://nginx.org/index.rss"
+    },
+    {
+      "id": "msrc", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 30,
+      "url": "https://api.msrc.microsoft.com/update-guide/rss"
+    }
+  ]
+}
