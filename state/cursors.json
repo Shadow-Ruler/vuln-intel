@@ -11,8 +11,8 @@
   "sha256": "8d01598d72379ec992486c3cdb3a80f00e24ec708ed3649bbc5cd515e1cd5e8a"
  },
  "bleepingcomputer": {
-  "etag": "ab18e3ba158fa528f2550966eae9d272",
-  "sha256": "60c982eca5fa4cb4dd0add23ea9b58069fbaeab619ab0ab49c9db1e648af1ae0"
+  "etag": "4130df0470ef19be06cdf9a0b612c10a",
+  "sha256": "767aec3fb64b2c06e5763ec44e8f29d77418cea4e5fd19083a5fe780ec254221"
  },
  "cert-fr": {
   "etag": "\"bc7dcd0dcbeca3d9748eb9b492d57db8\"",
@@ -54,13 +54,13 @@
   "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89"
  },
  "hn-cve": {
-  "sha256": "2d20be807b58dce0c647097b54f86b2f142cf3dccae4ce6dc30d649dc5c10c52"
+  "sha256": "591f2aba4c8b01ab23993e0dad6fefa51906e7543f390b5c97e076beba39887f"
  },
  "hn-rce": {
-  "sha256": "ddf989ca1494b5aabcbab045d99f6025de9027aa1625291c5ed656d30edddf81"
+  "sha256": "0204d8182d95614eb5c73c2f72562f271d119428067000a090dbe022455aafda"
  },
  "hn-vuln": {
-  "sha256": "99b8938aba681398b0ce8af575bd6d8e834328bc2de86e4c97146cc717843449"
+  "sha256": "2b008dc77c733c5d9afd176c189a7ca40e351f70763ecda026f9178a3e2f3d5a"
  },
  "kev": {
   "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
@@ -91,7 +91,7 @@
   "sha256": "c230ae722b1e1e701dfbd9662c91798b67d835a8616a78b291b3a33b610cdb57"
  },
  "rapid7": {
-  "sha256": "06e0c4a0774fc72c5ab05fb9ee71a1265580e141361a8b318be8250ba05ce568"
+  "sha256": "036c7828017a17b7d69f2c24f31ed516f88134185ef6991c928a8231e6424624"
  },
  "redhat": {
   "etag": "W/\"b8f3f99ee82533730c22349578816c89\"",
@@ -112,11 +112,11 @@
   "sha256": "1b52c6ab2308a8f9cd773ae6bfc29f53c0442fa51913647e095e1706daa09e72"
  },
  "watchtowr": {
-  "etag": "W/\"80040-gBIjeMlroSbdjqYwsFc3PkrxUOY\"",
-  "sha256": "b1d6dd885afd453c67b26591677daae54c227222ea621f824116677fbee619af"
+  "etag": "W/\"80040-oWW9gVEQgnHhKsOuq+DvVu0vr64\"",
+  "sha256": "a56616513388d5079dd897a9a9c7a3256405dfdb0dc06cd04f96db8b353af00e"
  },
  "wiz": {
-  "sha256": "f858e3a11b2a667b6236d78e6030d92ee6d8cac2b3b190171cb4362955f11a38"
+  "sha256": "56a3702cbc34bde4ac802d36586bbc4723c3d55a280e2fe9338a701a9e01d07f"
  },
  "zdi": {
   "sha256": "cb75e001b3c6b8dc0897ca98ca5a01463ce73b8cb8e9c948b6b9792a700c3923"
