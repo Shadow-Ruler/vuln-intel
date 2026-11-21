@@ -87,6 +87,64 @@
     {
       "id": "msrc", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 30,
       "url": "https://api.msrc.microsoft.com/update-guide/rss"
+    },
+
+    {
+      "id": "oss-security", "kind": "http", "parser": "feed", "role": "trend", "every_minutes": 15,
+      "url": "https://seclists.org/rss/oss-sec.rss"
+    },
+    {
+      "id": "certcc", "kind": "http", "parser": "feed", "role": "trend", "every_minutes": 30,
+      "url": "https://www.kb.cert.org/vuls/atomfeed/"
+    },
+    {
+      "id": "zdi", "kind": "http", "parser": "feed", "role": "trend", "every_minutes": 60,
+      "url": "https://www.zerodayinitiative.com/rss/published/"
+    },
+    {
+      "id": "cert-fr", "kind": "http", "parser": "feed", "role": "trend", "every_minutes": 60,
+      "url": "https://cert.cyber.gouv.fr/alerte/feed/"
+    },
+
+    {
+      "id": "cisco", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 30,
+      "url": "https://sec.cloudapps.cisco.com/security/center/psirtrss20/CiscoSecurityAdvisory.xml"
+    },
+    {
+      "id": "fortinet", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 30,
+      "url": "https://filestore.fortinet.com/fortiguard/rss/ir.xml"
+    },
+    {
+      "id": "paloalto", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 30,
+      "url": "https://security.paloaltonetworks.com/rss.xml"
+    },
+    {
+      "id": "kubernetes", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 60,
+      "url": "https://kubernetes.io/docs/reference/issues-security/official-cve-feed/feed.xml"
+    },
+    {
+      "id": "cisa-ics", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 60,
+      "url": "https://www.cisa.gov/cybersecurity-advisories/ics-advisories.xml"
+    },
+    {
+      "id": "redhat", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 30,
+      "url": "https://security.access.redhat.com/data/meta/v1/rhsa.rss"
+    },
+    {
+      "id": "debian-lts", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 60,
+      "url": "https://www.debian.org/lts/security/dla.rdf"
+    },
+    {
+      "id": "almalinux", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 60,
+      "url": "https://errata.almalinux.org/9/errata.rss"
+    },
+    {
+      "id": "amazon-linux", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 60,
+      "url": "https://alas.aws.amazon.com/AL2023/alas.rss"
+    },
+    {
+      "id": "archlinux", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 60,
+      "url": "https://security.archlinux.org/advisory/feed.atom"
     }
   ]
 }

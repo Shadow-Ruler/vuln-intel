@@ -184,7 +184,8 @@ class RawWriter:
             with open(path, "wb") as handle:
                 handle.write(body)
         self.entries.append({
-            "source": src["id"], "origin": src.get("origin", src["id"]), "parser": parser,
+            "source": src["id"], "origin": src.get("origin", src["id"]), "role": src.get("role", ""),
+            "parser": parser,
             "url": url, "sha256": digest, "bytes": len(body), "fetched_at": fetched_at, "hint": hint,
         })
         return digest

@@ -13,6 +13,7 @@ from . import common
 
 PARSER_TYPE = {"cve": "cve", "kev": "kev", "epss": "epss", "ghsa": "ghsa", "hn": "news", "feed": "news"}
 
+_ROLES = ("backbone", "exploitation", "ecosystem", "trend", "vendor")
 _STATES = ("PUBLISHED", "REJECTED")
 _STATUSES = ("affected", "unaffected", "unknown")
 _SSVC = {
@@ -74,15 +75,16 @@ def _src(obs: Dict[str, Any], manifest: Optional[Dict[str, Dict[str, Any]]]) -> 
     if not isinstance(source, str) or not common.SOURCE_ID_RE.match(source):
         raise Invalid("bad src.source")
     if manifest is None:
-        return {"source": source, "origin": source, "sha256": digest, "url": "", "fetched_at": ""}
+        return {"source": source, "origin": source, "role": "", "sha256": digest, "url": "", "fetched_at": ""}
     entry = manifest.get(digest)
     if entry is None or entry.get("source") != source:
         raise Invalid("src does not match a fetched document")
     if PARSER_TYPE.get(entry.get("parser")) != obs.get("type"):
         raise Invalid("observation type does not match the document's parser")
-    # URL, origin and fetch time come from the collector's manifest, not the parser.
+    # URL, origin, role and fetch time come from the collector's manifest, not the parser.
     return {
-        "source": source, "origin": _s(entry.get("origin"), 40) or source, "sha256": digest,
+        "source": source, "origin": _s(entry.get("origin"), 40) or source,
+        "role": _enum(entry.get("role"), _ROLES), "sha256": digest,
         "url": _url(entry.get("url")), "fetched_at": _ts(entry.get("fetched_at")),
     }
 
