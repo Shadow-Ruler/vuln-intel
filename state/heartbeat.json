@@ -4,29 +4,29 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T17:30:53Z",
-   "last_ok": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "vendor",
-   "status": "ok"
+   "status": "unchanged"
   },
   "amazon-linux": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T17:30:53Z",
-   "last_ok": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "vendor",
-   "status": "ok"
+   "status": "unchanged"
   },
   "archlinux": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T17:30:53Z",
-   "last_change": "2026-11-21T17:30:53Z",
-   "last_ok": "2026-11-21T17:30:53Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
+   "last_change": "2026-11-21T18:34:11Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "vendor",
    "status": "ok"
   },
@@ -34,9 +34,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T18:13:44Z",
-   "last_change": "2026-11-21T18:13:44Z",
-   "last_ok": "2026-11-21T18:13:44Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
+   "last_change": "2026-11-21T18:34:11Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
    "status": "ok"
   },
@@ -44,11 +44,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T17:30:53Z",
-   "last_ok": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "certcc": {
    "consecutive_errors": 0,
@@ -74,11 +74,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T17:30:53Z",
-   "last_ok": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "vendor",
-   "status": "ok"
+   "status": "unchanged"
   },
   "cisco": {
    "consecutive_errors": 0,
@@ -94,9 +94,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T17:32:28Z",
-   "last_change": "2026-11-21T17:32:28Z",
-   "last_ok": "2026-11-21T17:32:28Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
+   "last_change": "2026-11-21T18:34:11Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "backbone",
    "status": "ok"
   },
@@ -114,11 +114,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T17:30:53Z",
-   "last_ok": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "vendor",
-   "status": "ok"
+   "status": "unchanged"
   },
   "epss": {
    "consecutive_errors": 0,
@@ -144,9 +144,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "ecosystem",
    "status": "unchanged"
   },
@@ -154,9 +154,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T18:13:44Z",
-   "last_change": "2026-11-21T18:13:44Z",
-   "last_ok": "2026-11-21T18:13:44Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
+   "last_change": "2026-11-21T18:34:11Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
    "status": "ok"
   },
@@ -164,9 +164,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T18:13:44Z",
-   "last_change": "2026-11-21T18:13:44Z",
-   "last_ok": "2026-11-21T18:13:44Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
+   "last_change": "2026-11-21T18:34:11Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
    "status": "ok"
   },
@@ -174,9 +174,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T18:13:44Z",
-   "last_change": "2026-11-21T18:13:44Z",
-   "last_ok": "2026-11-21T18:13:44Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
+   "last_change": "2026-11-21T18:34:11Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
    "status": "ok"
   },
@@ -184,9 +184,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "exploitation",
    "status": "unchanged"
   },
@@ -194,11 +194,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T17:30:53Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T17:30:53Z",
-   "last_ok": "2026-11-21T17:30:53Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "vendor",
-   "status": "ok"
+   "status": "unchanged"
   },
   "msrc": {
    "consecutive_errors": 0,
@@ -224,9 +224,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T18:13:44Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T17:30:53Z",
-   "last_ok": "2026-11-21T18:13:44Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -254,9 +254,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T18:13:44Z",
-   "last_change": "2026-11-21T18:13:44Z",
-   "last_ok": "2026-11-21T18:13:44Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
+   "last_change": "2026-11-21T18:34:11Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
    "status": "ok"
   },
@@ -274,9 +274,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T18:13:44Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T18:13:44Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -284,11 +284,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T18:13:44Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T18:13:44Z",
-   "last_ok": "2026-11-21T18:13:44Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "ubuntu": {
    "consecutive_errors": 0,
@@ -304,9 +304,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T18:13:44Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T18:13:44Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -314,9 +314,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T18:13:44Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-21T18:13:44Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -324,22 +324,22 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-21T18:13:44Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
    "last_change": "2026-11-21T18:13:44Z",
-   "last_ok": "2026-11-21T18:13:44Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "zdi": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-21T17:30:53Z",
-   "last_change": "2026-11-21T17:30:53Z",
-   "last_ok": "2026-11-21T17:30:53Z",
+   "last_attempt": "2026-11-21T18:34:11Z",
+   "last_change": "2026-11-21T18:34:11Z",
+   "last_ok": "2026-11-21T18:34:11Z",
    "role": "trend",
    "status": "ok"
   }
  },
- "updated": "2026-11-21T18:23:08Z"
+ "updated": "2026-11-21T18:34:46Z"
 }
