@@ -795,6 +795,25 @@ class FixTests(unittest.TestCase):
             collect.collect_per_cve(src, fetcher, cursor, writer, CONFIG, NOW + dt.timedelta(days=15), enrich=names)
             self.assertIn("https://vendor.example/cve/CVE-2099-0002.json", fetcher.calls)   # asked again after two weeks
 
+    def test_known_exploited_cves_are_asked_about_first(self):
+        class Fetcher:
+            calls = []
+
+            def get(self, url, max_bytes, etag=None, auth=None, any_https_redirect=False):
+                self.calls.append(url)
+                raise collect.FetchError("HTTP 404")
+
+        cfg = {"sources": [{"id": "fix-redhat", "kind": "per_cve", "parser": "redhat_cve", "every_minutes": 60,
+                            "max_per_run": 1, "url_template": "https://vendor.example/{cve}.json"}]}
+        with tempfile.TemporaryDirectory() as tmp:
+            state = os.path.join(tmp, "data", "state")
+            common.write_json_atomic(os.path.join(state, "enrich.json"),
+                                     {"CVE-2099-9000": "2099-01-04", "CVE-2098-0001": "2099-01-01"})
+            common.write_json_atomic(os.path.join(tmp, "data", "kev.json"), {"CVE-2098-0001": {}})
+            fetcher = Fetcher()
+            collect.run(cfg, state, os.path.join(tmp, "out"), now=NOW, fetcher=fetcher)
+            self.assertEqual(fetcher.calls, ["https://vendor.example/CVE-2098-0001.json"])
+
     def test_commit_lists_the_cves_worth_asking_vendors_about(self):
         with tempfile.TemporaryDirectory() as tmp:
             os.makedirs(os.path.join(tmp, "news"))

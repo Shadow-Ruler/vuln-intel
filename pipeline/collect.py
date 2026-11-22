@@ -396,8 +396,10 @@ def run(cfg, state_dir, out_dir, token=None, only=None, now=None, fetcher=None):
                      key=lambda cve: str(wanted[cve].get("since", "")), reverse=True)
     enrich = common.read_json(os.path.join(state_dir, "enrich.json"), {})
     enrich = enrich if isinstance(enrich, dict) else {}
-    # Most recently named first, then the newest CVE numbers.
-    to_enrich = sorted(enrich, key=lambda cve: (str(enrich[cve]), cve), reverse=True)
+    # Known-exploited CVEs first, then the most recently named, then the newest numbers.
+    kev = common.read_json(os.path.join(os.path.dirname(os.path.abspath(state_dir)), "kev.json"), {})
+    kev = kev if isinstance(kev, dict) else {}
+    to_enrich = sorted(enrich, key=lambda cve: (cve in kev, str(enrich[cve]), cve), reverse=True)
     fetcher = fetcher or Fetcher(cfg, token=token)
     writer = RawWriter(out_dir)
     report = {"at": common.ts(now), "sources": {}, "cursors": {}}
