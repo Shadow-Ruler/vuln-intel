@@ -4,9 +4,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T01:14:48Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-21T20:30:39Z",
-   "last_ok": "2026-11-22T01:14:48Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "vendor",
    "status": "unchanged"
   },
@@ -14,19 +14,19 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T01:14:48Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-22T01:14:48Z",
-   "last_ok": "2026-11-22T01:14:48Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "vendor",
-   "status": "ok"
+   "status": "unchanged"
   },
   "archlinux": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T01:14:48Z",
-   "last_change": "2026-11-22T01:14:48Z",
-   "last_ok": "2026-11-22T01:14:48Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
+   "last_change": "2026-11-22T02:11:36Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "vendor",
    "status": "ok"
   },
@@ -34,9 +34,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T01:57:24Z",
-   "last_change": "2026-11-22T01:57:24Z",
-   "last_ok": "2026-11-22T01:57:24Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
+   "last_change": "2026-11-22T02:11:36Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
    "status": "ok"
   },
@@ -44,9 +44,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T01:14:48Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-21T17:30:53Z",
-   "last_ok": "2026-11-22T01:14:48Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -74,9 +74,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T01:14:48Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-21T17:30:53Z",
-   "last_ok": "2026-11-22T01:14:48Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "vendor",
    "status": "unchanged"
   },
@@ -94,9 +94,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T01:14:48Z",
-   "last_change": "2026-11-22T01:14:48Z",
-   "last_ok": "2026-11-22T01:14:48Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
+   "last_change": "2026-11-22T02:11:36Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "backbone",
    "status": "ok"
   },
@@ -114,9 +114,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T01:14:48Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-22T00:17:58Z",
-   "last_ok": "2026-11-22T01:14:48Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "vendor",
    "status": "unchanged"
   },
@@ -144,19 +144,19 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T01:14:48Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-22T01:14:48Z",
-   "last_ok": "2026-11-22T01:14:48Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "ecosystem",
-   "status": "ok"
+   "status": "unchanged"
   },
   "hn-cve": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T01:57:24Z",
-   "last_change": "2026-11-22T01:57:24Z",
-   "last_ok": "2026-11-22T01:57:24Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
+   "last_change": "2026-11-22T02:11:36Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
    "status": "ok"
   },
@@ -164,9 +164,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T01:57:24Z",
-   "last_change": "2026-11-22T01:57:24Z",
-   "last_ok": "2026-11-22T01:57:24Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
+   "last_change": "2026-11-22T02:11:36Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
    "status": "ok"
   },
@@ -174,9 +174,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T01:57:24Z",
-   "last_change": "2026-11-22T01:57:24Z",
-   "last_ok": "2026-11-22T01:57:24Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
+   "last_change": "2026-11-22T02:11:36Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
    "status": "ok"
   },
@@ -184,9 +184,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T01:14:48Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-22T01:14:48Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "exploitation",
    "status": "unchanged"
   },
@@ -194,11 +194,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T01:14:48Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-22T01:14:48Z",
-   "last_ok": "2026-11-22T01:14:48Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "vendor",
-   "status": "ok"
+   "status": "unchanged"
   },
   "msrc": {
    "consecutive_errors": 0,
@@ -224,11 +224,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T01:57:24Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-22T01:57:24Z",
-   "last_ok": "2026-11-22T01:57:24Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "paloalto": {
    "consecutive_errors": 0,
@@ -254,11 +254,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T01:57:24Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-22T01:57:24Z",
-   "last_ok": "2026-11-22T01:57:24Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "redhat": {
    "consecutive_errors": 0,
@@ -274,9 +274,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T01:57:24Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-22T01:57:24Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -284,9 +284,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T01:57:24Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-22T01:43:10Z",
-   "last_ok": "2026-11-22T01:57:24Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -304,9 +304,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T01:57:24Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-21T16:19:22Z",
-   "last_ok": "2026-11-22T01:57:24Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -314,9 +314,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T01:57:24Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-22T00:46:24Z",
-   "last_ok": "2026-11-22T01:57:24Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -324,22 +324,22 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T01:57:24Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
    "last_change": "2026-11-22T01:57:24Z",
-   "last_ok": "2026-11-22T01:57:24Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "zdi": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T01:14:48Z",
-   "last_change": "2026-11-22T01:14:48Z",
-   "last_ok": "2026-11-22T01:14:48Z",
+   "last_attempt": "2026-11-22T02:11:36Z",
+   "last_change": "2026-11-22T02:11:36Z",
+   "last_ok": "2026-11-22T02:11:36Z",
    "role": "trend",
    "status": "ok"
   }
  },
- "updated": "2026-11-22T01:57:56Z"
+ "updated": "2026-11-22T02:12:04Z"
 }
