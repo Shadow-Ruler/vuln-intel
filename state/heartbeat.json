@@ -152,21 +152,21 @@
   },
   "fix-debian": {
    "consecutive_errors": 0,
-   "detail": "83 found, 37 not tracked by this vendor, 0 failed",
+   "detail": "103 found, 17 not tracked by this vendor, 0 failed",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T06:13:19Z",
-   "last_change": "2026-11-22T06:13:19Z",
-   "last_ok": "2026-11-22T06:13:19Z",
+   "last_attempt": "2026-11-22T07:10:05Z",
+   "last_change": "2026-11-22T07:10:05Z",
+   "last_ok": "2026-11-22T07:10:05Z",
    "role": "fixes",
    "status": "ok"
   },
   "fix-redhat": {
    "consecutive_errors": 0,
-   "detail": "84 found, 36 not tracked by this vendor, 0 failed",
+   "detail": "99 found, 21 not tracked by this vendor, 0 failed",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T06:13:19Z",
-   "last_change": "2026-11-22T06:13:19Z",
-   "last_ok": "2026-11-22T06:13:19Z",
+   "last_attempt": "2026-11-22T07:10:05Z",
+   "last_change": "2026-11-22T07:10:05Z",
+   "last_ok": "2026-11-22T07:10:05Z",
    "role": "fixes",
    "status": "ok"
   },
@@ -421,5 +421,5 @@
    "status": "ok"
   }
  },
- "updated": "2026-11-22T07:08:36Z"
+ "updated": "2026-11-22T07:10:34Z"
 }
