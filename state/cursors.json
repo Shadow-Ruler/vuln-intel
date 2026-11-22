@@ -11,8 +11,8 @@
   "sha256": "380ee904d09ffb843d588d862774391cb51a2e5247ab397b0426dc66bb3a012f"
  },
  "bleepingcomputer": {
-  "etag": "1f9adab1a03f1394a1633c9d7167204b",
-  "sha256": "0ec5ffbb2742edfc832f35fda0c3f7e9d7e7723b10f1bbc9abcadff731b9c2dc"
+  "etag": "561154a514da87e2dc8b369285ac557c",
+  "sha256": "612368c8710451eabcc1ceddcded3b0e869e0d76a2313e9bda3e72e100307039"
  },
  "cert-fr": {
   "etag": "\"bc7dcd0dcbeca3d9748eb9b492d57db8\"",
@@ -54,13 +54,13 @@
   "sha256": "b99001e870615b96643c4aba50d7c2bb5c50493bdc2a27b2b5b861987b652f89"
  },
  "hn-cve": {
-  "sha256": "c95bd41f7a66eb121dda171a361e93c2a94e49202e854ad307db8bb30fec1dac"
+  "sha256": "237927e669423175400a97b01f2e7db9cddde096665cb1b221e88c3668f0d136"
  },
  "hn-rce": {
-  "sha256": "9effcd4df7058f6c3fe00b06bd4e2ed4ced0c492ffddadf9249c2c27c3cf9a95"
+  "sha256": "727254bc62d89998f4b970397c3c512f2ae78d732a5576bde2177b211b0fb5c2"
  },
  "hn-vuln": {
-  "sha256": "51522322368a51095eaa01d6422df52134ad8e8fc24f2ec6b16b242142ab27c0"
+  "sha256": "cbf6c9589b21253abbc931af4c9453bdf61cde34851cea0000e38678eb8f6d8b"
  },
  "kev": {
   "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
@@ -102,7 +102,7 @@
   "sha256": "7a79ec4c2bf8ed1d93d88b79da016a4548b64ca4f30d4b190fee46ec331ece1c"
  },
  "thehackernews": {
-  "sha256": "6753b4e17cea75e214ab744992156e1dde5e6481c43eb18d8ab06a43c88fa13e"
+  "sha256": "dceaf72f209929967d58ff6eac75e2ffe9733f06ef141f384585a2945af7760f"
  },
  "ubuntu": {
   "sha256": "77e35e2565c50e0a75e9bac6a76d5aebdece3566e009a88bece23291b092d37b"
@@ -112,8 +112,8 @@
   "sha256": "1b52c6ab2308a8f9cd773ae6bfc29f53c0442fa51913647e095e1706daa09e72"
  },
  "watchtowr": {
-  "etag": "W/\"80040-oWW9gVEQgnHhKsOuq+DvVu0vr64\"",
-  "sha256": "a56616513388d5079dd897a9a9c7a3256405dfdb0dc06cd04f96db8b353af00e"
+  "etag": "W/\"80040-gBIjeMlroSbdjqYwsFc3PkrxUOY\"",
+  "sha256": "b1d6dd885afd453c67b26591677daae54c227222ea621f824116677fbee619af"
  },
  "wiz": {
   "sha256": "6ec872a8c4dd2c6cc387f0c5071ad52139ef55eb911717e415566384960edc7c"
