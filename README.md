@@ -39,6 +39,8 @@ Listed in `config/sources.json`, each with its own interval. A source is fetched
 - **Linux distributions:** Red Hat, Ubuntu, Debian and Debian LTS, AlmaLinux, Amazon Linux, Arch Linux.
 - **Network and infrastructure vendors:** Cisco, Fortinet, Palo Alto Networks, Kubernetes, Microsoft, PHP, NGINX, CISA advisories and CISA industrial-control advisories.
 
+- **Public rules and exploit code:** the nuclei-templates CVE index, Exploit-DB, Metasploit module metadata, Emerging Threats Open and the SigmaHQ rule repository. Each is fetched whole once or twice a day and reduced to an identifier and a title per CVE; rule and exploit content is not kept.
+
 Linux kernel CVEs arrive through the CVE list itself, where the kernel project publishes them. Juniper, F5, VMware and SonicWall publish no machine-readable feed; their bugs still arrive through the CVE list and the news sources.
 
 To add a feed, add an entry with `"kind": "http"` and `"parser": "feed"` (RSS 2.0, Atom and RDF all work). The collector only contacts hosts that appear in this file, and refuses redirects to any other host. The one exception is a source marked `"redirects": "any-https"` (EPSS, which is served through a redirect to a CDN).
@@ -54,6 +56,8 @@ news/<day>.jsonl                news items, by the day they were first seen
 state/heartbeat.json            last success and status of every source
 state/cursors.json              where each source left off
 state/wanted.json               CVE records to backfill, and CVEs confirmed unpublished
+coverage/<kind>.json            public rules and exploits per CVE: [identifier, title, note]
+coverage/recent.json            CVEs that recently gained their first rule or exploit
 ```
 
 **Backfill.** The CVE source only reports records that changed since the last run, so a CVE published before the pipeline started has no record. When news or a recent KEV entry names such a CVE, the commit job marks it `pending` in `state/wanted.json` and the next CVE run fetches it once. If cvelistV5 has no such record it becomes `missing`, which downstream means the CVE is not published yet.
