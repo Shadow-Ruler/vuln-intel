@@ -10,8 +10,9 @@
   "status": "missing"
  },
  "CVE-2026-125651": {
+  "checked": "2026-11-22T21:37:46Z",
   "since": "2026-11-22T20:55:01Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-129975": {
   "checked": "2026-11-21T16:28:49Z",
