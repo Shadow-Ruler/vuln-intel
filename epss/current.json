@@ -82194,8 +82194,9 @@
   "CVE-2026-98432"
  ],
  "src": {
-  "fetched_at": "2026-11-21T16:19:22Z",
+  "fetched_at": "2026-11-22T04:24:51Z",
   "origin": "epss",
+  "role": "exploitation",
   "sha256": "759a333907ec8b9aa8a31d6f3abbf182bdc9b3dc725d51053aa0c919b9a3241e",
   "source": "epss",
   "url": "https://epss.empiricalsecurity.com/epss_scores-current.csv.gz"
