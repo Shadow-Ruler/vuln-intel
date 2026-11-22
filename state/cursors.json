@@ -11,8 +11,8 @@
   "sha256": "c972cbf0b31693aaed36d5494b0c69f7c689670bc9984aadc9aa36eac20b9aae"
  },
  "bleepingcomputer": {
-  "etag": "df1f7acfdebb46a63235f0fcacdb0a8d",
-  "sha256": "8dad672cadd69c79da9421f9023157b2f012d159b03ec5bf77f4bc1562266d48"
+  "etag": "ddc57d26cfcd1f932955bd17768cd133",
+  "sha256": "2e1372f453eaa31182939d8d2562dfe9a4b330b471188e46c6959d07a58bb0c3"
  },
  "cert-fr": {
   "etag": "\"bc7dcd0dcbeca3d9748eb9b492d57db8\"",
@@ -1976,13 +1976,13 @@
   "sha256": "6a836d2f472d371430fd562345f1456c640619f1bceef0e918f38028888d9eaf"
  },
  "hn-cve": {
-  "sha256": "0ed8397ca65b3b98f9dc9ef59e73bb68374ef0102ce213b516d55683d4d2ee07"
+  "sha256": "c576a85a4a218b9794f279a1ec8b328381eb96a29956601929ac705731bf2d76"
  },
  "hn-rce": {
-  "sha256": "2df4a5855a91cccbb94bb720e72f3a12435a22c87dd64a6b14160758fb10fc1c"
+  "sha256": "0d3a5640aed23626e4d868e1aaead67cdf152dd6abf05c2d22571c40742eb266"
  },
  "hn-vuln": {
-  "sha256": "be6e0c3a2c625e25f2a1c201fbdcae33f281d68a6e6bac510328e7d45c771c46"
+  "sha256": "624654001ce0149d0e6bc11f95c90adbe38ef20b5fd0b5e629d222d687a405f7"
  },
  "kev": {
   "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
@@ -2036,7 +2036,7 @@
   "sha256": "7a79ec4c2bf8ed1d93d88b79da016a4548b64ca4f30d4b190fee46ec331ece1c"
  },
  "thehackernews": {
-  "sha256": "e76a4d08eaa532b35d4107391210c9aa0fe9d7e7182dc6741b37aec121ab2d67"
+  "sha256": "96327ffda43b43392a2a94076f7a61f33b1ee5624aa7765503e6c1001f060f6d"
  },
  "ubuntu": {
   "sha256": "4c39515318d829f382eefcd29a2a6c335b9462c906d901c3792cdc266ba12ca0"
@@ -2046,8 +2046,8 @@
   "sha256": "1b52c6ab2308a8f9cd773ae6bfc29f53c0442fa51913647e095e1706daa09e72"
  },
  "watchtowr": {
-  "etag": "W/\"80040-oWW9gVEQgnHhKsOuq+DvVu0vr64\"",
-  "sha256": "a56616513388d5079dd897a9a9c7a3256405dfdb0dc06cd04f96db8b353af00e"
+  "etag": "W/\"80040-gBIjeMlroSbdjqYwsFc3PkrxUOY\"",
+  "sha256": "b1d6dd885afd453c67b26591677daae54c227222ea621f824116677fbee619af"
  },
  "wiz": {
   "sha256": "99f9900c06e509827ada521f4e0637da5e6129d426a505098634ad7091f6b70e"
