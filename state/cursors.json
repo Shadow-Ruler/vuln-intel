@@ -11,8 +11,8 @@
   "sha256": "84903ac05de54c30104511552f73f136d4bc5652998eb4479e3fc0a4a09d608d"
  },
  "bleepingcomputer": {
-  "etag": "60b94f55deb5059d7e7997a63cc8cdf7",
-  "sha256": "63593d66d55a22339273e83c959a32898d54dc95ed706c423abf5193a8166683"
+  "etag": "119290cb06a94aed534b15575e4bd9ee",
+  "sha256": "aed69377a769b6dd439489aa20bca97ab921dac607fc83ab711955ace44aa84b"
  },
  "cert-fr": {
   "etag": "\"bc7dcd0dcbeca3d9748eb9b492d57db8\"",
@@ -276,6 +276,7 @@
    "CVE-2026-116606": "none:2026-11-22",
    "CVE-2026-116620": "2026-11-22",
    "CVE-2026-116779": "none:2026-11-22",
+   "CVE-2026-117348": "none:2026-11-22",
    "CVE-2026-117610": "2026-11-22",
    "CVE-2026-117659": "none:2026-11-22",
    "CVE-2026-118148": "none:2026-11-22",
@@ -912,6 +913,7 @@
    "CVE-2026-116606": "none:2026-11-22",
    "CVE-2026-116620": "2026-11-22",
    "CVE-2026-116779": "none:2026-11-22",
+   "CVE-2026-117348": "none:2026-11-22",
    "CVE-2026-117610": "2026-11-22",
    "CVE-2026-117659": "none:2026-11-22",
    "CVE-2026-118148": "none:2026-11-22",
@@ -1970,13 +1972,13 @@
   "sha256": "6a836d2f472d371430fd562345f1456c640619f1bceef0e918f38028888d9eaf"
  },
  "hn-cve": {
-  "sha256": "51c4605f63a9a76c2f44efb641bab0b4ebc9daeb813a18f35cd507eea1ddc661"
+  "sha256": "f84c34f618197f95171e35389a3dbc57e781ffcf40025ac01356b7a644d25688"
  },
  "hn-rce": {
-  "sha256": "a4b1a7c57388a1db45f71c82da09e1717f7fb30d51f6d32c4f8558a4c8401477"
+  "sha256": "1c9fd5b7a169f694f5368d4e096daf32e570b8abfcd77389a975e01cd433a37a"
  },
  "hn-vuln": {
-  "sha256": "f62fbb4092cdf234a702d5d8f92723b38b6d047e6ba248d49330a654a14b2050"
+  "sha256": "58735abca44ed60e87339e3d3321ad724c60b139a08b257e55c85cbb90fe279d"
  },
  "kev": {
   "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
@@ -2040,8 +2042,8 @@
   "sha256": "1b52c6ab2308a8f9cd773ae6bfc29f53c0442fa51913647e095e1706daa09e72"
  },
  "watchtowr": {
-  "etag": "W/\"80040-oWW9gVEQgnHhKsOuq+DvVu0vr64\"",
-  "sha256": "a56616513388d5079dd897a9a9c7a3256405dfdb0dc06cd04f96db8b353af00e"
+  "etag": "W/\"80040-gBIjeMlroSbdjqYwsFc3PkrxUOY\"",
+  "sha256": "b1d6dd885afd453c67b26591677daae54c227222ea621f824116677fbee619af"
  },
  "wiz": {
   "sha256": "6c49616baeb52e6f4383d271544376be6a0904290f9a0a1e466bee5c55fcdb96"
