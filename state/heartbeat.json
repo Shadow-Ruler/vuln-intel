@@ -172,11 +172,11 @@
   },
   "fix-ubuntu": {
    "consecutive_errors": 0,
-   "detail": "98 found, 22 not tracked by this vendor, 0 failed",
+   "detail": "46 found, 74 not tracked by this vendor, 0 failed",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T05:08:58Z",
-   "last_change": "2026-11-22T05:08:58Z",
-   "last_ok": "2026-11-22T05:08:58Z",
+   "last_attempt": "2026-11-22T05:18:49Z",
+   "last_change": "2026-11-22T05:18:49Z",
+   "last_ok": "2026-11-22T05:18:49Z",
    "role": "fixes",
    "status": "ok"
   },
@@ -421,5 +421,5 @@
    "status": "ok"
   }
  },
- "updated": "2026-11-22T05:17:49Z"
+ "updated": "2026-11-22T05:19:24Z"
 }
