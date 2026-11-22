@@ -68,7 +68,7 @@ jobs:
         run: |
           mkdir -p _report
           cp _collected/manifest.jsonl _collected/collect-report.json _report/
-      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: raw
           path: |
@@ -76,14 +76,14 @@ jobs:
             !_collected/bulk/**
           retention-days: 90
           if-no-files-found: error
-      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           # Whole rule sets and exploit lists: needed by the parse job only.
           name: raw-bulk
           path: _collected/bulk
           retention-days: 1
           if-no-files-found: error
-      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: report
           path: _report
@@ -111,7 +111,7 @@ jobs:
           path: _in/bulk
       - name: Parse inside the sandbox
         run: sudo bash scripts/sandbox-parse.sh "$PWD" "$PWD/_in" "$PWD/_parsed"
-      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: parsed
           path: |
