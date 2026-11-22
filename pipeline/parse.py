@@ -513,11 +513,79 @@ def parse_sigma_tar(data: bytes, entry: Dict[str, Any]) -> List[Dict[str, Any]]:
     return out
 
 
+# --- Fixes: which package version fixes a CVE, per vendor --------------------
+
+_RPM = re.compile(r"^(?P<name>.+)-(?:\d+:)?(?P<version>[^-:/]+)-(?P<release>[^-:/]+)$")
+_RH_STATES = {"affected": "affected", "not affected": "not_affected", "will not fix": "wont_fix",
+              "out of support scope": "wont_fix", "fix deferred": "affected", "under investigation": "unknown"}
+_ADVISORY = re.compile(r"^(USN|DSA|DLA)-\d+-\d+$")
+
+
+def _fix(entry, cve, vendor, product, package, fixed, state, advisory=""):
+    return {"type": "fix", "cve": str(cve).upper(), "vendor": vendor, "product": T(product, 120),
+            "package": T(package, 160), "fixed": T(fixed, 120), "state": state, "advisory": T(advisory, 40),
+            "src": _src(entry)}
+
+
+def parse_redhat_cve(data: bytes, entry: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Red Hat security data API, one document per CVE."""
+    doc = _load_json(data)
+    if not isinstance(doc, dict):
+        raise ValueError("document is not an object")
+    cve = doc.get("name") if isinstance(doc.get("name"), str) else entry.get("hint", "")
+    out = []
+    released = doc.get("affected_release")
+    for item in (released if isinstance(released, list) else [])[:300]:
+        if not isinstance(item, dict) or not isinstance(item.get("package"), str):
+            continue
+        # Container images ("registry/name:tag") are not name-version-release packages.
+        match = _RPM.match(item["package"]) if "/" not in item["package"] else None
+        name = match.group("name") if match else item["package"]
+        fixed = "%s-%s" % (match.group("version"), match.group("release")) if match else ""
+        out.append(_fix(entry, cve, "redhat", item.get("product_name"), name, fixed, "fixed", item.get("advisory")))
+    states = doc.get("package_state")
+    for item in (states if isinstance(states, list) else [])[:300]:
+        if isinstance(item, dict):
+            state = _RH_STATES.get(str(item.get("fix_state", "")).strip().lower(), "unknown")
+            out.append(_fix(entry, cve, "redhat", item.get("product_name"), item.get("package_name"), "", state))
+    return out
+
+
+def parse_osv_distro(data: bytes, entry: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """An OSV record that a distribution publishes per CVE (DEBIAN-CVE-…, UBUNTU-CVE-…)."""
+    doc = _load_json(data)
+    ident = doc.get("id") if isinstance(doc, dict) else None
+    if not isinstance(ident, str) or not ident.startswith(("DEBIAN-CVE-", "UBUNTU-CVE-")):
+        raise ValueError("not a distribution CVE record")
+    vendor = "debian" if ident.startswith("DEBIAN-") else "ubuntu"
+    cve = ident.split("-", 1)[1]
+    related = doc.get("related")
+    advisory = next((r for r in (related if isinstance(related, list) else [])
+                     if isinstance(r, str) and _ADVISORY.match(r)), "")
+    out = []
+    affected = doc.get("affected")
+    for item in (affected if isinstance(affected, list) else [])[:300]:
+        package = item.get("package") if isinstance(item, dict) else None
+        if not isinstance(package, dict):
+            continue
+        fixed = ""
+        ranges = item.get("ranges")
+        for rng in (ranges if isinstance(ranges, list) else [])[:10]:
+            events = rng.get("events") if isinstance(rng, dict) else None
+            for event in (events if isinstance(events, list) else [])[:20]:
+                if isinstance(event, dict) and isinstance(event.get("fixed"), str):
+                    fixed = fixed or event["fixed"]
+        out.append(_fix(entry, cve, vendor, package.get("ecosystem"), package.get("name"), fixed,
+                        "fixed" if fixed else "affected", advisory))
+    return out
+
+
 PARSERS: Dict[str, Callable[[bytes, Dict[str, Any]], List[Dict[str, Any]]]] = {
     "cve": parse_cve, "kev": parse_kev, "epss": parse_epss,
     "ghsa": parse_ghsa, "hn": parse_hn, "feed": parse_feed,
     "nuclei_index": parse_nuclei_index, "exploitdb": parse_exploitdb, "metasploit": parse_metasploit,
     "et_rules": parse_et_rules, "sigma_tar": parse_sigma_tar,
+    "redhat_cve": parse_redhat_cve, "osv_distro": parse_osv_distro,
 }
 
 

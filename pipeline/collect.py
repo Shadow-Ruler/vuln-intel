@@ -27,7 +27,9 @@ from . import common
 DUE_SLACK_SECONDS = 300
 MAX_RUN_BYTES = 600 * 1024 * 1024
 PARSERS = ("cve", "kev", "epss", "ghsa", "hn", "feed",
-           "nuclei_index", "exploitdb", "metasploit", "et_rules", "sigma_tar")
+           "nuclei_index", "exploitdb", "metasploit", "et_rules", "sigma_tar",
+           "redhat_cve", "osv_distro")
+NOT_TRACKED_REFRESH_DAYS = 14   # how soon to ask a vendor again about a CVE it had nothing on
 
 
 class FetchError(Exception):
@@ -64,11 +66,13 @@ def load_config(path: str) -> Dict[str, Any]:
         if not common.SOURCE_ID_RE.match(sid) or sid in seen:
             raise ValueError("bad or duplicate source id: %r" % (sid,))
         seen.add(sid)
-        if src.get("kind") not in ("http", "cvelist_delta"):
+        if src.get("kind") not in ("http", "cvelist_delta", "per_cve"):
             raise ValueError("%s: unknown kind" % sid)
-        if src["kind"] == "http" and src.get("parser") not in PARSERS:
+        if src["kind"] in ("http", "per_cve") and src.get("parser") not in PARSERS:
             raise ValueError("%s: unknown parser" % sid)
-        for key in ("url", "record_base", "fallback_url"):
+        if src["kind"] == "per_cve" and src.get("url_template", "").count("{cve}") != 1:
+            raise ValueError("%s: url_template must contain {cve} once" % sid)
+        for key in ("url", "record_base", "fallback_url", "url_template"):
             if key in src and not src[key].startswith("https://"):
                 raise ValueError("%s: %s must be https" % (sid, key))
         if src.get("redirects", "allowlist") not in ("allowlist", "any-https"):
@@ -84,7 +88,7 @@ def load_config(path: str) -> Dict[str, Any]:
 def allowed_hosts(cfg: Dict[str, Any]) -> set:
     hosts = set()
     for src in cfg["sources"]:
-        for key in ("url", "record_base", "fallback_url"):
+        for key in ("url", "record_base", "fallback_url", "url_template"):
             if key in src:
                 hosts.add((urllib.parse.urlsplit(src[key]).hostname or "").lower())
         for host in src.get("redirect_hosts", []):
@@ -329,6 +333,57 @@ def collect_cvelist(src, fetcher, cursor, writer, cfg, now, wanted=()):
     return result("ok" if done else "unchanged", {"fetch_time": common.ts(new_cursor)}, detail)
 
 
+def collect_per_cve(src, fetcher, cursor, writer, cfg, now, enrich=()):
+    """Fetch one small document per CVE from a vendor, for CVEs worth enriching.
+
+    The cursor remembers when each CVE was last fetched: a CVE the vendor has
+    data on is refreshed every few days (fix status changes), one it has
+    nothing on is asked about again only after two weeks.
+    """
+    fetched = cursor.get("fetched") if isinstance(cursor.get("fetched"), dict) else {}
+    fetched = dict(fetched)
+    today = common.ts(now)[:10]
+
+    def stale(cve: str) -> bool:
+        last = str(fetched.get(cve, ""))
+        days = NOT_TRACKED_REFRESH_DAYS if last.startswith("none:") else src.get("refresh_days", 3)
+        return last.replace("none:", "") <= (now - dt.timedelta(days=days)).strftime("%Y-%m-%d")
+
+    todo = [cve for cve in enrich if isinstance(cve, str) and common.CVE_RE.match(cve) and stale(cve)]
+    todo = todo[: src.get("max_per_run", 120)]
+    if not todo:
+        return {"status": "unchanged", "items": 0}, None
+    fetched_at = common.ts(now)
+
+    def fetch(cve_id):
+        url = src["url_template"].replace("{cve}", cve_id)   # the ID matched its pattern
+        try:
+            return cve_id, url, fetcher.get(url, src.get("max_bytes", 5000000))[1], None
+        except FetchError as err:
+            return cve_id, url, None, str(err)
+
+    found, absent, failures = 0, 0, []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+        for cve_id, url, body, error in pool.map(fetch, todo):
+            if body is not None:
+                writer.add(src, src["parser"], url, body, fetched_at, hint=cve_id)
+                fetched[cve_id] = today
+                found += 1
+            elif error == "HTTP 404":
+                fetched[cve_id] = "none:" + today
+                absent += 1
+            else:
+                failures.append("%s (%s)" % (cve_id, error))
+    if not found and not absent:
+        return {"status": "error", "items": 0,
+                "detail": "all %d lookups failed, e.g. %s" % (len(failures), failures[0])}, None
+    keep = (now - dt.timedelta(days=45)).strftime("%Y-%m-%d")
+    fetched = {cve: day for cve, day in fetched.items() if str(day).replace("none:", "") >= keep}
+    report = {"status": "ok" if found else "unchanged", "items": found,
+              "detail": ("%d found, %d not tracked by this vendor, %d failed" % (found, absent, len(failures)))}
+    return report, {"fetched": fetched}
+
+
 def run(cfg, state_dir, out_dir, token=None, only=None, now=None, fetcher=None):
     now = now or common.utcnow()
     heartbeat = (common.read_json(os.path.join(state_dir, "heartbeat.json"), {}) or {}).get("sources", {})
@@ -339,6 +394,10 @@ def run(cfg, state_dir, out_dir, token=None, only=None, now=None, fetcher=None):
     pending = sorted((cve for cve, entry in wanted.items()
                       if isinstance(entry, dict) and entry.get("status") == "pending"),
                      key=lambda cve: str(wanted[cve].get("since", "")), reverse=True)
+    enrich = common.read_json(os.path.join(state_dir, "enrich.json"), {})
+    enrich = enrich if isinstance(enrich, dict) else {}
+    # Most recently named first, then the newest CVE numbers.
+    to_enrich = sorted(enrich, key=lambda cve: (str(enrich[cve]), cve), reverse=True)
     fetcher = fetcher or Fetcher(cfg, token=token)
     writer = RawWriter(out_dir)
     report = {"at": common.ts(now), "sources": {}, "cursors": {}}
@@ -352,6 +411,9 @@ def run(cfg, state_dir, out_dir, token=None, only=None, now=None, fetcher=None):
             if src["kind"] == "cvelist_delta":
                 entry, cursor = collect_cvelist(src, fetcher, cursors.get(sid) or {}, writer, cfg, now,
                                                 wanted=pending)
+            elif src["kind"] == "per_cve":
+                entry, cursor = collect_per_cve(src, fetcher, cursors.get(sid) or {}, writer, cfg, now,
+                                                enrich=to_enrich)
             else:
                 entry, cursor = collect_http(src, fetcher, cursors.get(sid) or {}, writer, cfg, now)
         except FetchError as err:

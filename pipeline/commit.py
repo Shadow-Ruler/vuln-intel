@@ -22,6 +22,8 @@ WANTED_NEWS_DAYS = 7     # CVEs named in news this recently are worth a record
 WANTED_KEV_DAYS = 30     # and so are CVEs added to KEV this recently
 WANTED_KEEP_DAYS = 30
 WANTED_MAX = 3000
+ENRICH_KEEP_DAYS = 30    # keep asking vendors about a CVE this long after it was last named
+ENRICH_MAX = 4000
 
 
 def load_manifest(path: str) -> Dict[str, Dict[str, Any]]:
@@ -125,6 +127,19 @@ def update_wanted(data_dir: str, report: Dict[str, Any], now) -> Dict[str, int]:
     for cve in named:
         if cve not in wanted and not has_record(cve):
             wanted[cve] = {"status": "pending", "since": stamp}
+
+    # The same CVEs are the ones worth asking vendors about (fixed versions).
+    enrich_path = os.path.join(data_dir, "state", "enrich.json")
+    enrich = common.read_json(enrich_path, {})
+    enrich = enrich if isinstance(enrich, dict) else {}
+    for cve in named:
+        enrich[cve] = stamp[:10]
+    keep_from = (now - dt.timedelta(days=ENRICH_KEEP_DAYS)).strftime("%Y-%m-%d")
+    enrich = {cve: day for cve, day in enrich.items()
+              if isinstance(day, str) and day >= keep_from and common.CVE_RE.match(cve)}
+    if len(enrich) > ENRICH_MAX:
+        enrich = dict(sorted(enrich.items(), key=lambda item: (item[1], item[0]), reverse=True)[:ENRICH_MAX])
+    common.write_json_atomic(enrich_path, enrich)
     for entry in (report.get("sources") or {}).values():
         backfill = entry.get("backfill") if isinstance(entry, dict) else None
         for cve in (backfill.get("missing") or []) if isinstance(backfill, dict) else []:

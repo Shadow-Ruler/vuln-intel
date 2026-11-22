@@ -171,6 +171,22 @@
       "id": "sigma", "kind": "http", "parser": "sigma_tar", "role": "coverage", "every_minutes": 720,
       "bulk": true, "max_bytes": 80000000,
       "url": "https://codeload.github.com/SigmaHQ/sigma/tar.gz/refs/heads/master"
+    },
+
+    {
+      "id": "fix-redhat", "kind": "per_cve", "parser": "redhat_cve", "role": "fixes", "every_minutes": 60,
+      "max_per_run": 120, "refresh_days": 3,
+      "url_template": "https://access.redhat.com/hydra/rest/securitydata/cve/{cve}.json"
+    },
+    {
+      "id": "fix-debian", "kind": "per_cve", "parser": "osv_distro", "role": "fixes", "every_minutes": 60,
+      "max_per_run": 120, "refresh_days": 3,
+      "url_template": "https://api.osv.dev/v1/vulns/DEBIAN-{cve}"
+    },
+    {
+      "id": "fix-ubuntu", "kind": "per_cve", "parser": "osv_distro", "role": "fixes", "every_minutes": 60,
+      "max_per_run": 120, "refresh_days": 3,
+      "url_template": "https://api.osv.dev/v1/vulns/UBUNTU-{cve}"
     }
   ]
 }

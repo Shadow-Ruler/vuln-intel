@@ -12,6 +12,7 @@ Layout:
   news/<day>.jsonl                news items by the day the pipeline first saw them
   coverage/<kind>.json            public rules and exploits per CVE: [identifier, title, note]
   coverage/recent.json            CVEs that recently gained their first rule or exploit
+  fixes/<year>/<n>xxx/<CVE>.json  fixed package versions per vendor (Red Hat, Debian, Ubuntu)
   state/                          cursors, heartbeat, news de-duplication index
 """
 from __future__ import annotations
@@ -27,6 +28,7 @@ from . import common
 NEWS_MAX_AGE_DAYS = 7
 NEWS_SEEN_KEEP_DAYS = 60
 COVERAGE_PER_CVE = 20
+FIX_ROWS_PER_VENDOR = 80
 COVERAGE_RECENT_DAYS = 14
 
 
@@ -115,6 +117,7 @@ def apply(data_dir: str, observations: Iterable[Dict[str, Any]], now: dt.datetim
         seen = {}
     fresh_news = []
     coverage: Dict[str, Dict[str, set]] = {}
+    fixes: Dict[Any, set] = {}
 
     for obs in observations:
         kind = obs["type"]
@@ -144,6 +147,9 @@ def apply(data_dir: str, observations: Iterable[Dict[str, Any]], now: dt.datetim
                  "src": obs["src"]},
             )
             stats["epss"] += 1
+        elif kind == "fix":
+            fixes.setdefault((obs["cve"], obs["vendor"]), set()).add(
+                (obs["product"], obs["package"], obs["fixed"], obs["state"], obs["advisory"]))
         elif kind == "coverage":
             coverage.setdefault(obs["kind"], {}).setdefault(obs["cve"], set()).add(
                 (obs["ident"], obs["title"], obs["note"]))
@@ -162,6 +168,19 @@ def apply(data_dir: str, observations: Iterable[Dict[str, Any]], now: dt.datetim
 
     if coverage:
         _apply_coverage(data_dir, coverage, day, now, stats)
+    # Each vendor document is that vendor's complete statement for the CVE, so
+    # it replaces what was stored for that vendor and leaves the others alone.
+    for (cve, vendor), rows in fixes.items():
+        path = os.path.join(data_dir, "fixes" + common.cve_relpath(cve)[len("cves"):])
+        record = common.read_json(path, {})
+        record = record if isinstance(record, dict) else {}
+        new = [dict(zip(("product", "package", "fixed", "state", "advisory"), row))
+               for row in sorted(rows)[:FIX_ROWS_PER_VENDOR]]
+        if record.get(vendor) != new:
+            record[vendor] = new
+            record["updated"] = stamp
+            common.write_json_atomic(path, record)
+            stats["fix"] = stats.get("fix", 0) + 1
     if kev_changed:
         common.write_json_atomic(kev_path, kev)
     if fresh_news:

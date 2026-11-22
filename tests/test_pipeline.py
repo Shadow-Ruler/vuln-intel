@@ -667,5 +667,153 @@ class CoverageTests(unittest.TestCase):
             self.assertEqual(table, {"CVE-2099-0001": [["http/cves/2099/CVE-2099-0001.yaml", "Acme", ""]]})
 
 
+REDHAT_DOC = {
+    "name": "CVE-2099-6387", "threat_severity": "Important",
+    "affected_release": [
+        {"product_name": "Red Hat Enterprise Linux 9", "release_date": "2099-01-03T00:00:00Z",
+         "advisory": "RHSA-2099:4312", "cpe": "cpe:/a:redhat:enterprise_linux:9",
+         "package": "openssh-0:8.7p1-38.el9_4.1"},
+        {"product_name": "Red Hat OpenShift Container Platform 4.13", "advisory": "RHSA-2099:4484",
+         "package": "openshift/ose-rhel-coreos-9:413.92.202407091321-0"},
+    ],
+    "package_state": [
+        {"product_name": "Red Hat Ceph Storage 5", "fix_state": "Not affected", "package_name": "openssh"},
+        {"product_name": "Red Hat Enterprise Linux 6", "fix_state": "Out of support scope", "package_name": "openssh"},
+        {"product_name": "Red Hat Enterprise Linux 8", "fix_state": "Affected", "package_name": "openssh"},
+        "not an object",
+    ],
+}
+OSV_DEBIAN = {
+    "id": "DEBIAN-CVE-2099-6387", "upstream": ["CVE-2099-6387"],
+    "affected": [
+        {"package": {"name": "openssh", "ecosystem": "Debian:12"},
+         "ranges": [{"type": "ECOSYSTEM", "events": [{"introduced": "0"}, {"fixed": "1:9.2p1-2+deb12u3"}]}]},
+        {"package": {"name": "openssh", "ecosystem": "Debian:11"},
+         "ranges": [{"type": "ECOSYSTEM", "events": [{"introduced": "0"}]}]},
+    ],
+}
+OSV_UBUNTU = {
+    "id": "UBUNTU-CVE-2099-6387", "related": ["USN-6859-1"], "upstream": ["CVE-2099-6387"],
+    "affected": [{"package": {"name": "openssh", "ecosystem": "Ubuntu:24.04:LTS"},
+                  "ranges": [{"type": "ECOSYSTEM", "events": [{"introduced": "0"}, {"fixed": "1:9.6p1-3ubuntu13.3"}]}]}],
+}
+
+
+class FixTests(unittest.TestCase):
+    """Which package version fixes a CVE, as each vendor states it."""
+
+    def check(self, parser, doc):
+        data = fx.dumps(doc)
+        item = entry(source="fix", parser=parser, data=data)
+        manifest = {item["sha256"]: item}
+        out = [validate.validate(obs, manifest) for obs in parse.PARSERS[parser](data, item)]
+        return [(o["vendor"], o["product"], o["package"], o["fixed"], o["state"], o["advisory"]) for o in out]
+
+    def test_red_hat(self):
+        self.assertEqual(self.check("redhat_cve", REDHAT_DOC), [
+            ("redhat", "Red Hat Enterprise Linux 9", "openssh", "8.7p1-38.el9_4.1", "fixed", "RHSA-2099:4312"),
+            # A container image is not name-version-release: keep the name, claim no version.
+            ("redhat", "Red Hat OpenShift Container Platform 4.13",
+             "openshift/ose-rhel-coreos-9:413.92.202407091321-0", "", "fixed", "RHSA-2099:4484"),
+            ("redhat", "Red Hat Ceph Storage 5", "openssh", "", "not_affected", ""),
+            ("redhat", "Red Hat Enterprise Linux 6", "openssh", "", "wont_fix", ""),
+            ("redhat", "Red Hat Enterprise Linux 8", "openssh", "", "affected", ""),
+        ])
+
+    def test_debian_and_ubuntu_from_osv(self):
+        self.assertEqual(self.check("osv_distro", OSV_DEBIAN), [
+            ("debian", "Debian:12", "openssh", "1:9.2p1-2+deb12u3", "fixed", ""),
+            ("debian", "Debian:11", "openssh", "", "affected", ""),
+        ])
+        self.assertEqual(self.check("osv_distro", OSV_UBUNTU), [
+            ("ubuntu", "Ubuntu:24.04:LTS", "openssh", "1:9.6p1-3ubuntu13.3", "fixed", "USN-6859-1"),
+        ])
+        data = fx.dumps({"id": "GHSA-xxxx", "affected": []})
+        with self.assertRaises(ValueError):
+            parse.parse_osv_distro(data, entry(parser="osv_distro", data=data))
+
+    def test_validation_drops_odd_versions_and_advisories(self):
+        base = {"type": "fix", "cve": "CVE-2099-6387", "vendor": "redhat", "product": "RHEL 9", "package": "openssh",
+                "state": "fixed", "src": {"source": "s", "sha256": "a" * 64}}
+        clean = validate.validate(dict(base, fixed="1.0'; DROP TABLE x;--", advisory="<b>RHSA</b>"))
+        self.assertEqual((clean["fixed"], clean["advisory"]), ("", ""))
+        for bad in (dict(base, vendor="acme"), dict(base, state="maybe"), dict(base, package=""), dict(base, cve="x")):
+            with self.assertRaises(validate.Invalid):
+                validate.validate(bad)
+
+    def test_store_keeps_one_statement_per_vendor(self):
+        def obs(vendor, product, fixed, state="fixed"):
+            return {"type": "fix", "cve": "CVE-2099-6387", "vendor": vendor, "product": product, "package": "openssh",
+                    "fixed": fixed, "state": state, "advisory": ""}
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "fixes", "2099", "6xxx", "CVE-2099-6387.json")
+            store.apply(tmp, [obs("redhat", "RHEL 9", "8.7p1-38.el9"), obs("debian", "Debian:12", "", "affected")], NOW)
+            record = common.read_json(path, {})
+            self.assertEqual([r["fixed"] for r in record["redhat"]], ["8.7p1-38.el9"])
+            self.assertEqual(record["debian"][0]["state"], "affected")
+            # Debian ships its fix: only Debian's statement is replaced.
+            stats = store.apply(tmp, [obs("debian", "Debian:12", "1:9.2p1-2+deb12u3")], NOW)
+            record = common.read_json(path, {})
+            self.assertEqual(stats["fix"], 1)
+            self.assertEqual(record["debian"], [{"product": "Debian:12", "package": "openssh",
+                                                 "fixed": "1:9.2p1-2+deb12u3", "state": "fixed", "advisory": ""}])
+            self.assertEqual(len(record["redhat"]), 1)
+            self.assertNotIn("fix", store.apply(tmp, [obs("debian", "Debian:12", "1:9.2p1-2+deb12u3")], NOW))
+
+    def test_per_cve_lookup_remembers_what_it_asked(self):
+        class Fetcher:
+            def __init__(self):
+                self.calls = []
+
+            def get(self, url, max_bytes, etag=None, auth=None, any_https_redirect=False):
+                self.calls.append(url)
+                if url.endswith("CVE-2099-0001.json"):
+                    return 200, fx.dumps(REDHAT_DOC), None
+                raise collect.FetchError("HTTP 404" if url.endswith("CVE-2099-0002.json") else "HTTP 503")
+
+        src = {"id": "fix-redhat", "kind": "per_cve", "parser": "redhat_cve", "every_minutes": 60,
+               "max_per_run": 10, "refresh_days": 3, "url_template": "https://vendor.example/cve/{cve}.json"}
+        names = ["CVE-2099-0001", "CVE-2099-0002", "CVE-2099-0003", "not-a-cve"]
+        with tempfile.TemporaryDirectory() as tmp:
+            fetcher, writer = Fetcher(), collect.RawWriter(tmp)
+            report, cursor = collect.collect_per_cve(src, fetcher, {}, writer, CONFIG, NOW, enrich=names)
+            self.assertEqual((report["status"], report["items"]), ("ok", 1))
+            self.assertEqual(report["detail"], "1 found, 1 not tracked by this vendor, 1 failed")
+            # Found and "vendor has nothing" are remembered; the server error is not, so it is retried.
+            self.assertEqual(cursor, {"fetched": {"CVE-2099-0001": "2099-01-04", "CVE-2099-0002": "none:2099-01-04"}})
+            self.assertEqual(writer.entries[0]["hint"], "CVE-2099-0001")
+
+            fetcher.calls.clear()
+            collect.collect_per_cve(src, fetcher, cursor, writer, CONFIG, NOW + dt.timedelta(days=1), enrich=names)
+            self.assertEqual(fetcher.calls, ["https://vendor.example/cve/CVE-2099-0003.json"])
+            fetcher.calls.clear()
+            collect.collect_per_cve(src, fetcher, cursor, writer, CONFIG, NOW + dt.timedelta(days=4), enrich=names)
+            self.assertEqual(sorted(fetcher.calls), ["https://vendor.example/cve/CVE-2099-0001.json",
+                                                     "https://vendor.example/cve/CVE-2099-0003.json"])
+            fetcher.calls.clear()
+            collect.collect_per_cve(src, fetcher, cursor, writer, CONFIG, NOW + dt.timedelta(days=15), enrich=names)
+            self.assertIn("https://vendor.example/cve/CVE-2099-0002.json", fetcher.calls)   # asked again after two weeks
+
+    def test_commit_lists_the_cves_worth_asking_vendors_about(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            os.makedirs(os.path.join(tmp, "news"))
+            with open(os.path.join(tmp, "news", "2099-01-04.jsonl"), "w") as handle:
+                handle.write(json.dumps({"cves": ["CVE-2099-0001", "junk"]}) + "\n")
+            common.write_json_atomic(os.path.join(tmp, "kev.json"), {"CVE-2099-0002": {"date_added": "2099-01-01"}})
+            common.write_json_atomic(os.path.join(tmp, "state", "enrich.json"),
+                                     {"CVE-2098-0009": "2098-11-01", "CVE-2099-0005": "2098-12-20"})
+            commit.update_wanted(tmp, {"sources": {}}, NOW)
+            self.assertEqual(common.read_json(os.path.join(tmp, "state", "enrich.json"), {}),
+                             {"CVE-2099-0001": "2099-01-04", "CVE-2099-0002": "2099-01-04", "CVE-2099-0005": "2098-12-20"})
+
+    def test_shipped_config_has_the_vendor_lookups(self):
+        path = os.path.join(os.path.dirname(__file__), "..", "config", "sources.json")
+        cfg = collect.load_config(path)
+        kinds = {s["id"]: s["kind"] for s in cfg["sources"]}
+        self.assertEqual({k for k, v in kinds.items() if v == "per_cve"}, {"fix-redhat", "fix-debian", "fix-ubuntu"})
+        self.assertIn("api.osv.dev", collect.allowed_hosts(cfg))
+
+
 if __name__ == "__main__":
     unittest.main()

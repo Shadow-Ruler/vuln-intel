@@ -14,9 +14,13 @@ from . import common
 
 PARSER_TYPE = {"cve": "cve", "kev": "kev", "epss": "epss", "ghsa": "ghsa", "hn": "news", "feed": "news",
                "nuclei_index": "coverage", "exploitdb": "coverage", "metasploit": "coverage",
-               "et_rules": "coverage", "sigma_tar": "coverage"}
+               "et_rules": "coverage", "sigma_tar": "coverage",
+               "redhat_cve": "fix", "osv_distro": "fix"}
 
-_ROLES = ("backbone", "exploitation", "ecosystem", "trend", "vendor", "coverage")
+_ROLES = ("backbone", "exploitation", "ecosystem", "trend", "vendor", "coverage", "fixes")
+_VERSION = re.compile(r"^[A-Za-z0-9][A-Za-z0-9.:+~_-]{0,119}$")
+_ADVISORY_ID = re.compile(r"^(RHSA|RHBA|RHEA|USN|DSA|DLA)-[0-9]{1,5}[:-][0-9]{1,6}(-[0-9]{1,3})?$")
+_FIX_STATES = ("fixed", "affected", "not_affected", "wont_fix", "unknown")
 _PATH = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_./+-]{1,250}$")
 _NUMBER = re.compile(r"^[0-9]{1,10}$")
 _COVERAGE_IDENT = {"nuclei": _PATH, "sigma": _PATH, "metasploit": _PATH, "exploitdb": _NUMBER, "suricata-et": _NUMBER}
@@ -248,7 +252,30 @@ def _coverage(obs, src):
     }
 
 
-_VALIDATORS = {"cve": _cve, "kev": _kev, "epss": _epss, "ghsa": _ghsa, "news": _news, "coverage": _coverage}
+def _fix(obs, src):
+    """A vendor's statement about one package in one product for one CVE."""
+    product, package = _s(obs.get("product"), 120), _s(obs.get("package"), 160)
+    vendor = _enum(obs.get("vendor"), ("redhat", "debian", "ubuntu"))
+    state = _enum(obs.get("state"), _FIX_STATES)
+    if not vendor or not state or not product or not package:
+        raise Invalid("bad fix entry")
+    fixed = _s(obs.get("fixed"), 120)
+    advisory = _s(obs.get("advisory"), 40)
+    return {
+        "type": "fix",
+        "cve": _cve_id(obs.get("cve")),
+        "vendor": vendor,
+        "product": product,
+        "package": package,
+        "fixed": fixed if _VERSION.match(fixed) else "",
+        "state": state,
+        "advisory": advisory if _ADVISORY_ID.match(advisory) else "",
+        "src": src,
+    }
+
+
+_VALIDATORS = {"cve": _cve, "kev": _kev, "epss": _epss, "ghsa": _ghsa, "news": _news, "coverage": _coverage,
+               "fix": _fix}
 
 
 def validate(obs: Any, manifest: Optional[Dict[str, Dict[str, Any]]] = None) -> Dict[str, Any]:
