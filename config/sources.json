@@ -145,6 +145,32 @@
     {
       "id": "archlinux", "kind": "http", "parser": "feed", "role": "vendor", "every_minutes": 60,
       "url": "https://security.archlinux.org/advisory/feed.atom"
+    },
+
+    {
+      "id": "nuclei-index", "kind": "http", "parser": "nuclei_index", "role": "coverage", "every_minutes": 360,
+      "bulk": true, "max_bytes": 40000000,
+      "url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cves.json"
+    },
+    {
+      "id": "exploitdb", "kind": "http", "parser": "exploitdb", "role": "coverage", "every_minutes": 720,
+      "bulk": true, "max_bytes": 80000000,
+      "url": "https://gitlab.com/exploit-database/exploitdb/-/raw/main/files_exploits.csv"
+    },
+    {
+      "id": "metasploit", "kind": "http", "parser": "metasploit", "role": "coverage", "every_minutes": 720,
+      "bulk": true, "max_bytes": 140000000,
+      "url": "https://raw.githubusercontent.com/rapid7/metasploit-framework/master/db/modules_metadata_base.json"
+    },
+    {
+      "id": "et-open", "kind": "http", "parser": "et_rules", "role": "coverage", "every_minutes": 720,
+      "bulk": true, "max_bytes": 140000000,
+      "url": "https://rules.emergingthreats.net/open/suricata-7.0/emerging-all.rules"
+    },
+    {
+      "id": "sigma", "kind": "http", "parser": "sigma_tar", "role": "coverage", "every_minutes": 720,
+      "bulk": true, "max_bytes": 80000000,
+      "url": "https://codeload.github.com/SigmaHQ/sigma/tar.gz/refs/heads/master"
     }
   ]
 }

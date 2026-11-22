@@ -10,6 +10,8 @@ Layout:
   kev.json                        CISA KEV entries keyed by CVE
   epss/current.json               CVEs at or above the 80th / 95th percentile
   news/<day>.jsonl                news items by the day the pipeline first saw them
+  coverage/<kind>.json            public rules and exploits per CVE: [identifier, title, note]
+  coverage/recent.json            CVEs that recently gained their first rule or exploit
   state/                          cursors, heartbeat, news de-duplication index
 """
 from __future__ import annotations
@@ -24,6 +26,8 @@ from . import common
 
 NEWS_MAX_AGE_DAYS = 7
 NEWS_SEEN_KEEP_DAYS = 60
+COVERAGE_PER_CVE = 20
+COVERAGE_RECENT_DAYS = 14
 
 
 def _without_fetch_time(obs: Dict[str, Any]) -> Dict[str, Any]:
@@ -49,10 +53,55 @@ def _news_key(item: Dict[str, Any]) -> str:
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:20]
 
 
+def _write_table(path: str, table: Dict[str, Any]) -> None:
+    """One CVE per line, so a daily refresh changes only the lines that moved."""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    lines = ["%s:%s" % (json.dumps(key), json.dumps(table[key], separators=(",", ":"), ensure_ascii=True))
+             for key in sorted(table)]
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as handle:
+        handle.write("{\n" + ",\n".join(lines) + "\n}\n")
+    os.replace(tmp, path)
+
+
+def _apply_coverage(data_dir: str, coverage: Dict[str, Dict[str, set]], day: str, now: dt.datetime,
+                    stats: Dict[str, int]) -> None:
+    """Each source is a complete snapshot, so it replaces its file. CVEs that
+    gained their first rule or exploit of a kind are noted in recent.json, so
+    the scorer can look at them again."""
+    recent_path = os.path.join(data_dir, "coverage", "recent.json")
+    recent = common.read_json(recent_path, {})
+    recent = recent if isinstance(recent, dict) else {}
+    for kind, found in coverage.items():
+        path = os.path.join(data_dir, "coverage", kind + ".json")
+        old = common.read_json(path, {})
+        old = old if isinstance(old, dict) else {}
+        new = {cve: [list(item) for item in sorted(items)[:COVERAGE_PER_CVE]] for cve, items in found.items()}
+        if old and len(new) * 2 < len(old):
+            # A snapshot that lost over half its entries is more likely truncated than true.
+            stats["coverage_refused"] = stats.get("coverage_refused", 0) + 1
+            continue
+        if new == old:
+            continue
+        if old:  # not on the first load, when everything would look new
+            for cve in new:
+                if cve not in old:
+                    entry = recent.get(cve) if isinstance(recent.get(cve), dict) else {"kinds": []}
+                    entry["day"] = day
+                    entry["kinds"] = sorted(set(entry.get("kinds", [])) | {kind})
+                    recent[cve] = entry
+        _write_table(path, new)
+        stats["coverage"] += 1
+    cutoff = (now - dt.timedelta(days=COVERAGE_RECENT_DAYS)).strftime("%Y-%m-%d")
+    recent = {cve: entry for cve, entry in recent.items()
+              if isinstance(entry, dict) and str(entry.get("day", "")) >= cutoff}
+    _write_table(recent_path, recent)
+
+
 def apply(data_dir: str, observations: Iterable[Dict[str, Any]], now: dt.datetime) -> Dict[str, int]:
     stamp = common.ts(now)
     day = stamp[:10]
-    stats = {"cve": 0, "ghsa": 0, "kev_new": 0, "epss": 0, "news": 0, "unchanged": 0}
+    stats = {"cve": 0, "ghsa": 0, "kev_new": 0, "epss": 0, "news": 0, "unchanged": 0, "coverage": 0}
 
     kev_path = os.path.join(data_dir, "kev.json")
     kev = common.read_json(kev_path, {})
@@ -65,6 +114,7 @@ def apply(data_dir: str, observations: Iterable[Dict[str, Any]], now: dt.datetim
     if not isinstance(seen, dict):
         seen = {}
     fresh_news = []
+    coverage: Dict[str, Dict[str, set]] = {}
 
     for obs in observations:
         kind = obs["type"]
@@ -94,6 +144,9 @@ def apply(data_dir: str, observations: Iterable[Dict[str, Any]], now: dt.datetim
                  "src": obs["src"]},
             )
             stats["epss"] += 1
+        elif kind == "coverage":
+            coverage.setdefault(obs["kind"], {}).setdefault(obs["cve"], set()).add(
+                (obs["ident"], obs["title"], obs["note"]))
         elif kind == "news":
             published = common.parse_ts(obs["published"])
             if published and (now - published).days > NEWS_MAX_AGE_DAYS:
@@ -107,6 +160,8 @@ def apply(data_dir: str, observations: Iterable[Dict[str, Any]], now: dt.datetim
             fresh_news.append(item)
             stats["news"] += 1
 
+    if coverage:
+        _apply_coverage(data_dir, coverage, day, now, stats)
     if kev_changed:
         common.write_json_atomic(kev_path, kev)
     if fresh_news:

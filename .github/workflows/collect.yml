@@ -71,8 +71,17 @@ jobs:
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: raw
-          path: _collected
+          path: |
+            _collected
+            !_collected/bulk/**
           retention-days: 90
+          if-no-files-found: error
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          # Whole rule sets and exploit lists: needed by the parse job only.
+          name: raw-bulk
+          path: _collected/bulk
+          retention-days: 1
           if-no-files-found: error
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
@@ -96,6 +105,10 @@ jobs:
         with:
           name: raw
           path: _in
+      - uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: raw-bulk
+          path: _in/bulk
       - name: Parse inside the sandbox
         run: sudo bash scripts/sandbox-parse.sh "$PWD" "$PWD/_in" "$PWD/_parsed"
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0

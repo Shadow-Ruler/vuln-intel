@@ -7,13 +7,19 @@ evidence pointer must match a document the collector really fetched.
 """
 from __future__ import annotations
 
+import re
 from typing import Any, Dict, List, Optional
 
 from . import common
 
-PARSER_TYPE = {"cve": "cve", "kev": "kev", "epss": "epss", "ghsa": "ghsa", "hn": "news", "feed": "news"}
+PARSER_TYPE = {"cve": "cve", "kev": "kev", "epss": "epss", "ghsa": "ghsa", "hn": "news", "feed": "news",
+               "nuclei_index": "coverage", "exploitdb": "coverage", "metasploit": "coverage",
+               "et_rules": "coverage", "sigma_tar": "coverage"}
 
-_ROLES = ("backbone", "exploitation", "ecosystem", "trend", "vendor")
+_ROLES = ("backbone", "exploitation", "ecosystem", "trend", "vendor", "coverage")
+_PATH = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_./+-]{1,250}$")
+_NUMBER = re.compile(r"^[0-9]{1,10}$")
+_COVERAGE_IDENT = {"nuclei": _PATH, "sigma": _PATH, "metasploit": _PATH, "exploitdb": _NUMBER, "suricata-et": _NUMBER}
 _STATES = ("PUBLISHED", "REJECTED")
 _STATUSES = ("affected", "unaffected", "unknown")
 _SSVC = {
@@ -223,7 +229,26 @@ def _news(obs, src):
     }
 
 
-_VALIDATORS = {"cve": _cve, "kev": _kev, "epss": _epss, "ghsa": _ghsa, "news": _news}
+def _coverage(obs, src):
+    """A pointer to a public rule or exploit for a CVE: an identifier and a
+    title, never content. The identifier must be a plain repository path or
+    a number, because links are later built from it."""
+    kind = _enum(obs.get("kind"), tuple(_COVERAGE_IDENT))
+    ident = obs.get("ident")
+    if not kind or not isinstance(ident, str) or not _COVERAGE_IDENT[kind].match(ident) or ".." in ident:
+        raise Invalid("bad coverage entry")
+    return {
+        "type": "coverage",
+        "kind": kind,
+        "cve": _cve_id(obs.get("cve")),
+        "ident": ident,
+        "title": _s(obs.get("title"), 200),
+        "note": _s(obs.get("note"), 40),
+        "src": src,
+    }
+
+
+_VALIDATORS = {"cve": _cve, "kev": _kev, "epss": _epss, "ghsa": _ghsa, "news": _news, "coverage": _coverage}
 
 
 def validate(obs: Any, manifest: Optional[Dict[str, Dict[str, Any]]] = None) -> Dict[str, Any]:

@@ -537,5 +537,135 @@ class EndToEndTests(unittest.TestCase):
             self.assertEqual(store.apply(tmp, [old], NOW)["news"], 0)
 
 
+class CoverageTests(unittest.TestCase):
+    """Public rule sets and exploit lists, reduced to (CVE, identifier, title)."""
+
+    def check(self, parser, data):
+        item = entry(source="cov", parser=parser, data=data)
+        manifest = {item["sha256"]: item}
+        return [validate.validate(obs, manifest) for obs in parse.PARSERS[parser](data, item)]
+
+    def rows(self, out):
+        return [(o["kind"], o["cve"], o["ident"], o["title"], o["note"]) for o in out]
+
+    def test_nuclei_index(self):
+        data = (b'{"ID":"CVE-2099-0001","Info":{"Name":"Acme - RCE","Severity":"critical"},'
+                b'"file_path":"http/cves/2099/CVE-2099-0001.yaml"}\nnot json\n{"ID":"nope","file_path":"x.yaml"}\n')
+        self.assertEqual(self.rows(self.check("nuclei_index", data)),
+                         [("nuclei", "CVE-2099-0001", "http/cves/2099/CVE-2099-0001.yaml", "Acme - RCE", "critical")])
+
+    def test_exploitdb(self):
+        data = (b"id,file,description,date_published,author,type,platform,port,date_added,date_updated,verified,"
+                b"codes,tags,aliases,screenshot_url,application_url,source_url\n"
+                b'16929,exploits/aix/16929.rb,"Acme Daemon, Opcode 21 - Buffer Overflow",2010-11-11,Someone,remote,'
+                b"aix,,2010-11-11,,1,CVE-2099-0002;OSVDB-1;CVE-2099-0003,,,,,\n"
+                b'19046,exploits/x/19046.txt,"No CVE here",1999-10-15,"A B",dos,aix,,1999-10-15,,0,OSVDB-5970,,,,,\n')
+        self.assertEqual(self.rows(self.check("exploitdb", data)), [
+            ("exploitdb", "CVE-2099-0002", "16929", "Acme Daemon, Opcode 21 - Buffer Overflow", "remote, verified"),
+            ("exploitdb", "CVE-2099-0003", "16929", "Acme Daemon, Opcode 21 - Buffer Overflow", "remote, verified")])
+
+    def test_metasploit(self):
+        data = fx.dumps({
+            "exploit_linux/http/acme_rce": {
+                "name": "Acme RCE", "fullname": "exploit/linux/http/acme_rce", "rank": 600, "type": "exploit",
+                "references": ["CVE-2099-0004", "URL-https://x.example", 7],
+                "path": "/modules/exploits/linux/http/acme_rce.rb"},
+            "post_x": {"type": "post", "references": ["CVE-2099-0005"], "path": "/modules/post/x.rb"},
+            "bad": "not a module"})
+        self.assertEqual(self.rows(self.check("metasploit", data)), [
+            ("metasploit", "CVE-2099-0004", "modules/exploits/linux/http/acme_rce.rb", "Acme RCE", "exploit, rank 600")])
+
+    def test_emerging_threats_rules(self):
+        data = (b"# a comment\n"
+                b'#alert tcp any any -> any any (msg:"ET EXPLOIT ships disabled"; reference:cve,2099-0006; sid:1; rev:1;)\n'
+                b'alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET EXPLOIT Acme RCE Attempt"; flow:established,to_server; '
+                b"reference:cve,2099-0007; reference:cve,CVE-2099-0008; classtype:attempted-admin; sid:2010375; rev:2;)\n"
+                b'alert tcp any any -> any any (msg:"no cve here"; sid:5; rev:1;)\n')
+        self.assertEqual(self.rows(self.check("et_rules", data)), [
+            ("suricata-et", "CVE-2099-0007", "2010375", "ET EXPLOIT Acme RCE Attempt", ""),
+            ("suricata-et", "CVE-2099-0008", "2010375", "ET EXPLOIT Acme RCE Attempt", "")])
+
+    def test_sigma_tarball_is_read_without_extracting(self):
+        import io
+        import tarfile
+        buffer = io.BytesIO()
+        with tarfile.open(fileobj=buffer, mode="w:gz") as archive:
+            def add(name, text):
+                info = tarfile.TarInfo(name)
+                body = text.encode()
+                info.size = len(body)
+                archive.addfile(info, io.BytesIO(body))
+            add("sigma-master/rules-emerging-threats/2099/Exploits/CVE-2099-0009/acme.yml",
+                "title: Acme Exploit Attempt\nid: 1\ntags:\n    - attack.initial-access\n    - cve.2099-0009\n")
+            add("sigma-master/rules/linux/other.yml", "title: Other Rule\ntags:\n    - cve.2099-0010\n")
+            add("sigma-master/tests/not_a_rule.yml", "title: Test\ntags:\n    - cve.2099-0011\n")
+            add("sigma-master/README.md", "cve.2099-0012")
+            link = tarfile.TarInfo("sigma-master/rules/link.yml")
+            link.type, link.linkname = tarfile.SYMTYPE, "/etc/passwd"
+            archive.addfile(link)
+        self.assertEqual(self.rows(self.check("sigma_tar", buffer.getvalue())), [
+            ("sigma", "CVE-2099-0009", "rules-emerging-threats/2099/Exploits/CVE-2099-0009/acme.yml",
+             "Acme Exploit Attempt", ""),
+            ("sigma", "CVE-2099-0010", "rules/linux/other.yml", "Other Rule", "")])
+
+    def test_empty_indexes_are_errors_not_empty_snapshots(self):
+        for parser, data in (("nuclei_index", b"{}\n"), ("exploitdb", b"id,codes\n"), ("metasploit", b"{}"),
+                             ("et_rules", b"# nothing\n")):
+            with self.assertRaises(ValueError):
+                parse.PARSERS[parser](data, entry(parser=parser, data=data))
+
+    def test_identifiers_that_could_not_be_safe_links_are_refused(self):
+        base = {"type": "coverage", "cve": "CVE-2099-0001", "title": "t", "note": "",
+                "src": {"source": "s", "sha256": "a" * 64}}
+        for ident in ("../../etc/passwd", "rules/../../x.yml", "a b.yml", "https://evil.example/x", "", "x\ny", 5):
+            with self.assertRaises(validate.Invalid):
+                validate.validate(dict(base, kind="sigma", ident=ident))
+        for kind, ident in (("exploitdb", "12a"), ("suricata-et", "-1"), ("pastebin", "1")):
+            with self.assertRaises(validate.Invalid):
+                validate.validate(dict(base, kind=kind, ident=ident))
+        self.assertEqual(validate.validate(dict(base, kind="exploitdb", ident="123"))["ident"], "123")
+
+    def test_store_keeps_snapshots_and_notes_newly_covered_cves(self):
+        def obs(cve, ident="rules/a.yml"):
+            return {"type": "coverage", "kind": "sigma", "cve": cve, "ident": ident, "title": "T", "note": ""}
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "coverage", "sigma.json")
+            recent = os.path.join(tmp, "coverage", "recent.json")
+            store.apply(tmp, [obs("CVE-2099-0001"), obs("CVE-2099-0002"), obs("CVE-2099-0002", "rules/b.yml")], NOW)
+            self.assertEqual(common.read_json(path, {})["CVE-2099-0002"], [["rules/a.yml", "T", ""], ["rules/b.yml", "T", ""]])
+            self.assertEqual(common.read_json(recent, None), {})          # first load: nothing is "new"
+
+            store.apply(tmp, [obs("CVE-2099-0001"), obs("CVE-2099-0002"), obs("CVE-2099-0003")], NOW)
+            self.assertEqual(common.read_json(recent, {}), {"CVE-2099-0003": {"day": "2099-01-04", "kinds": ["sigma"]}})
+            self.assertEqual(sorted(common.read_json(path, {})), ["CVE-2099-0001", "CVE-2099-0002", "CVE-2099-0003"])
+
+            # A snapshot that lost most of its entries is refused, not stored.
+            stats = store.apply(tmp, [obs("CVE-2099-0001")], NOW)
+            self.assertEqual(stats["coverage_refused"], 1)
+            self.assertEqual(len(common.read_json(path, {})), 3)
+
+            later = NOW + dt.timedelta(days=20)
+            store.apply(tmp, [obs("CVE-2099-0001"), obs("CVE-2099-0002"), obs("CVE-2099-0003")], later)
+            self.assertEqual(common.read_json(recent, None), {})          # the note expires
+
+    def test_bulk_sources_are_stored_apart_and_still_parsed(self):
+        data = b'{"ID":"CVE-2099-0001","Info":{"Name":"Acme"},"file_path":"http/cves/2099/CVE-2099-0001.yaml"}\n'
+        src = {"id": "nuclei-index", "role": "coverage", "bulk": True}
+        with tempfile.TemporaryDirectory() as tmp:
+            writer = collect.RawWriter(tmp)
+            digest = writer.add(src, "nuclei_index", "https://example.com/cves.json", data, "2099-01-04T12:00:00Z")
+            self.assertTrue(os.path.exists(os.path.join(tmp, "bulk", digest)))
+            self.assertFalse(os.path.exists(os.path.join(tmp, "raw", digest)))
+            with open(os.path.join(tmp, "manifest.jsonl"), "w") as handle:
+                handle.write(json.dumps(writer.entries[0]) + "\n")
+            report = parse.run(tmp, os.path.join(tmp, "parsed"))
+            self.assertEqual(report["sources"]["nuclei-index"], {"files": 1, "errors": 0, "observations": 1})
+            summary = commit.run(os.path.join(tmp, "data"), tmp, os.path.join(tmp, "parsed"), now=NOW)
+            self.assertEqual(summary["applied"]["coverage"], 1)
+            table = common.read_json(os.path.join(tmp, "data", "coverage", "nuclei.json"), {})
+            self.assertEqual(table, {"CVE-2099-0001": [["http/cves/2099/CVE-2099-0001.yaml", "Acme", ""]]})
+
+
 if __name__ == "__main__":
     unittest.main()

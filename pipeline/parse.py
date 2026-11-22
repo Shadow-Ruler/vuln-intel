@@ -370,9 +370,154 @@ def parse_feed(data: bytes, entry: Dict[str, Any]) -> List[Dict[str, Any]]:
     return out
 
 
+# --- Coverage: public detection rules and public exploit code, by CVE --------
+#
+# Each of these sources is one large index. The parsers only pull out, per
+# CVE, an identifier and a title. They never keep rule or exploit content.
+
+MAX_COVERAGE = 250000
+_ET_CVE = re.compile(r"reference:\s*cve\s*,\s*(?:CVE-|CAN-)?(\d{4}-\d{4,7})\s*;", re.IGNORECASE)
+_ET_MSG = re.compile(r'msg:\s*"([^"]{1,300})"')
+_ET_SID = re.compile(r"\bsid:\s*(\d{1,10})\s*;")
+_SIGMA_TAG = re.compile(r"^\s*-\s*cve\.(\d{4})-(\d{4,7})\s*$", re.IGNORECASE | re.MULTILINE)
+_SIGMA_TITLE = re.compile(r"^title:\s*(.+?)\s*$", re.MULTILINE)
+_SIGMA_DIR = re.compile(r"/(CVE-\d{4}-\d{4,7})/", re.IGNORECASE)
+
+
+def _coverage(entry, kind, cve, ident, title, note=""):
+    return {"type": "coverage", "kind": kind, "cve": cve.upper(), "ident": str(ident),
+            "title": T(title, 200), "note": T(note, 40), "src": _src(entry)}
+
+
+def _text(data: bytes) -> str:
+    return data.decode("utf-8", "replace")
+
+
+def parse_nuclei_index(data: bytes, entry: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """nuclei-templates cves.json: one JSON object per line."""
+    out = []
+    for line in _text(data).splitlines():
+        if len(out) >= MAX_COVERAGE:
+            break
+        try:
+            obj = json.loads(line)
+        except (ValueError, RecursionError):
+            continue
+        if not isinstance(obj, dict):
+            continue
+        info = obj.get("Info") if isinstance(obj.get("Info"), dict) else {}
+        cve, path = obj.get("ID"), obj.get("file_path")
+        if isinstance(cve, str) and common.CVE_RE.match(cve.upper()) and isinstance(path, str):
+            out.append(_coverage(entry, "nuclei", cve, path, info.get("Name"), info.get("Severity")))
+    if not out:
+        raise ValueError("no templates found")
+    return out
+
+
+def parse_exploitdb(data: bytes, entry: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Exploit-DB files_exploits.csv: one row per exploit, CVEs in the codes column."""
+    out = []
+    for row in csv.DictReader(io.StringIO(_text(data))):
+        if len(out) >= MAX_COVERAGE:
+            break
+        ident = (row.get("id") or "").strip()
+        if not ident.isdigit():
+            continue
+        note = (row.get("type") or "").strip()
+        if (row.get("verified") or "").strip() == "1":
+            note += ", verified"
+        for code in (row.get("codes") or "").split(";"):
+            code = code.strip().upper()
+            if common.CVE_RE.match(code):
+                out.append(_coverage(entry, "exploitdb", code, ident, row.get("description"), note))
+    if not out:
+        raise ValueError("no exploits with a CVE found")
+    return out
+
+
+def parse_metasploit(data: bytes, entry: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Metasploit modules_metadata_base.json: an object of modules with a references list."""
+    doc = _load_json(data)
+    modules = doc.values() if isinstance(doc, dict) else doc if isinstance(doc, list) else []
+    out = []
+    for module in modules:
+        if len(out) >= MAX_COVERAGE:
+            break
+        if not isinstance(module, dict) or module.get("type") not in ("exploit", "auxiliary"):
+            continue
+        path = module.get("path")
+        refs = module.get("references")
+        if not isinstance(path, str) or not isinstance(refs, list):
+            continue
+        note = "%s, rank %s" % (module["type"], T(module.get("rank"), 6))
+        for ref in refs[:60]:
+            ref = ref.strip().upper() if isinstance(ref, str) else ""
+            if common.CVE_RE.match(ref):
+                out.append(_coverage(entry, "metasploit", ref, path.lstrip("/"),
+                                     module.get("name") or module.get("fullname"), note))
+    if not out:
+        raise ValueError("no modules with a CVE found")
+    return out
+
+
+def parse_et_rules(data: bytes, entry: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Emerging Threats Open rules: enabled rules that reference a CVE."""
+    out = []
+    for line in _text(data).splitlines():
+        if len(out) >= MAX_COVERAGE:
+            break
+        if not line.startswith("alert") or len(line) > 20000:
+            continue  # comments and rules that ship disabled start with '#'
+        cves = _ET_CVE.findall(line)
+        sid = _ET_SID.search(line)
+        msg = _ET_MSG.search(line)
+        if not cves or not sid:
+            continue
+        for cve in sorted(set(cves)):
+            out.append(_coverage(entry, "suricata-et", "CVE-" + cve, sid.group(1), msg.group(1) if msg else ""))
+    if not out:
+        raise ValueError("no rules with a CVE found")
+    return out
+
+
+def parse_sigma_tar(data: bytes, entry: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """SigmaHQ repository tarball: rule files tagged with, or filed under, a CVE.
+    Members are read in memory one at a time; nothing is extracted to disk."""
+    import tarfile
+
+    out = []
+    read = 0
+    with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as archive:
+        for member in archive:
+            if len(out) >= MAX_COVERAGE or read > MAX_DECOMPRESSED:
+                break
+            name = member.name
+            if not member.isfile() or member.size > 300000 or "/rules" not in name \
+                    or not name.endswith((".yml", ".yaml")):
+                continue
+            handle = archive.extractfile(member)
+            if handle is None:
+                continue
+            text = _text(handle.read(300001))
+            read += len(text)
+            cves = {"CVE-%s-%s" % pair for pair in _SIGMA_TAG.findall(text)}
+            cves.update(match.upper() for match in _SIGMA_DIR.findall(name))
+            if not cves:
+                continue
+            title = _SIGMA_TITLE.search(text)
+            path = name.split("/", 1)[1] if "/" in name else name   # drop the "sigma-master/" prefix
+            for cve in sorted(cves):
+                out.append(_coverage(entry, "sigma", cve, path, title.group(1) if title else ""))
+    if not out:
+        raise ValueError("no rules with a CVE found")
+    return out
+
+
 PARSERS: Dict[str, Callable[[bytes, Dict[str, Any]], List[Dict[str, Any]]]] = {
     "cve": parse_cve, "kev": parse_kev, "epss": parse_epss,
     "ghsa": parse_ghsa, "hn": parse_hn, "feed": parse_feed,
+    "nuclei_index": parse_nuclei_index, "exploitdb": parse_exploitdb, "metasploit": parse_metasploit,
+    "et_rules": parse_et_rules, "sigma_tar": parse_sigma_tar,
 }
 
 
@@ -401,7 +546,7 @@ def run(in_dir: str, out_dir: str) -> Dict[str, Any]:
             try:
                 if parser is None or not isinstance(digest, str) or not common.SHA256_RE.match(digest):
                     raise ValueError("bad manifest entry")
-                path = os.path.join(in_dir, "raw", digest)
+                path = os.path.join(in_dir, "bulk" if entry.get("bulk") is True else "raw", digest)
                 if os.path.islink(path) or os.path.getsize(path) > MAX_RAW:
                     raise ValueError("raw file is a link or too large")
                 with open(path, "rb") as handle:

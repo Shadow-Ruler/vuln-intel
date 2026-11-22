@@ -26,7 +26,8 @@ from . import common
 
 DUE_SLACK_SECONDS = 300
 MAX_RUN_BYTES = 600 * 1024 * 1024
-PARSERS = ("cve", "kev", "epss", "ghsa", "hn", "feed")
+PARSERS = ("cve", "kev", "epss", "ghsa", "hn", "feed",
+           "nuclei_index", "exploitdb", "metasploit", "et_rules", "sigma_tar")
 
 
 class FetchError(Exception):
@@ -169,7 +170,13 @@ class RawWriter:
 
     def __init__(self, out_dir: str):
         self.raw_dir = os.path.join(out_dir, "raw")
+        # Large indexes that are fetched whole (rule sets, exploit lists) go in
+        # their own folder, so they can be kept for a day instead of 90.
+        self.bulk_dir = os.path.join(out_dir, "bulk")
         os.makedirs(self.raw_dir, exist_ok=True)
+        os.makedirs(self.bulk_dir, exist_ok=True)
+        with open(os.path.join(self.bulk_dir, "about.txt"), "w", encoding="utf-8") as handle:
+            handle.write("Large index files fetched in this run, named by SHA-256.\n")
         self.entries: List[Dict[str, Any]] = []
         self.total = 0
 
@@ -179,13 +186,14 @@ class RawWriter:
         self.total += len(body)
         if self.total > MAX_RUN_BYTES:
             raise FetchError("run exceeded the total download budget")
-        path = os.path.join(self.raw_dir, digest)
+        bulk = src.get("bulk") is True
+        path = os.path.join(self.bulk_dir if bulk else self.raw_dir, digest)
         if not os.path.exists(path):
             with open(path, "wb") as handle:
                 handle.write(body)
         self.entries.append({
             "source": src["id"], "origin": src.get("origin", src["id"]), "role": src.get("role", ""),
-            "parser": parser,
+            "parser": parser, "bulk": bulk,
             "url": url, "sha256": digest, "bytes": len(body), "fetched_at": fetched_at, "hint": hint,
         })
         return digest
