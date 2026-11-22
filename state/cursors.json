@@ -4,15 +4,15 @@
   "sha256": "754aa12379a673254eab1c36e61385348b98df029f54f816125c3ddef7078521"
  },
  "amazon-linux": {
-  "etag": "\"85a3ae228123c5fbd0d0ecd833d9f3d9\"",
-  "sha256": "524c9fa51594bad7e6671679bd75d91b597cd2096e2f2f90ac8088ddf665cac3"
+  "etag": "\"408b8fa24b6088993d0bc6bf7e4e86fa\"",
+  "sha256": "b4c355784ec66c3374d28e1e32e928adbdde99aec26c65437fbdc2b14b507d24"
  },
  "archlinux": {
-  "sha256": "2a0edc12540b1ce436f65875c097790600c930122efeffb76c22d923e4285039"
+  "sha256": "4d0b9d4bb11348442057dd62f894690beed78f9b2fd88553b99fa02075ee4483"
  },
  "bleepingcomputer": {
-  "etag": "89fd4c0926bf0c96a7d5f6ac46aec983",
-  "sha256": "0b38327c756655976cdf6d0c450231527569601ac65a3606d98573d11975a93c"
+  "etag": "cad8cf00ac12966cbffc4caa2403b140",
+  "sha256": "bc2fa002d4bb985211e9056e06566bf6d33aeb9ce6906e2a5d6c2e37c4ab0b38"
  },
  "cert-fr": {
   "etag": "\"bc7dcd0dcbeca3d9748eb9b492d57db8\"",
@@ -31,7 +31,7 @@
   "sha256": "73fb6d8d5d78e14fd4c1a1769c222c11c4b4908bd4d24c5b6d1315ed89e0ff3c"
  },
  "cvelist": {
-  "fetch_time": "2026-11-22T16:37:36Z"
+  "fetch_time": "2026-11-22T17:23:40Z"
  },
  "debian": {
   "etag": "\"4015-660df1c507a28;660dfeb4ff6ca",
@@ -1965,21 +1965,21 @@
   }
  },
  "fortinet": {
-  "etag": "\"6b032319-c705\"",
-  "sha256": "a54b83660b21fc295889c53118336fe66a56afb25131116c366151fe1d60a656"
+  "etag": "\"6b032a22-c705\"",
+  "sha256": "615276e6804f8c96716df8499943934dd514aad17cb79d8f63992c3e0b55f290"
  },
  "ghsa": {
   "etag": "W/\"f47f0cd351c1cb12fb4faee0b3b31a03f396e5d3b586c9e5435e1c7670b93fc3\"",
   "sha256": "6a836d2f472d371430fd562345f1456c640619f1bceef0e918f38028888d9eaf"
  },
  "hn-cve": {
-  "sha256": "423b4bcde2a801a9376e8e67da8522f4eabb552623bf8af42b3914845ee59136"
+  "sha256": "9d1596a8747d0ae57e69495a3dd1d61066b9eca6d9b767625c8c27ae83eadd40"
  },
  "hn-rce": {
-  "sha256": "acd888ca5afddece1d77d23d060bdacd6e309130372f9d872e6eae40482d29bc"
+  "sha256": "316535ad4ef7a8f7673f8bab523c87234cd0e9bad51b62ed63713fa1c3c8bbc1"
  },
  "hn-vuln": {
-  "sha256": "229351cea823a8b294fc436af7d30525d78f6b004d513192d264cad7f9d10102"
+  "sha256": "dd1f85beba8c3aba7db4da82f7fc7112628b9f60ec759b499b3a34370bf44dec"
  },
  "kev": {
   "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
@@ -2010,19 +2010,19 @@
   "sha256": "6f2901fe743a20efb823f4c1d23b476356bff7c09f32303558f6ea59f988c012"
  },
  "paloalto": {
-  "etag": "W/\"20fe-OhoWQ/kIzE+fCmSjhjalKa1QvOs\"",
-  "sha256": "65913134cbde0d45040578297bfd9e7c121eec66a3e8a88f78dd3332afb3dbd9"
+  "etag": "W/\"2102-1omXxSjeg+25YR7UtHVgfOzyLzg\"",
+  "sha256": "ab3a1580d535de1b3801898ff632320eaa9e0f743c458c99cdd514579e0232c5"
  },
  "php": {
-  "etag": "W/\"17185b-660a1a23a7bf6\"",
-  "sha256": "c230ae722b1e1e701dfbd9662c91798b67d835a8616a78b291b3a33b610cdb57"
+  "etag": "W/\"171fe1-660c6b5409ada\"",
+  "sha256": "8757d5522aba151780566892eaee6464d956e03d43c16b84ca71587ed1f2275c"
  },
  "rapid7": {
-  "sha256": "808102e77f869c212a323ed98253080771361603a32975a86c25fcb6c8dd8568"
+  "sha256": "62ca3d6d313380b6ad3f8c19b115e6bb17388c8aa0f438c250e23a3afe8ca9c4"
  },
  "redhat": {
-  "etag": "W/\"975db388cbaa67ce4abc7c87a13a9def\"",
-  "sha256": "f963e6f6e8fb2417cfb70ef66f1dfbc193d1b7a4f33030660900feed3f8b4118"
+  "etag": "W/\"72cc012c739f08df69d02a3e44f8b710\"",
+  "sha256": "5b9ffedf848f68e2c0195dc0a87aa8fc725a0ba03512020d227c227ca9fc9085"
  },
  "sigma": {
   "etag": "W/\"7216154ea3e33cf0333e99c19a834c7a4427d5af8251c8415ca913877637cc26\"",
@@ -2036,7 +2036,7 @@
   "sha256": "d834ad746413cd3cc1cdec093d4a87be181b1fe76b7d04a078200c136ade638c"
  },
  "ubuntu": {
-  "sha256": "4ccd08359918e07036c63fb823cf1f39d561e13821f60c3e7fa0711dcd9c44b6"
+  "sha256": "acb351a9558b50905ab7ac12fba616612cf2bb8ac0960032e93f3276cc87e7bf"
  },
  "unit42": {
   "etag": "\"04aed02b5ac55bf53e100909d2a56b4c-gzip\"",
@@ -2050,6 +2050,6 @@
   "sha256": "6ba93edabe486d72d8e95d26aca7f24b63765b6fd785f579d0e9744ce3f740f0"
  },
  "zdi": {
-  "sha256": "477b88ceba9b3ed79a75c09d4dc22f04cfd6e745f7ceda5e475f860896986fc8"
+  "sha256": "7e1d4302806f332e4093602265b33c15b78293e3f6fde92c7d0fae671634d5c3"
  }
 }
