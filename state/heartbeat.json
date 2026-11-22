@@ -152,11 +152,11 @@
   },
   "fix-debian": {
    "consecutive_errors": 0,
-   "detail": "95 found, 25 not tracked by this vendor, 0 failed",
+   "detail": "54 found, 66 not tracked by this vendor, 0 failed",
    "every_minutes": 60,
-   "last_attempt": "2026-11-22T05:07:42Z",
-   "last_change": "2026-11-22T05:07:42Z",
-   "last_ok": "2026-11-22T05:07:42Z",
+   "last_attempt": "2026-11-22T05:16:16Z",
+   "last_change": "2026-11-22T05:16:16Z",
+   "last_ok": "2026-11-22T05:16:16Z",
    "role": "fixes",
    "status": "ok"
   },
@@ -421,5 +421,5 @@
    "status": "ok"
   }
  },
- "updated": "2026-11-22T05:15:35Z"
+ "updated": "2026-11-22T05:16:44Z"
 }
