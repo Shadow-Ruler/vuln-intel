@@ -34,9 +34,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T04:24:51Z",
-   "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-22T04:24:51Z",
+   "last_attempt": "2026-11-22T04:47:57Z",
+   "last_change": "2026-11-22T04:47:57Z",
+   "last_ok": "2026-11-22T04:47:57Z",
    "role": "trend",
    "status": "ok"
   },
@@ -174,9 +174,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T04:24:51Z",
-   "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-22T04:24:51Z",
+   "last_attempt": "2026-11-22T04:47:57Z",
+   "last_change": "2026-11-22T04:47:57Z",
+   "last_ok": "2026-11-22T04:47:57Z",
    "role": "trend",
    "status": "ok"
   },
@@ -184,9 +184,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T04:24:51Z",
-   "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-22T04:24:51Z",
+   "last_attempt": "2026-11-22T04:47:57Z",
+   "last_change": "2026-11-22T04:47:57Z",
+   "last_ok": "2026-11-22T04:47:57Z",
    "role": "trend",
    "status": "ok"
   },
@@ -194,9 +194,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T04:24:51Z",
-   "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-22T04:24:51Z",
+   "last_attempt": "2026-11-22T04:47:57Z",
+   "last_change": "2026-11-22T04:47:57Z",
+   "last_ok": "2026-11-22T04:47:57Z",
    "role": "trend",
    "status": "ok"
   },
@@ -264,11 +264,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T04:24:51Z",
+   "last_attempt": "2026-11-22T04:47:57Z",
    "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-22T04:24:51Z",
+   "last_ok": "2026-11-22T04:47:57Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "paloalto": {
    "consecutive_errors": 0,
@@ -294,11 +294,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T04:24:51Z",
+   "last_attempt": "2026-11-22T04:47:57Z",
    "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-22T04:24:51Z",
+   "last_ok": "2026-11-22T04:47:57Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "redhat": {
    "consecutive_errors": 0,
@@ -324,19 +324,19 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T04:24:51Z",
+   "last_attempt": "2026-11-22T04:47:57Z",
    "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-22T04:24:51Z",
+   "last_ok": "2026-11-22T04:47:57Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "thehackernews": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T04:24:51Z",
-   "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-22T04:24:51Z",
+   "last_attempt": "2026-11-22T04:47:57Z",
+   "last_change": "2026-11-22T04:47:57Z",
+   "last_ok": "2026-11-22T04:47:57Z",
    "role": "trend",
    "status": "ok"
   },
@@ -354,31 +354,31 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T04:24:51Z",
+   "last_attempt": "2026-11-22T04:47:57Z",
    "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-22T04:24:51Z",
+   "last_ok": "2026-11-22T04:47:57Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "watchtowr": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T04:24:51Z",
+   "last_attempt": "2026-11-22T04:47:57Z",
    "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-22T04:24:51Z",
+   "last_ok": "2026-11-22T04:47:57Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "wiz": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-22T04:24:51Z",
+   "last_attempt": "2026-11-22T04:47:57Z",
    "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-22T04:24:51Z",
+   "last_ok": "2026-11-22T04:47:57Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "zdi": {
    "consecutive_errors": 0,
@@ -391,5 +391,5 @@
    "status": "ok"
   }
  },
- "updated": "2026-11-22T04:34:17Z"
+ "updated": "2026-11-22T04:48:38Z"
 }
