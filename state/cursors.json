@@ -11,8 +11,8 @@
   "sha256": "b3b16911900d3b4db427753dc136820bffb05db959bfae4df4c5625a8146168d"
  },
  "bleepingcomputer": {
-  "etag": "9233b3ae5af23de8400616c8e838b4e3",
-  "sha256": "cf131fd19168bf92584203c0ddf5f45ce3affbbff50f34a29eb782f0dfe34108"
+  "etag": "d36401b2542bcaa143bf92127d1aa73a",
+  "sha256": "9d90287bfa056cbacad24dfedb151ffd46ecc60b9fe3604b06f71216144e6d19"
  },
  "cert-fr": {
   "etag": "\"bc7dcd0dcbeca3d9748eb9b492d57db8\"",
@@ -443,6 +443,7 @@
    "CVE-2026-131811": "none:2026-11-22",
    "CVE-2026-131812": "none:2026-11-22",
    "CVE-2026-131813": "none:2026-11-22",
+   "CVE-2026-131914": "none:2026-11-23",
    "CVE-2026-132825": "2026-11-22",
    "CVE-2026-133949": "none:2026-11-22",
    "CVE-2026-14661": "2026-11-22",
@@ -1094,6 +1095,7 @@
    "CVE-2026-131811": "none:2026-11-22",
    "CVE-2026-131812": "none:2026-11-22",
    "CVE-2026-131813": "none:2026-11-22",
+   "CVE-2026-131914": "none:2026-11-23",
    "CVE-2026-132825": "2026-11-22",
    "CVE-2026-133949": "none:2026-11-22",
    "CVE-2026-14661": "2026-11-22",
@@ -2015,13 +2017,13 @@
   "sha256": "ddb9ea6d18801249d714730a9c6115cf25f3aea6845781c27275c4a352c547e6"
  },
  "hn-cve": {
-  "sha256": "aa34b261606682ed54aa0db11da979b7cefa173ae4ba1a169e213bfccfc857b5"
+  "sha256": "809e52c014a30f333d26ba6ba7631dc690e2456ad0b1f01e9acc0f2daaf19864"
  },
  "hn-rce": {
-  "sha256": "2a065f2b9de1f2b8d059ec4e9821f8122d01838e697e461ee65f650a35e8cc34"
+  "sha256": "cae003c57214aa49da4e0d4d87d3192337e0118bb0358bd441e40227ccf824f0"
  },
  "hn-vuln": {
-  "sha256": "5e535aaaf4f6ee806f8ffc6c197fcc2e98d9a6282f9ac7f6f8e2a44b52c77172"
+  "sha256": "1a933a081893e422d66c16caf588ca446e5f2a300134e45ccc8805f7b7c264d2"
  },
  "kev": {
   "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
@@ -2048,8 +2050,8 @@
   "sha256": "e9a335047606288a9e7148e84e90414b109b70dcf4330706651d7ffaed450163"
  },
  "oss-security": {
-  "etag": "\"40bf-660ee079d9e91\"",
-  "sha256": "0e178ca8c8d77f5e7e4ac96daeda9194634d82b01b72452422ee69fc59a5bf5e"
+  "etag": "\"4026-660ef13c971f7\"",
+  "sha256": "56b68685c2125d78ff94dc39feb8cb9c6d42d10dede5f0d495544488032c0c5a"
  },
  "paloalto": {
   "etag": "W/\"20f9-v0HfLwZJxHxx2fPoeaH444c1fOI\"",
