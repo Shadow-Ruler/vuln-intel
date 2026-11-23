@@ -1,0 +1,33 @@
+{
+ "cve": "CVE-2026-22865",
+ "first_seen": "2026-11-23T16:36:41Z",
+ "id": "GHSA-mqwm-5m85-gmcv",
+ "packages": [
+  {
+   "ecosystem": "maven",
+   "name": "org.gradle:gradle-core",
+   "patched": "8.14.4",
+   "range": "< 8.14.4"
+  },
+  {
+   "ecosystem": "maven",
+   "name": "org.gradle:gradle-core",
+   "patched": "9.3.0",
+   "range": ">= 9.0.0, < 9.3.0"
+  }
+ ],
+ "published": "2026-11-23T15:41:57Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-23T16:35:51Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "17bc92ffa220fe49412e62418d5fd66fcf2480930f1a9944bc8e382a2e61a353",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Gradle causes failure to disable repositories exposing builds to malicious artifacts",
+ "type": "ghsa",
+ "updated": "2026-11-23T15:41:58Z",
+ "withdrawn": false
+}
