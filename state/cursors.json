@@ -11,8 +11,8 @@
   "sha256": "c19411b6f5fc62f8d2cd71dec0905999f64d970d7fa437f2805157fd073a4e61"
  },
  "bleepingcomputer": {
-  "etag": "366ef43e55c40d7795476ad7ac196929",
-  "sha256": "5dd594406db552f01ef83dcdbaaca2558884797ea8f9bce7fbbf19dda860bea8"
+  "etag": "075dba2fa94f86f89f1a010a5ad2f540",
+  "sha256": "e8705bede97951036e05afdd5c1862e89dade0a4be5aad382856fa51c79450e4"
  },
  "cert-fr": {
   "etag": "\"bc7dcd0dcbeca3d9748eb9b492d57db8\"",
@@ -480,6 +480,10 @@
    "CVE-2026-59082": "none:2026-11-22",
    "CVE-2026-59309": "none:2026-11-22",
    "CVE-2026-59890": "none:2026-11-22",
+   "CVE-2026-60076": "none:2026-11-23",
+   "CVE-2026-60077": "none:2026-11-23",
+   "CVE-2026-60078": "none:2026-11-23",
+   "CVE-2026-60079": "none:2026-11-23",
    "CVE-2026-61711": "none:2026-11-22",
    "CVE-2026-61712": "none:2026-11-22",
    "CVE-2026-63516": "none:2026-11-22",
@@ -1127,6 +1131,10 @@
    "CVE-2026-59082": "none:2026-11-22",
    "CVE-2026-59309": "none:2026-11-22",
    "CVE-2026-59890": "2026-11-22",
+   "CVE-2026-60076": "none:2026-11-23",
+   "CVE-2026-60077": "none:2026-11-23",
+   "CVE-2026-60078": "none:2026-11-23",
+   "CVE-2026-60079": "none:2026-11-23",
    "CVE-2026-61711": "2026-11-22",
    "CVE-2026-61712": "2026-11-22",
    "CVE-2026-63516": "none:2026-11-22",
@@ -2003,13 +2011,13 @@
   "sha256": "ddb9ea6d18801249d714730a9c6115cf25f3aea6845781c27275c4a352c547e6"
  },
  "hn-cve": {
-  "sha256": "96ff734eeef6c0cd0ef954cdbf12031bfdb1f520435d4604725e5bc1f318dae1"
+  "sha256": "c6f226c26764f091c4a9609dadaf199f7932b12560562c5f06c80c708f5dd15a"
  },
  "hn-rce": {
-  "sha256": "574e80617e23ab2d0bc9d0b6f707e07e9b143fd3ad26417f5f87e3d94cf3e75f"
+  "sha256": "0eb641cde3b63745a0ded8c9262126c0401159084f36f1f8d51c346e82ac150b"
  },
  "hn-vuln": {
-  "sha256": "48143848706224bbe167fb004b6d4d49665142d85a7efc7a57099e34a6b166b1"
+  "sha256": "8addf84040b937c1cf075f49a7f32a28b33daac2c4b185b19a7faab500d6587a"
  },
  "kev": {
   "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
@@ -2059,8 +2067,8 @@
   "sha256": "e3eac1bac04d1e353a985197c6d2ee9d1f3e0a5922c0426f408dbd8fd485960b"
  },
  "talos": {
-  "etag": "W/\"1172a6-GMJVpoWCA0/Kfigy7jjWLaIX0WA\"",
-  "sha256": "7a79ec4c2bf8ed1d93d88b79da016a4548b64ca4f30d4b190fee46ec331ece1c"
+  "etag": "W/\"1172a6-w1Mubktm7BwWUpH9zIE1Kk0Q4pM\"",
+  "sha256": "ddd1d8a7545d2b8450e6ab5402cc7fadebb0a31183ca795d4e0472463a133fe3"
  },
  "thehackernews": {
   "sha256": "e3ac6946bb1de04b90238f0a6f2ef0a6f7a5405d218b3f460551039d306d89a8"
