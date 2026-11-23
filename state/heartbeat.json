@@ -34,9 +34,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-23T02:21:24Z",
-   "last_change": "2026-11-23T02:21:24Z",
-   "last_ok": "2026-11-23T02:21:24Z",
+   "last_attempt": "2026-11-23T02:35:40Z",
+   "last_change": "2026-11-23T02:35:40Z",
+   "last_ok": "2026-11-23T02:35:40Z",
    "role": "trend",
    "status": "ok"
   },
@@ -204,9 +204,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-23T02:21:24Z",
-   "last_change": "2026-11-23T02:21:24Z",
-   "last_ok": "2026-11-23T02:21:24Z",
+   "last_attempt": "2026-11-23T02:35:40Z",
+   "last_change": "2026-11-23T02:35:40Z",
+   "last_ok": "2026-11-23T02:35:40Z",
    "role": "trend",
    "status": "ok"
   },
@@ -214,9 +214,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-23T02:21:24Z",
-   "last_change": "2026-11-23T02:21:24Z",
-   "last_ok": "2026-11-23T02:21:24Z",
+   "last_attempt": "2026-11-23T02:35:40Z",
+   "last_change": "2026-11-23T02:35:40Z",
+   "last_ok": "2026-11-23T02:35:40Z",
    "role": "trend",
    "status": "ok"
   },
@@ -224,9 +224,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-23T02:21:24Z",
-   "last_change": "2026-11-23T02:21:24Z",
-   "last_ok": "2026-11-23T02:21:24Z",
+   "last_attempt": "2026-11-23T02:35:40Z",
+   "last_change": "2026-11-23T02:35:40Z",
+   "last_ok": "2026-11-23T02:35:40Z",
    "role": "trend",
    "status": "ok"
   },
@@ -294,11 +294,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-23T02:21:24Z",
-   "last_change": "2026-11-23T01:10:28Z",
-   "last_ok": "2026-11-23T02:21:24Z",
+   "last_attempt": "2026-11-23T02:35:40Z",
+   "last_change": "2026-11-23T02:35:40Z",
+   "last_ok": "2026-11-23T02:35:40Z",
    "role": "trend",
-   "status": "unchanged"
+   "status": "ok"
   },
   "paloalto": {
    "consecutive_errors": 0,
@@ -324,11 +324,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-23T02:21:24Z",
+   "last_attempt": "2026-11-23T02:35:40Z",
    "last_change": "2026-11-23T02:21:24Z",
-   "last_ok": "2026-11-23T02:21:24Z",
+   "last_ok": "2026-11-23T02:35:40Z",
    "role": "trend",
-   "status": "ok"
+   "status": "unchanged"
   },
   "redhat": {
    "consecutive_errors": 0,
@@ -354,9 +354,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-23T02:21:24Z",
+   "last_attempt": "2026-11-23T02:35:40Z",
    "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-23T02:21:24Z",
+   "last_ok": "2026-11-23T02:35:40Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -364,11 +364,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-23T02:21:24Z",
-   "last_change": "2026-11-23T02:07:20Z",
-   "last_ok": "2026-11-23T02:21:24Z",
+   "last_attempt": "2026-11-23T02:35:40Z",
+   "last_change": "2026-11-23T02:35:40Z",
+   "last_ok": "2026-11-23T02:35:40Z",
    "role": "trend",
-   "status": "unchanged"
+   "status": "ok"
   },
   "ubuntu": {
    "consecutive_errors": 0,
@@ -384,9 +384,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-23T02:21:24Z",
+   "last_attempt": "2026-11-23T02:35:40Z",
    "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-23T02:21:24Z",
+   "last_ok": "2026-11-23T02:35:40Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -394,19 +394,19 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-23T02:21:24Z",
-   "last_change": "2026-11-23T00:42:03Z",
-   "last_ok": "2026-11-23T02:21:24Z",
+   "last_attempt": "2026-11-23T02:35:40Z",
+   "last_change": "2026-11-23T02:35:40Z",
+   "last_ok": "2026-11-23T02:35:40Z",
    "role": "trend",
-   "status": "unchanged"
+   "status": "ok"
   },
   "wiz": {
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-23T02:21:24Z",
+   "last_attempt": "2026-11-23T02:35:40Z",
    "last_change": "2026-11-23T01:53:04Z",
-   "last_ok": "2026-11-23T02:21:24Z",
+   "last_ok": "2026-11-23T02:35:40Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -421,5 +421,5 @@
    "status": "ok"
   }
  },
- "updated": "2026-11-23T02:21:59Z"
+ "updated": "2026-11-23T02:36:08Z"
 }
