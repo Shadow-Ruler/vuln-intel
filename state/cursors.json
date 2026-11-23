@@ -4,15 +4,15 @@
   "sha256": "178e1befcdc79e05767b0558f4a62439a2d28430ad0db1607470683db026cfa4"
  },
  "amazon-linux": {
-  "etag": "\"2a5b913ab03f1368e63d0ed1ab6e8f48\"",
-  "sha256": "ab8a4e5c97415a577b26eda9abc0ba8ec919e7c0f9f98d86546cd178de1cc31f"
+  "etag": "\"85a3ae228123c5fbd0d0ecd833d9f3d9\"",
+  "sha256": "524c9fa51594bad7e6671679bd75d91b597cd2096e2f2f90ac8088ddf665cac3"
  },
  "archlinux": {
-  "sha256": "a3e6a226939b5d277bca1b8caa8fefb9dad40a8b7058b1aeeee28212c72cd426"
+  "sha256": "7b1d18ec4696ef5fb9a68a7a7cec58e5a4526c88d3bcd71243e03ebde9bb0887"
  },
  "bleepingcomputer": {
-  "etag": "ed18bce42e7a26acb873f8daec0f9575",
-  "sha256": "7e5a644368fb473718b6d42a889878bed5618726b9601551310e09077a68409a"
+  "etag": "d9ec2d452920829faacfd39e0cc7c4ed",
+  "sha256": "255e7ca2b5869139bbf5c424ede70762efff6d4bdf47555f17643d38e6d10823"
  },
  "cert-fr": {
   "etag": "\"bc7dcd0dcbeca3d9748eb9b492d57db8\"",
@@ -31,7 +31,7 @@
   "sha256": "73fb6d8d5d78e14fd4c1a1769c222c11c4b4908bd4d24c5b6d1315ed89e0ff3c"
  },
  "cvelist": {
-  "fetch_time": "2026-11-23T12:42:37Z"
+  "fetch_time": "2026-11-23T13:36:53Z"
  },
  "debian": {
   "etag": "\"400c-660e5d01a1958;660e61e845f54",
@@ -1754,6 +1754,7 @@
    "CVE-2026-131914": "none:2026-11-23",
    "CVE-2026-132825": "2026-11-22",
    "CVE-2026-133949": "none:2026-11-22",
+   "CVE-2026-134624": "none:2026-11-23",
    "CVE-2026-14661": "2026-11-22",
    "CVE-2026-14978": "none:2026-11-22",
    "CVE-2026-15353": "2026-11-22",
@@ -1869,6 +1870,7 @@
    "CVE-2026-84015": "none:2026-11-22",
    "CVE-2026-84016": "none:2026-11-22",
    "CVE-2026-84020": "none:2026-11-22",
+   "CVE-2026-84869": "none:2026-11-23",
    "CVE-2026-85114": "none:2026-11-22",
    "CVE-2026-85115": "none:2026-11-22",
    "CVE-2026-85794": "none:2026-11-22",
@@ -2014,21 +2016,21 @@
   }
  },
  "fortinet": {
-  "etag": "\"6b043c5b-c705\"",
-  "sha256": "14e289aa109b591d5ba1957c40829c9757cadb13952ad4556230ac4a21ea4cb0"
+  "etag": "\"6b043fde-c705\"",
+  "sha256": "664338db2f85e368dab3ac093edf8169f2637ecd972268a66e4dc5b65978f93c"
  },
  "ghsa": {
   "etag": "W/\"0a843da233efe943dee93001ffde27e0c3ffde6cbadd98aefb00caac48af9ef8\"",
   "sha256": "305315f5b26e7d47f3d35862c1bfed4874a581b4e5dc2cc63fd98bb1f288b78e"
  },
  "hn-cve": {
-  "sha256": "bf9fd75df6bc1f558ae1e932f430453314de376aa3201aecb5339607574c4c7a"
+  "sha256": "1c45aebba05418dbeecd448841c1d42622b3c2663953fefe0f31dc50ee40fe56"
  },
  "hn-rce": {
-  "sha256": "4432616cc9d7291d592beafc297d17d4d4dba0449c20fa751d716bcec6487860"
+  "sha256": "600ef60ba333327f512c328d99190c4fdde58006327913cd674ce92733e1d059"
  },
  "hn-vuln": {
-  "sha256": "6ddeaec8cbfa389540c0a40d29f030ba421aaed9954b726788e241ebccd81350"
+  "sha256": "07084d1c50912ff21a4fd58466c808da5fca88e94ca82fad3c3c15291c3889a7"
  },
  "kev": {
   "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
@@ -2059,8 +2061,8 @@
   "sha256": "56b68685c2125d78ff94dc39feb8cb9c6d42d10dede5f0d495544488032c0c5a"
  },
  "paloalto": {
-  "etag": "W/\"2106-PvUPwQRbnrAHb5MpZ/RKVznY8/k\"",
-  "sha256": "057cfad36d8a3faf823e26ac7e2b4e36aa1ed133b41426cc07526a11eda35222"
+  "etag": "W/\"20f9-v0HfLwZJxHxx2fPoeaH444c1fOI\"",
+  "sha256": "dcf911a45c8f5cf32826ef2ee83701f97e489369a004ecee1f60c63b7de19c54"
  },
  "php": {
   "etag": "W/\"171fe1-660c6b5409ada\"",
@@ -2078,14 +2080,14 @@
   "sha256": "e3eac1bac04d1e353a985197c6d2ee9d1f3e0a5922c0426f408dbd8fd485960b"
  },
  "talos": {
-  "etag": "W/\"1172a6-w1Mubktm7BwWUpH9zIE1Kk0Q4pM\"",
-  "sha256": "ddd1d8a7545d2b8450e6ab5402cc7fadebb0a31183ca795d4e0472463a133fe3"
+  "etag": "W/\"1172a6-GJ7qHTY20Fuy1q56MMQPJZTqvtI\"",
+  "sha256": "82f4db9975e4f1a2a24b43d5201c6c7b83938c64853c03448f722ec56ea24ff7"
  },
  "thehackernews": {
   "sha256": "95be29f74053512f92da1c2e3f13280380bdae90c7593f161499714289a64f31"
  },
  "ubuntu": {
-  "sha256": "84d9dda2dfb9f90b72c1faf3ba906790cb2a61ec4b72ff74eca3b328a0aa3bc2"
+  "sha256": "47d930a166f95e18c2f054d909396241e38328bc7fe78254d32a92fd5736bda7"
  },
  "unit42": {
   "etag": "\"04aed02b5ac55bf53e100909d2a56b4c-gzip\"",
@@ -2099,6 +2101,6 @@
   "sha256": "3b75ada593b7ff4f4a9a903b84ead4185b7916dc92efd76d602ef68e14589dbb"
  },
  "zdi": {
-  "sha256": "2d0f10069cfe247d8e8a64596248c1239354d39192ef472c995585a466d92eb8"
+  "sha256": "e3cd81d300d13c1d6ffde1c0c0978485c9c6687e187a1bfe8215ec576eca5467"
  }
 }
