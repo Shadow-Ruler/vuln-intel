@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2026-63402",
+ "first_seen": "2026-11-23T21:21:10Z",
+ "id": "GHSA-6jcc-5g8w-32mx",
+ "packages": [
+  {
+   "ecosystem": "npm",
+   "name": "i18next",
+   "patched": "26.3.4",
+   "range": "< 26.3.4"
+  }
+ ],
+ "published": "2026-11-23T20:53:00Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-23T21:20:36Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "e155ae617f1767799617c63c18e9201f6bfa9f2117d3dc1a396934b15c3b8db0",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "i18next deepExtend recurses into inherited built-ins, allowing corruption of shared built-in objects (DoS)",
+ "type": "ghsa",
+ "updated": "2026-11-23T20:53:01Z",
+ "withdrawn": false
+}
