@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2026-63492",
+ "first_seen": "2026-11-23T22:18:45Z",
+ "id": "GHSA-j44m-77cc-p3cc",
+ "packages": [
+  {
+   "ecosystem": "composer",
+   "name": "wwbn/avideo",
+   "patched": "29.1.0",
+   "range": "< 29.1.0"
+  }
+ ],
+ "published": "2026-11-23T22:06:28Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-23T22:17:33Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "3f8b717102158230f15f8db041c8b1276a3eaaf9f6cefaed0bb9c5543d527f54",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "AVideo API vulnerable to OS command injection through an unescaped FFmpeg process keyword",
+ "type": "ghsa",
+ "updated": "2026-11-23T22:06:29Z",
+ "withdrawn": false
+}
