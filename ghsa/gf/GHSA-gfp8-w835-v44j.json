@@ -1,0 +1,33 @@
+{
+ "cve": "CVE-2026-62268",
+ "first_seen": "2026-11-23T10:54:29Z",
+ "id": "GHSA-gfp8-w835-v44j",
+ "packages": [
+  {
+   "ecosystem": "pip",
+   "name": "borgbackup",
+   "patched": "1.4.5",
+   "range": "< 1.4.5"
+  },
+  {
+   "ecosystem": "pip",
+   "name": "borgbackup",
+   "patched": "2.0.0b22",
+   "range": ">= 2.0.0b1, < 2.0.0b22"
+  }
+ ],
+ "published": "2026-10-15T20:09:23Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-23T10:53:47Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "305315f5b26e7d47f3d35862c1bfed4874a581b4e5dc2cc63fd98bb1f288b78e",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "borg extract might modify out-of-tree files when extracting maliciously crafted archives",
+ "type": "ghsa",
+ "updated": "2026-11-23T10:10:08Z",
+ "withdrawn": false
+}
