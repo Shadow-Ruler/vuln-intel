@@ -11,8 +11,8 @@
   "sha256": "b3b16911900d3b4db427753dc136820bffb05db959bfae4df4c5625a8146168d"
  },
  "bleepingcomputer": {
-  "etag": "f8d0a318d3f63e3099e9b4c2ce72ace6",
-  "sha256": "fd4501ffb2a58decbe7c510690fdc3aed40357515af346045c843c1df1aaf95c"
+  "etag": "6e82a27f87c5cb4cc4ad900b581dfa1b",
+  "sha256": "94d3e07d4653a462763f1b9ede2fd425619cb4cf7d717a9f2d4ba0b1508d3f96"
  },
  "cert-fr": {
   "etag": "\"bc7dcd0dcbeca3d9748eb9b492d57db8\"",
@@ -2015,13 +2015,13 @@
   "sha256": "ddb9ea6d18801249d714730a9c6115cf25f3aea6845781c27275c4a352c547e6"
  },
  "hn-cve": {
-  "sha256": "c6d5383c7a6ba6b1c16a8673f1893a77f4eacfdeaf43ee0d04e1ccb2f5d8b071"
+  "sha256": "b85f5a85cb5a6b073be9859bef43b9a3e9d4f3cde06e48a56723d7e44638d3c8"
  },
  "hn-rce": {
-  "sha256": "c2c63cae2a745a5bd97d8c52c60492112ca363a50db72374b4dd388a0fb60c0b"
+  "sha256": "cdf18360009776c54ad2c0b48e39d198c2bf15bdd8e044544d81080aac154b3e"
  },
  "hn-vuln": {
-  "sha256": "c653c8a3c670068f15b0d10f15416e98ace00d2eb1f02507fc2e9868526fbe12"
+  "sha256": "df7c1a162d32c76d9691af5cb26ed8d55fb51b8d5ccb34bbb6f977a386299dd3"
  },
  "kev": {
   "etag": "W/\"e638b61f6ec4670620de538688d6b4f63f1c1c4680a544b66b73d4987a8fef8c\"",
@@ -2044,8 +2044,8 @@
   "sha256": "6aff72b825cf45e79397a17537e1fabd7b201e9eea5c5c1bdf4ecc9bf771c7df"
  },
  "nuclei-index": {
-  "etag": "W/\"1e79ba989692f42569765432f68b030634a45df5cf7e68ddca5a4fbb7b097d2e\"",
-  "sha256": "2d434915fe037dccb6e991f49d1f04a70598d39caf8a77d99e3e4ba4c45f1a0a"
+  "etag": "W/\"2846670530411d87d43aee0b3a51833cf6466474c033eace43ca74369fe2f657\"",
+  "sha256": "e9a335047606288a9e7148e84e90414b109b70dcf4330706651d7ffaed450163"
  },
  "oss-security": {
   "etag": "\"40bf-660ee079d9e91\"",
@@ -2075,7 +2075,7 @@
   "sha256": "ddd1d8a7545d2b8450e6ab5402cc7fadebb0a31183ca795d4e0472463a133fe3"
  },
  "thehackernews": {
-  "sha256": "e3ac6946bb1de04b90238f0a6f2ef0a6f7a5405d218b3f460551039d306d89a8"
+  "sha256": "05c612170e077975c7af47626599a1e9a40515fd5a925233469bd50dd4efbc86"
  },
  "ubuntu": {
   "sha256": "f38b71982f54994a3ba351db3158d818769d102349ab3190b3cef9bc6b9af1f7"
@@ -2085,8 +2085,8 @@
   "sha256": "1b52c6ab2308a8f9cd773ae6bfc29f53c0442fa51913647e095e1706daa09e72"
  },
  "watchtowr": {
-  "etag": "W/\"80040-oWW9gVEQgnHhKsOuq+DvVu0vr64\"",
-  "sha256": "a56616513388d5079dd897a9a9c7a3256405dfdb0dc06cd04f96db8b353af00e"
+  "etag": "W/\"80040-gBIjeMlroSbdjqYwsFc3PkrxUOY\"",
+  "sha256": "b1d6dd885afd453c67b26591677daae54c227222ea621f824116677fbee619af"
  },
  "wiz": {
   "sha256": "7089d722e16666362fa7561b33cec29a4d0ba979c5d2647a34dae674119aa207"
