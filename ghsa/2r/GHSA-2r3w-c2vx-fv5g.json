@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2026-133469",
+ "first_seen": "2026-11-23T17:33:36Z",
+ "id": "GHSA-2r3w-c2vx-fv5g",
+ "packages": [
+  {
+   "ecosystem": "npm",
+   "name": "xo-server",
+   "patched": "",
+   "range": "<= 5.7.4"
+  }
+ ],
+ "published": "2026-11-23T17:29:29Z",
+ "severity": "critical",
+ "src": {
+  "fetched_at": "2026-11-23T17:32:51Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "7577aff5f1db1a85620f594d87afe51b8f93a24e7d914d399c5d29b9fa56452c",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Xen Orchestra: Empty-object login token",
+ "type": "ghsa",
+ "updated": "2026-11-23T17:29:30Z",
+ "withdrawn": false
+}
