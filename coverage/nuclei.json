@@ -4490,6 +4490,7 @@
 "CVE-2026-44578":[["javascript/cves/2026/CVE-2026-44578.yaml","Next.js WebSocket Upgrade Handler - SSRF","high"]],
 "CVE-2026-4480":[["javascript/cves/2026/CVE-2026-4480.yaml","Samba Printing Subsystem - Remote Code Execution","critical"]],
 "CVE-2026-44825":[["http/cves/2026/CVE-2026-44825.yaml","Apache Solr 9.4.0-9.10.1 / 10.0.0 - Hardcoded Default Credentials","high"]],
+"CVE-2026-45140":[["http/cves/2026/CVE-2026-45140.yaml","Chamilo LMS <= 2.0.0 - Unauthenticated Arbitrary File Upload via CStudio big-upload.php","critical"]],
 "CVE-2026-45247":[["http/cves/2026/CVE-2026-45247.yaml","Mirasvit Full Page Cache Warmer < 1.11.12 - Remote Code Execution","critical"]],
 "CVE-2026-45298":[["http/cves/2026/CVE-2026-45298.yaml","Dozzle - Server Side Request Forgery","high"]],
 "CVE-2026-45332":[["http/cves/2026/CVE-2026-45332.yaml","Automad < 2.0.0-beta.28 - Unauthenticated Admin Password Hash Disclosure","high"]],
