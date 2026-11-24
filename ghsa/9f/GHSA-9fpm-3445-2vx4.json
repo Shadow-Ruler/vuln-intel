@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2026-7700",
+ "first_seen": "2026-11-24T11:09:32Z",
+ "id": "GHSA-9fpm-3445-2vx4",
+ "packages": [
+  {
+   "ecosystem": "pip",
+   "name": "langflow",
+   "patched": "1.10.3",
+   "range": ">= 1.3.0, < 1.10.3"
+  }
+ ],
+ "published": "2026-10-05T22:30:41Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-24T11:08:40Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "70c3dba94cc59beb258f8bb01d028ed194ee2214cdfc42647085ec6cfa964fe4",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Langflow: Prompt injection in Langflow Smart Transform can lead to code execution",
+ "type": "ghsa",
+ "updated": "2026-11-24T01:23:39Z",
+ "withdrawn": false
+}

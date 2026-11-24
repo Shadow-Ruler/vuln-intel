@@ -2287,6 +2287,7 @@
 "CVE-2026-115731":[["2072847","ET EXPLOIT Puppet Server Authenticated RCE via Event Deserialization (CVE-2026-115731)",""]],
 "CVE-2026-123158":[["2072752","ET POLICY OpenSSH Vulnerable Version Banner Observed (CVE-2026-123158)",""]],
 "CVE-2026-1281":[["2067230","ET WEB_SPECIFIC_APPS Ivanti Endpoint Manager Mobile Unauthenticated Remote Code Execution (CVE-2026-1281 & CVE-2026-1340)",""]],
+"CVE-2026-131914":[["2072858","ET EXPLOIT ASP.NET Idunno AntiCsrf Unauthenticated ObjectStateFormatter Deserialization Attempt (CVE-2026-131914)",""]],
 "CVE-2026-1340":[["2067230","ET WEB_SPECIFIC_APPS Ivanti Endpoint Manager Mobile Unauthenticated Remote Code Execution (CVE-2026-1281 & CVE-2026-1340)",""]],
 "CVE-2026-1419":[["2067088","ET WEB_SPECIFIC_APPS D-Link setDayNightMode LightSensorControl Parameter Command Injection Attempt (CVE-2026-1419)",""]],
 "CVE-2026-15409":[["2071235","ET WEB_SPECIFIC_APPS SonicWall SMA Websocket Tunnel Bypass (CVE-2026-15409)",""]],
