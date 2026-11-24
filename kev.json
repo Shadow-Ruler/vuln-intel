@@ -14516,6 +14516,33 @@
   "ransomware": "Unknown",
   "vendor": "Apache"
  },
+ "CVE-2026-131914": {
+  "date_added": "2026-11-24",
+  "due_date": "2026-11-27",
+  "first_seen": "2026-11-24T20:40:28Z",
+  "name": "Idunno AntiCsrf Deserialization of Untrusted Data Vulnerability",
+  "product": "AntiCsrf",
+  "ransomware": "Unknown",
+  "vendor": "Idunno"
+ },
+ "CVE-2026-132165": {
+  "date_added": "2026-11-24",
+  "due_date": "2026-11-27",
+  "first_seen": "2026-11-24T20:40:28Z",
+  "name": "Drupal Core Remote Code Execution Vulnerability",
+  "product": "Core",
+  "ransomware": "Unknown",
+  "vendor": "Drupal"
+ },
+ "CVE-2026-132224": {
+  "date_added": "2026-11-24",
+  "due_date": "2026-11-27",
+  "first_seen": "2026-11-24T20:40:28Z",
+  "name": "Optimizely Web Experimentation External Control of Critical State Data Vulnerability",
+  "product": "Web Experimentation",
+  "ransomware": "Unknown",
+  "vendor": "Optimizely"
+ },
  "CVE-2026-133968": {
   "date_added": "2026-11-23",
   "due_date": "2026-11-26",
