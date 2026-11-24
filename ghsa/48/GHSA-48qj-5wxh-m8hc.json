@@ -1,0 +1,33 @@
+{
+ "cve": "CVE-2026-59192",
+ "first_seen": "2026-11-24T17:48:56Z",
+ "id": "GHSA-48qj-5wxh-m8hc",
+ "packages": [
+  {
+   "ecosystem": "composer",
+   "name": "cakephp/twig-view",
+   "patched": "1.3.3",
+   "range": "< 1.3.3"
+  },
+  {
+   "ecosystem": "composer",
+   "name": "cakephp/twig-view",
+   "patched": "2.1.2",
+   "range": ">= 2.0.0, < 2.1.2"
+  }
+ ],
+ "published": "2026-11-24T17:42:51Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-24T17:48:17Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "5fdf78bde133fe64ab007c6bb3b4b32cd849d54365bed70d8b1fa1e052bf172c",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Cakephp twig-view unserialize Twig filter allows arbitrary object deserialization",
+ "type": "ghsa",
+ "updated": "2026-11-24T17:42:52Z",
+ "withdrawn": false
+}
