@@ -1,15 +1,18 @@
 {
  "CVE-2026-103333": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:43:39Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-108368": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:16:12Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-108765": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:16:12Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-112788": {
   "checked": "2026-11-23T20:24:32Z",
@@ -32,20 +35,24 @@
   "status": "missing"
  },
  "CVE-2026-120502": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:43:39Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-124324": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:43:39Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-134858": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:43:39Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-135660": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:43:39Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-45110": {
   "checked": "2026-11-21T17:33:02Z",
@@ -83,32 +90,39 @@
   "status": "missing"
  },
  "CVE-2026-86154": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:16:12Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-86155": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:43:39Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-86156": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:43:39Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-96296": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:16:12Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-96298": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:16:12Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-96353": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:16:12Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-96354": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:16:12Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-97727": {
   "checked": "2026-11-21T17:31:40Z",
@@ -116,7 +130,8 @@
   "status": "missing"
  },
  "CVE-2026-97893": {
+  "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:43:39Z",
-  "status": "pending"
+  "status": "missing"
  }
 }

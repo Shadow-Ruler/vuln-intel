@@ -10994,7 +10994,7 @@
   "first_seen": "2026-11-21T16:20:06Z",
   "name": "Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability",
   "product": "DiskStation Manager (DSM)",
-  "ransomware": "Unknown",
+  "ransomware": "Known",
   "vendor": "Synology"
  },
  "CVE-2024-1086": {
@@ -14516,6 +14516,15 @@
   "ransomware": "Unknown",
   "vendor": "Apache"
  },
+ "CVE-2026-133968": {
+  "date_added": "2026-11-23",
+  "due_date": "2026-11-26",
+  "first_seen": "2026-11-24T00:12:35Z",
+  "name": "Project MONAI MONAI Label Path Traversal Vulnerability",
+  "product": "MONAI Label",
+  "ransomware": "Unknown",
+  "vendor": "Project MONAI"
+ },
  "CVE-2026-1340": {
   "date_added": "2026-04-08",
   "due_date": "2026-04-11",
@@ -14524,6 +14533,15 @@
   "product": "Endpoint Manager Mobile (EPMM)",
   "ransomware": "Unknown",
   "vendor": "Ivanti"
+ },
+ "CVE-2026-134624": {
+  "date_added": "2026-11-23",
+  "due_date": "2026-11-26",
+  "first_seen": "2026-11-24T00:12:35Z",
+  "name": "N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
+  "product": "MailAssure",
+  "ransomware": "Unknown",
+  "vendor": "N-able"
  },
  "CVE-2026-15409": {
   "date_added": "2026-07-14",
