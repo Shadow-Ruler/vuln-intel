@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2026-59726",
+ "first_seen": "2026-11-24T21:37:44Z",
+ "id": "GHSA-c4hm-4h84-2cf3",
+ "packages": [
+  {
+   "ecosystem": "npm",
+   "name": "ruflo",
+   "patched": "3.16.3",
+   "range": "< 3.16.3"
+  }
+ ],
+ "published": "2026-11-24T21:01:10Z",
+ "severity": "critical",
+ "src": {
+  "fetched_at": "2026-11-24T21:36:36Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "d34612d5e86944bbb6a149256af4fc0b6a2e0e27c0085bb35470a2ced945d639",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "ruflo MCP bridge allows unauthenticated remote code execution in default Docker Compose deployments",
+ "type": "ghsa",
+ "updated": "2026-11-24T21:01:11Z",
+ "withdrawn": false
+}

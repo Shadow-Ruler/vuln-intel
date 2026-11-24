@@ -1,0 +1,27 @@
+{
+ "cve": "",
+ "first_seen": "2026-11-24T21:37:44Z",
+ "id": "GHSA-jrxj-9mhw-55wc",
+ "packages": [
+  {
+   "ecosystem": "composer",
+   "name": "wwbn/avideo",
+   "patched": "29.1.0",
+   "range": "< 29.1.0"
+  }
+ ],
+ "published": "2026-07-16T15:33:10Z",
+ "severity": "critical",
+ "src": {
+  "fetched_at": "2026-11-24T21:36:36Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "d34612d5e86944bbb6a149256af4fc0b6a2e0e27c0085bb35470a2ced945d639",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Duplicate Advisory: AVideo API FFmpeg process permits OS command injection via notifyCode/callback",
+ "type": "ghsa",
+ "updated": "2026-11-24T20:52:51Z",
+ "withdrawn": true
+}

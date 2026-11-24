@@ -1,0 +1,27 @@
+{
+ "cve": "",
+ "first_seen": "2026-11-24T21:37:44Z",
+ "id": "GHSA-jp3c-6v3g-mpxv",
+ "packages": [
+  {
+   "ecosystem": "go",
+   "name": "github.com/insomniacslk/dhcp",
+   "patched": "0.0.0-20260719225207-c76316d4aa82",
+   "range": ">= 0.0.0-20190522091526-5dce45b2b680, < 0.0.0-20260719225207-c76316d4aa82"
+  }
+ ],
+ "published": "2026-11-24T21:13:37Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-24T21:36:36Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "d34612d5e86944bbb6a149256af4fc0b6a2e0e27c0085bb35470a2ced945d639",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "github.com/insomniacslk/dhcp permits denial of service through a malformed IPv4 payload length",
+ "type": "ghsa",
+ "updated": "2026-11-24T21:13:37Z",
+ "withdrawn": false
+}

@@ -1,0 +1,33 @@
+{
+ "cve": "CVE-2026-59818",
+ "first_seen": "2026-11-24T21:37:44Z",
+ "id": "GHSA-3wh4-j44w-pg92",
+ "packages": [
+  {
+   "ecosystem": "go",
+   "name": "go.etcd.io/etcd/v3",
+   "patched": "3.5.32",
+   "range": "< 3.5.32"
+  },
+  {
+   "ecosystem": "go",
+   "name": "go.etcd.io/etcd/v3",
+   "patched": "3.6.13",
+   "range": ">= 3.6.0-alpha.0, < 3.6.13"
+  }
+ ],
+ "published": "2026-11-24T21:09:38Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-24T21:36:36Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "d34612d5e86944bbb6a149256af4fc0b6a2e0e27c0085bb35470a2ced945d639",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "etcd: CRL enforcement bypass on gRPC listener when `--listen-client-http-urls` is configured",
+ "type": "ghsa",
+ "updated": "2026-11-24T21:09:39Z",
+ "withdrawn": false
+}
