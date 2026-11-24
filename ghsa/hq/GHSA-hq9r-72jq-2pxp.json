@@ -1,0 +1,33 @@
+{
+ "cve": "CVE-2026-59191",
+ "first_seen": "2026-11-24T23:31:30Z",
+ "id": "GHSA-hq9r-72jq-2pxp",
+ "packages": [
+  {
+   "ecosystem": "composer",
+   "name": "cakephp/twig-view",
+   "patched": "1.3.3",
+   "range": "< 1.3.3"
+  },
+  {
+   "ecosystem": "composer",
+   "name": "cakephp/twig-view",
+   "patched": "2.1.2",
+   "range": ">= 2.0.0, < 2.1.2"
+  }
+ ],
+ "published": "2026-11-24T22:39:23Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-24T23:30:29Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "e81bcb3c2e0a729d9bbb91e306e686f8dd789b9aef8191c3f8a16f0f1e894571",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "TwigView FileLoader may allow arbitrary file reads through user-controlled template paths",
+ "type": "ghsa",
+ "updated": "2026-11-24T22:39:23Z",
+ "withdrawn": false
+}

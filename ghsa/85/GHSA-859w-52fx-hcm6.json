@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2026-64855",
+ "first_seen": "2026-11-24T23:31:30Z",
+ "id": "GHSA-859w-52fx-hcm6",
+ "packages": [
+  {
+   "ecosystem": "pip",
+   "name": "soapbar",
+   "patched": "0.13.0",
+   "range": "< 0.13.0"
+  }
+ ],
+ "published": "2026-11-24T22:41:44Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-24T23:30:29Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "e81bcb3c2e0a729d9bbb91e306e686f8dd789b9aef8191c3f8a16f0f1e894571",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "soapbar: verify_envelope_bsp accepts an unauthenticated embedded certificate (signature forgery / authentication bypass)",
+ "type": "ghsa",
+ "updated": "2026-11-24T22:41:47Z",
+ "withdrawn": false
+}
