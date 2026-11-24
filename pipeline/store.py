@@ -31,6 +31,9 @@ COVERAGE_PER_CVE = 20
 EXPLOIT_KINDS = ("metasploit", "exploitdb")   # working exploit code, as opposed to scanner templates or rules
 FIX_ROWS_PER_VENDOR = 80
 COVERAGE_RECENT_DAYS = 14
+# More newly covered CVEs than this in one refresh is a list being re-indexed
+# (Exploit-DB gained 2,837 at once on 23 November 2026), not that many new exploits.
+COVERAGE_BURST = 300
 
 
 def _without_fetch_time(obs: Dict[str, Any]) -> Dict[str, Any]:
@@ -91,17 +94,20 @@ def _apply_coverage(data_dir: str, coverage: Dict[str, Dict[str, set]], day: str
             continue
         if new == old:
             continue
-        if old:  # not on the first load, when everything would look new
-            for cve in new:
-                if cve not in old:
-                    entry = recent.get(cve) if isinstance(recent.get(cve), dict) else {"kinds": []}
-                    entry["day"] = day
-                    entry["kinds"] = sorted(set(entry.get("kinds", [])) | {kind})
-                    if kind in EXPLOIT_KINDS and cve not in had_exploit:
-                        # Its first exploit code ever, not just a second listing
-                        # or a new scanner template for a long-known exploit.
-                        entry["first_exploit"] = True
-                    recent[cve] = entry
+        added = [cve for cve in new if cve not in old] if old else []  # on the first load everything would look new
+        if len(added) > COVERAGE_BURST:
+            # Stored like any other snapshot, but nothing in it is called news.
+            stats["coverage_bursts"] = stats.get("coverage_bursts", 0) + 1
+            added = []
+        for cve in added:
+            entry = recent.get(cve) if isinstance(recent.get(cve), dict) else {"kinds": []}
+            entry["day"] = day
+            entry["kinds"] = sorted(set(entry.get("kinds", [])) | {kind})
+            if kind in EXPLOIT_KINDS and cve not in had_exploit:
+                # Its first exploit code ever, not just a second listing
+                # or a new scanner template for a long-known exploit.
+                entry["first_exploit"] = True
+            recent[cve] = entry
         _write_table(path, new)
         stats["coverage"] += 1
     cutoff = (now - dt.timedelta(days=COVERAGE_RECENT_DAYS)).strftime("%Y-%m-%d")

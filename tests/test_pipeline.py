@@ -673,6 +673,26 @@ class CoverageTests(unittest.TestCase):
                 "CVE-2099-0009": {"day": "2099-01-04", "kinds": ["metasploit"], "first_exploit": True},
             })
 
+    def test_a_re_indexed_list_is_stored_but_not_called_news(self):
+        def obs(n):
+            return {"type": "coverage", "kind": "exploitdb", "cve": "CVE-2099-%05d" % n, "ident": str(n),
+                    "title": "T", "note": ""}
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "coverage", "exploitdb.json")
+            recent = os.path.join(tmp, "coverage", "recent.json")
+            store.apply(tmp, [obs(n) for n in range(1000)], NOW)
+            # One refresh adds far more CVEs than a day of new exploits could.
+            stats = store.apply(tmp, [obs(n) for n in range(1000 + store.COVERAGE_BURST + 1)], NOW)
+            self.assertEqual(stats["coverage_bursts"], 1)
+            self.assertEqual(len(common.read_json(path, {})), 1000 + store.COVERAGE_BURST + 1)
+            self.assertEqual(common.read_json(recent, None), {})
+            # An ordinary day afterwards is noted as usual.
+            stats = store.apply(tmp, [obs(n) for n in range(1000 + store.COVERAGE_BURST + 3)], NOW)
+            self.assertNotIn("coverage_bursts", stats)
+            self.assertEqual(sorted(common.read_json(recent, {})), ["CVE-2099-01301", "CVE-2099-01302"])
+            self.assertTrue(all(entry.get("first_exploit") for entry in common.read_json(recent, {}).values()))
+
     def test_bulk_sources_are_stored_apart_and_still_parsed(self):
         data = b'{"ID":"CVE-2099-0001","Info":{"Name":"Acme"},"file_path":"http/cves/2099/CVE-2099-0001.yaml"}\n'
         src = {"id": "nuclei-index", "role": "coverage", "bulk": True}
