@@ -11,8 +11,8 @@
   "sha256": "317be06e21a2044465b79c40791dcdfa72821c0043816c68f48bcc0c1019f9aa"
  },
  "bleepingcomputer": {
-  "etag": "ac010f820d653a5e385fb929a92d5dc0",
-  "sha256": "d70ca39a9f2b1acaf4d03d3f62656194873e49e58c7df4eca90b0b45bbcd9839"
+  "etag": "6770617deec8e2e72979fa3b25dc9598",
+  "sha256": "22ad4f5ffb0e7c6b31239b9e5d73345d5e37020135d1551ec56bbb95bb5d9259"
  },
  "cert-fr": {
   "etag": "\"799b658519101d49aa53fd150fc2c58f\"",
@@ -28,14 +28,14 @@
   "sha256": "e65530b16bc2b27fd6cb7cef3146acd1e478478a94cb3be8bc0d0b0550f486e9"
  },
  "cisco": {
-  "sha256": "d8c98b92457e455d27bcae5c37e50bd1afd6e9b8ba986ebddfe07da0e9407e82"
+  "sha256": "6e7b837a20adcc726f520395ddb02269bc1096db1dc73ec9040a5e93b357c802"
  },
  "cvelist": {
   "fetch_time": "2026-11-24T19:36:55Z"
  },
  "debian": {
-  "etag": "\"400a-66100a20ea917;66100ee2ae593",
-  "sha256": "a5ac39dd07e8c7c7423a7870cd0f1c192b4577d098d9dc5c3752ed7387860e41"
+  "etag": "\"3ff8-6610ab1b38b6e;6610b0258be2b",
+  "sha256": "21506dacc84c35247826183f8b44c356deb2a0ac6fe92878c00150480cf66f04"
  },
  "debian-lts": {
   "etag": "\"3f33-660f693dc709f-gzip\"",
@@ -2478,21 +2478,21 @@
   }
  },
  "fortinet": {
-  "etag": "\"6b05e5bf-c705\"",
-  "sha256": "7c211bc7c85c4647ebd86ca6ff6e6387e38605f98cc055f5fcd4abc9690fc934"
+  "etag": "\"6b05ecc6-c705\"",
+  "sha256": "dc9c422b76c4a43023ec298ea32c08811c0d8a1a958a588f64bf0e254d2d78f6"
  },
  "ghsa": {
   "etag": "W/\"5e6e189b6e9cd3476c53059cae7fc629aeaaf62da1659f25fd9cddb8b2afb64c\"",
   "sha256": "b9baffc8787c5717ffa8bac6806f67b72e911cf51e0d176b688fc5201293920a"
  },
  "hn-cve": {
-  "sha256": "7fd5cb4a61a73c5855900f303fb97206b58e367ee3b2eed2468b83cdfca94f74"
+  "sha256": "a89897679c38c29def95fb95a12d269fafd77879f87c3583d4d254726a2600ef"
  },
  "hn-rce": {
-  "sha256": "950fa20b4989908df4d058448931c3a01be9d01e33c09df0d65e35a32942f581"
+  "sha256": "86e521afdde141ba8f2acb5e109929c1953c5bbdcddc26f09edd4588c55c7ea0"
  },
  "hn-vuln": {
-  "sha256": "0afc3f3286f0df626faedbf02953d14e7af2af4d335da844b1a3ef54b6878be2"
+  "sha256": "ae58068600902daa3ef30ca4ee9a80d11793048f742b56b5221540c086aeb60c"
  },
  "kev": {
   "etag": "W/\"b9b13938b195425fccaf22c5380df356fecb82a13e07a37656d8b31dd4483223\"",
@@ -2507,8 +2507,8 @@
   "sha256": "9e03a3c416a91bf944bbb35de28b26a566e12a239aa58d9eb583de0ed5a3452c"
  },
  "msrc": {
-  "etag": "\"0x8DF49AB16522EAD\"",
-  "sha256": "767dbf15d5820cb9e7ec4171f36b3c3e5e59d28241da3a37c1be226f4c20ae75"
+  "etag": "\"0x8DF4A66A27D8FCE\"",
+  "sha256": "0a16199e281ccf5fa8685db28128b6b508c85c5c1b1a6c623f74cd73dbb57a1a"
  },
  "nginx": {
   "etag": "\"6b045cd4-70e\"",
@@ -2523,8 +2523,8 @@
   "sha256": "ee92f4bea84a04eff518812689850a49fe90df2e8f7e653dd9cdcd5e20fabc36"
  },
  "paloalto": {
-  "etag": "W/\"20fe-8JpqqElKX+o3DpqDNUEBV5q7qzQ\"",
-  "sha256": "1a295167c1224377f7dbb9ec5be3b1e82889ffc575f09fa6a7e8030b1698abdd"
+  "etag": "W/\"2102-68NmX31Q0K+F52qAiQ9sxMjMZ6Y\"",
+  "sha256": "4f73a919b9fbd342db16749cdb39e0ea0c6a170673a85a706a68f1ae34678f2b"
  },
  "php": {
   "etag": "W/\"172c8c-660e54d16e7ee\"",
@@ -2534,8 +2534,8 @@
   "sha256": "ecf026ea9d56582dea7f759e9429c9f45615fbc4a48cd414761c6da75b5b2608"
  },
  "redhat": {
-  "etag": "W/\"f40df5c6b9d4e1982180ed61b4afd360\"",
-  "sha256": "0b48298553c24ad95c7ba3bb7f9a7915500555b29915fb9b0fa67d3b225d53c5"
+  "etag": "W/\"96559d6af2a671158a3c6ffaa114a60b\"",
+  "sha256": "ef747f75c17f8570256da7ed0ff12b90ba368287d537b04c74df6cef825e9c07"
  },
  "sigma": {
   "etag": "W/\"bc58ec5a52f1ccf4f2dac18db7a159b715703e75defae06f647974562c83be98\"",
@@ -2546,10 +2546,10 @@
   "sha256": "99b8212bf087507d9bc50e64ef91ecec27d65c70f60bc8fce1095f11d3314a11"
  },
  "thehackernews": {
-  "sha256": "8a5262635d47e29e6a73b061fff335a1adad85c7d0569099fae5c727a188baa4"
+  "sha256": "6b96aabf8e6ab2cefb099842f397887b71105b5bcb6ca29fca06f7f53d1b5d13"
  },
  "ubuntu": {
-  "sha256": "b61446f2fb8952bf722582d7a0d1607f602e4675006feb4885a52e148a186e4d"
+  "sha256": "42b3fd92df88edb6b4cb82ad37f0911da5735a591bf0405bb857cdc92bc93712"
  },
  "unit42": {
   "etag": "\"93d3fa334822df212e071477a6c85cf8-gzip\"",
