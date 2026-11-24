@@ -2616,6 +2616,7 @@
 "CVE-2023-4974":{"kinds":["exploitdb"],"day":"2026-11-23"},
 "CVE-2023-4987":{"kinds":["exploitdb"],"day":"2026-11-23"},
 "CVE-2023-49976":{"kinds":["exploitdb"],"day":"2026-11-23"},
+"CVE-2023-50071":{"kinds":["exploitdb"],"day":"2026-11-24","first_exploit":true},
 "CVE-2023-51951":{"kinds":["exploitdb"],"day":"2026-11-23"},
 "CVE-2023-53734":{"kinds":["exploitdb"],"day":"2026-11-23"},
 "CVE-2023-53739":{"kinds":["exploitdb"],"day":"2026-11-23"},
