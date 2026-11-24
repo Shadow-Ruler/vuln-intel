@@ -34,9 +34,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-24T00:39:51Z",
-   "last_change": "2026-11-24T00:39:51Z",
-   "last_ok": "2026-11-24T00:39:51Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
+   "last_change": "2026-11-24T00:54:02Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "trend",
    "status": "ok"
   },
@@ -152,21 +152,21 @@
   },
   "fix-debian": {
    "consecutive_errors": 0,
-   "detail": "0 found, 15 not tracked by this vendor, 0 failed",
+   "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-23T23:57:04Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
    "last_change": "2026-11-23T22:03:17Z",
-   "last_ok": "2026-11-23T23:57:04Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "fixes",
    "status": "unchanged"
   },
   "fix-redhat": {
    "consecutive_errors": 0,
-   "detail": "0 found, 15 not tracked by this vendor, 0 failed",
+   "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-23T23:57:04Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
    "last_change": "2026-11-23T22:03:17Z",
-   "last_ok": "2026-11-23T23:57:04Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "fixes",
    "status": "unchanged"
   },
@@ -204,9 +204,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-24T00:39:51Z",
-   "last_change": "2026-11-24T00:39:51Z",
-   "last_ok": "2026-11-24T00:39:51Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
+   "last_change": "2026-11-24T00:54:02Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "trend",
    "status": "ok"
   },
@@ -214,9 +214,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-24T00:39:51Z",
-   "last_change": "2026-11-24T00:39:51Z",
-   "last_ok": "2026-11-24T00:39:51Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
+   "last_change": "2026-11-24T00:54:02Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "trend",
    "status": "ok"
   },
@@ -224,9 +224,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-24T00:39:51Z",
-   "last_change": "2026-11-24T00:39:51Z",
-   "last_ok": "2026-11-24T00:39:51Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
+   "last_change": "2026-11-24T00:54:02Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "trend",
    "status": "ok"
   },
@@ -294,9 +294,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-24T00:39:51Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
    "last_change": "2026-11-23T23:42:53Z",
-   "last_ok": "2026-11-24T00:39:51Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -324,9 +324,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-24T00:39:51Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
    "last_change": "2026-11-23T14:27:45Z",
-   "last_ok": "2026-11-24T00:39:51Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -354,9 +354,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-24T00:39:51Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
    "last_change": "2026-11-23T18:15:26Z",
-   "last_ok": "2026-11-24T00:39:51Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -364,11 +364,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-24T00:39:51Z",
-   "last_change": "2026-11-23T23:57:04Z",
-   "last_ok": "2026-11-24T00:39:51Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
+   "last_change": "2026-11-24T00:54:02Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "trend",
-   "status": "unchanged"
+   "status": "ok"
   },
   "ubuntu": {
    "consecutive_errors": 0,
@@ -384,9 +384,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-24T00:39:51Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
    "last_change": "2026-11-22T04:24:51Z",
-   "last_ok": "2026-11-24T00:39:51Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -394,9 +394,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-24T00:39:51Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
    "last_change": "2026-11-23T14:13:26Z",
-   "last_ok": "2026-11-24T00:39:51Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -404,11 +404,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-24T00:39:51Z",
-   "last_change": "2026-11-23T23:57:04Z",
-   "last_ok": "2026-11-24T00:39:51Z",
+   "last_attempt": "2026-11-24T00:54:02Z",
+   "last_change": "2026-11-24T00:54:02Z",
+   "last_ok": "2026-11-24T00:54:02Z",
    "role": "trend",
-   "status": "unchanged"
+   "status": "ok"
   },
   "zdi": {
    "consecutive_errors": 0,
@@ -421,5 +421,5 @@
    "status": "ok"
   }
  },
- "updated": "2026-11-24T00:40:28Z"
+ "updated": "2026-11-24T00:54:44Z"
 }
