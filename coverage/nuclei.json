@@ -4194,6 +4194,7 @@
 "CVE-2026-124027":[["http/cves/2026/CVE-2026-124027.yaml","ChatWiki < 2.10.0 - Cross-Tenant Document Page Disclosure","high"]],
 "CVE-2026-124450":[["http/cves/2026/CVE-2026-124450.yaml","OpenEMR FaxSMS Module - Authenticated Arbitrary File Read via disposeDocument","high"]],
 "CVE-2026-125357":[["http/cves/2026/CVE-2026-125357.yaml","Munin munin-httpd 2.99.1-2.999.18 - Unauthenticated Path Traversal","medium"]],
+"CVE-2026-125444":[["http/cves/2026/CVE-2026-125444.yaml","King Addons for Elementor <= 51.1.87 - Unauthenticated Arbitrary Widget Rendering via Faceted Filters AJAX","medium"]],
 "CVE-2026-12583":[["http/cves/2026/CVE-2026-12583.yaml","Newsletters < 4.15 - Unauthenticated PHP Object Injection via Subscriber Custom Field","high"]],
 "CVE-2026-12592":[["http/cves/2026/CVE-2026-12592.yaml","SlimStat Analytics < 5.5.0 - Unauthenticated Stored XSS via CF-IPCountry Header","high"]],
 "CVE-2026-12609":[["http/cves/2026/CVE-2026-12609.yaml","Eclipse Theia - Unauthenticated Path Traversal","high"]],
