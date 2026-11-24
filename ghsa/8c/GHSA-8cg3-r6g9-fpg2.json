@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2026-59831",
+ "first_seen": "2026-11-24T22:34:11Z",
+ "id": "GHSA-8cg3-r6g9-fpg2",
+ "packages": [
+  {
+   "ecosystem": "go",
+   "name": "github.com/cli/cli/v2",
+   "patched": "2.96.0",
+   "range": ">= 2.10.0, < 2.96.0"
+  }
+ ],
+ "published": "2026-11-24T22:26:25Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-24T22:33:26Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "f7081efbc06620efafe0d7d603cc56112df20389cb166b03245ce7995d9a7191",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "GitHub CLI gh codespace jupyter may allow code execution via unvalidated URLs from malicious Codespaces",
+ "type": "ghsa",
+ "updated": "2026-11-24T22:26:26Z",
+ "withdrawn": false
+}

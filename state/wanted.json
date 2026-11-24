@@ -1,52 +1,8 @@
 {
- "CVE-2025-15716": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2025-60037": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-100968": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-102448": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
  "CVE-2026-113627": {
   "checked": "2026-11-21T16:28:49Z",
   "since": "2026-11-21T16:27:54Z",
   "status": "missing"
- },
- "CVE-2026-114202": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-114204": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-114205": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-114822": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-114849": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-114850": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-114934": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
  },
  "CVE-2026-116021": {
   "checked": "2026-11-23T01:25:19Z",
@@ -74,28 +30,34 @@
   "status": "missing"
  },
  "CVE-2026-131814": {
+  "checked": "2026-11-24T22:34:11Z",
   "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-131815": {
+  "checked": "2026-11-24T22:34:11Z",
   "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-131816": {
+  "checked": "2026-11-24T22:34:11Z",
   "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-131817": {
+  "checked": "2026-11-24T22:34:11Z",
   "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-131818": {
+  "checked": "2026-11-24T22:34:11Z",
   "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-131819": {
+  "checked": "2026-11-24T22:34:11Z",
   "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-131827": {
   "checked": "2026-11-24T21:37:44Z",
@@ -158,58 +120,39 @@
   "status": "missing"
  },
  "CVE-2026-133989": {
+  "checked": "2026-11-24T22:34:11Z",
   "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-133991": {
+  "checked": "2026-11-24T22:34:11Z",
   "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-133992": {
+  "checked": "2026-11-24T22:34:11Z",
   "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-133994": {
+  "checked": "2026-11-24T22:34:11Z",
   "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-133995": {
+  "checked": "2026-11-24T22:34:11Z",
   "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-135901": {
   "checked": "2026-11-24T18:46:59Z",
   "since": "2026-11-24T17:48:56Z",
   "status": "missing"
  },
- "CVE-2026-24182": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
  "CVE-2026-45110": {
   "checked": "2026-11-21T17:33:02Z",
   "since": "2026-11-21T17:31:40Z",
   "status": "missing"
- },
- "CVE-2026-47552": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-47588": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-47591": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-47597": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-47602": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
  },
  "CVE-2026-48841": {
   "checked": "2026-11-21T17:33:02Z",
@@ -221,62 +164,10 @@
   "since": "2026-11-24T18:46:59Z",
   "status": "missing"
  },
- "CVE-2026-61752": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-61753": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-61754": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-65101": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-65103": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-65111": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-65161": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-65170": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
  "CVE-2026-71482": {
   "checked": "2026-11-21T17:33:02Z",
   "since": "2026-11-21T17:31:40Z",
   "status": "missing"
- },
- "CVE-2026-91457": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-91458": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-91459": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-91460": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
- },
- "CVE-2026-91483": {
-  "since": "2026-11-24T21:37:44Z",
-  "status": "pending"
  },
  "CVE-2026-97727": {
   "checked": "2026-11-21T17:31:40Z",
