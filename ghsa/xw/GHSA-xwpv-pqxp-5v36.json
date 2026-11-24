@@ -1,0 +1,33 @@
+{
+ "cve": "CVE-2026-84307",
+ "first_seen": "2026-11-24T18:46:59Z",
+ "id": "GHSA-xwpv-pqxp-5v36",
+ "packages": [
+  {
+   "ecosystem": "composer",
+   "name": "filament/filament",
+   "patched": "4.12.5",
+   "range": ">= 4.0.0, < 4.12.5"
+  },
+  {
+   "ecosystem": "composer",
+   "name": "filament/filament",
+   "patched": "5.7.5",
+   "range": ">= 5.0.0, < 5.7.5"
+  }
+ ],
+ "published": "2026-09-01T21:29:00Z",
+ "severity": "low",
+ "src": {
+  "fetched_at": "2026-11-24T18:45:31Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "b9baffc8787c5717ffa8bac6806f67b72e911cf51e0d176b688fc5201293920a",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Filament: Password validity disclosure for accounts denied panel access on login page",
+ "type": "ghsa",
+ "updated": "2026-11-24T17:58:08Z",
+ "withdrawn": false
+}
