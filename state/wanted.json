@@ -14,10 +14,6 @@
   "since": "2026-11-22T14:02:55Z",
   "status": "missing"
  },
- "CVE-2026-119055": {
-  "since": "2026-11-24T15:55:26Z",
-  "status": "pending"
- },
  "CVE-2026-120502": {
   "checked": "2026-11-24T00:12:35Z",
   "since": "2026-11-23T23:43:39Z",
@@ -39,12 +35,9 @@
   "status": "missing"
  },
  "CVE-2026-127280": {
+  "checked": "2026-11-24T16:52:35Z",
   "since": "2026-11-24T15:55:26Z",
-  "status": "pending"
- },
- "CVE-2026-129713": {
-  "since": "2026-11-24T15:55:26Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-129959": {
   "checked": "2026-11-24T12:06:59Z",
