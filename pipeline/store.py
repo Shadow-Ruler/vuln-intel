@@ -28,6 +28,7 @@ from . import common
 NEWS_MAX_AGE_DAYS = 7
 NEWS_SEEN_KEEP_DAYS = 60
 COVERAGE_PER_CVE = 20
+EXPLOIT_KINDS = ("metasploit", "exploitdb")   # working exploit code, as opposed to scanner templates or rules
 FIX_ROWS_PER_VENDOR = 80
 COVERAGE_RECENT_DAYS = 14
 
@@ -74,6 +75,11 @@ def _apply_coverage(data_dir: str, coverage: Dict[str, Dict[str, set]], day: str
     recent_path = os.path.join(data_dir, "coverage", "recent.json")
     recent = common.read_json(recent_path, {})
     recent = recent if isinstance(recent, dict) else {}
+    # What exploit code each CVE had before this run, across both exploit lists.
+    had_exploit = set()
+    for exploit_kind in EXPLOIT_KINDS:
+        before = common.read_json(os.path.join(data_dir, "coverage", exploit_kind + ".json"), {})
+        had_exploit.update(before if isinstance(before, dict) else {})
     for kind, found in coverage.items():
         path = os.path.join(data_dir, "coverage", kind + ".json")
         old = common.read_json(path, {})
@@ -91,6 +97,10 @@ def _apply_coverage(data_dir: str, coverage: Dict[str, Dict[str, set]], day: str
                     entry = recent.get(cve) if isinstance(recent.get(cve), dict) else {"kinds": []}
                     entry["day"] = day
                     entry["kinds"] = sorted(set(entry.get("kinds", [])) | {kind})
+                    if kind in EXPLOIT_KINDS and cve not in had_exploit:
+                        # Its first exploit code ever, not just a second listing
+                        # or a new scanner template for a long-known exploit.
+                        entry["first_exploit"] = True
                     recent[cve] = entry
         _write_table(path, new)
         stats["coverage"] += 1

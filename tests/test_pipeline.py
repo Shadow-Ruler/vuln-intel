@@ -649,6 +649,30 @@ class CoverageTests(unittest.TestCase):
             store.apply(tmp, [obs("CVE-2099-0001"), obs("CVE-2099-0002"), obs("CVE-2099-0003")], later)
             self.assertEqual(common.read_json(recent, None), {})          # the note expires
 
+    def test_recent_notes_whether_exploit_code_is_a_first(self):
+        def obs(kind, cve, ident="1"):
+            return {"type": "coverage", "kind": kind, "cve": cve, "ident": ident, "title": "T", "note": ""}
+
+        with tempfile.TemporaryDirectory() as tmp:
+            recent = os.path.join(tmp, "coverage", "recent.json")
+            # First load of each list: nothing is new.
+            store.apply(tmp, [obs("metasploit", "CVE-2099-0001", "modules/a.rb"), obs("exploitdb", "CVE-2099-0002"),
+                              obs("nuclei", "CVE-2099-0003", "http/a.yaml")], NOW)
+            self.assertEqual(common.read_json(recent, None), {})
+            store.apply(tmp, [
+                obs("metasploit", "CVE-2099-0001", "modules/a.rb"),
+                obs("metasploit", "CVE-2099-0002", "modules/b.rb"),   # already had an Exploit-DB entry
+                obs("metasploit", "CVE-2099-0009", "modules/c.rb"),   # its first exploit code ever
+                obs("exploitdb", "CVE-2099-0002"),
+                obs("nuclei", "CVE-2099-0003", "http/a.yaml"),
+                obs("nuclei", "CVE-2099-0001", "http/b.yaml"),        # a scanner template for a known exploit
+            ], NOW)
+            self.assertEqual(common.read_json(recent, {}), {
+                "CVE-2099-0001": {"day": "2099-01-04", "kinds": ["nuclei"]},
+                "CVE-2099-0002": {"day": "2099-01-04", "kinds": ["metasploit"]},
+                "CVE-2099-0009": {"day": "2099-01-04", "kinds": ["metasploit"], "first_exploit": True},
+            })
+
     def test_bulk_sources_are_stored_apart_and_still_parsed(self):
         data = b'{"ID":"CVE-2099-0001","Info":{"Name":"Acme"},"file_path":"http/cves/2099/CVE-2099-0001.yaml"}\n'
         src = {"id": "nuclei-index", "role": "coverage", "bulk": True}

@@ -1,0 +1,46 @@
+name: watchdog
+
+# A second, slower chain whose only job is to restart the relay if it has
+# stopped. It keeps itself going the same way the relay does, and the relay
+# restarts it in turn, so the pipeline stops only if both chains break within
+# the same half hour.
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: watchdog
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    environment: timer-watchdog
+    permissions:
+      actions: write
+    steps:
+      - name: Hand over to the next watchdog run, then check the relay
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          retry() { for n in 1 2 3 4 5; do "$@" && return 0; sleep $((n * 6)); done; return 1; }
+          queued() {
+            gh run list --repo "$GITHUB_REPOSITORY" --workflow "$1" --limit 30 --json databaseId,status \
+              --jq "[.[] | select(.status != \"completed\" and .status != \"in_progress\" and .databaseId != ${GITHUB_RUN_ID})] | length"
+          }
+          next=$(queued watchdog.yml); echo "watchdog ticks already queued: ${next:-unknown}"
+          if [ "${next:-0}" -eq 0 ]; then
+            retry gh workflow run watchdog.yml --repo "$GITHUB_REPOSITORY" --ref main \
+              || echo "::error::could not hand over to the next watchdog run"
+          fi
+          relay=$(queued relay.yml); echo "relay ticks queued: ${relay:-unknown}"
+          if [ "${relay:-1}" -eq 0 ]; then
+            echo "::warning::the relay had stopped; restarting it"
+            retry gh workflow run relay.yml --repo "$GITHUB_REPOSITORY" --ref main \
+              || echo "::error::could not restart the relay"
+          fi
+          exit 0

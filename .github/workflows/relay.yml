@@ -2,14 +2,18 @@ name: relay
 
 # The pipeline's own clock.
 #
-# GitHub's `schedule` trigger does not fire reliably in new repositories, so
-# collection does not depend on it. Each relay run waits (the `timer`
-# environment has a wait timer, and waiting costs nothing), then starts a
-# collection and the next relay run. One run hands over to the next, so there
-# is always exactly one waiting.
+# GitHub's `schedule` trigger is not reliable here, so collection does not
+# depend on it. Each relay run waits (the `timer` environment has a wait timer,
+# and waiting costs nothing), then hands over to the next relay run and starts
+# a collection. One run hands over to the next, so one is always waiting.
 #
-# If the chain ever breaks, any collect run restarts it (see `ensure-relay` in
-# collect.yml), as does starting this workflow by hand.
+# What keeps the chain alive:
+#   - The hand-over comes first and is retried. Starting the collection comes
+#     second, and its failure cannot stop the hand-over. (On 24 Nov 2026 a
+#     single HTTP 502 on the collection dispatch stopped the chain for ten hours.)
+#   - watchdog.yml is a second, slower chain. Each restarts the other.
+#   - Every collect run restarts the relay if no tick is queued.
+#   - Starting this workflow by hand restarts everything. Extra chains merge.
 
 on:
   workflow_dispatch:
@@ -23,22 +27,39 @@ concurrency:
 jobs:
   tick:
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 8
     environment: timer
     permissions:
       actions: write
     steps:
-      - name: Start a collection and hand over to the next relay run
+      - name: Hand over to the next relay run, then start a collection
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh workflow run collect.yml --repo "$GITHUB_REPOSITORY" --ref main
-          # Hand over only if no other relay run is already waiting, so two
-          # chains started by accident merge back into one.
-          others=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow relay.yml --limit 30 \
-            --json databaseId,status \
-            --jq "[.[] | select(.status != \"completed\" and .databaseId != ${GITHUB_RUN_ID})] | length")
-          echo "other relay runs waiting: ${others}"
-          if [ "${others}" -eq 0 ]; then
-            gh workflow run relay.yml --repo "$GITHUB_REPOSITORY" --ref main
+          set +e
+          retry() { for n in 1 2 3 4 5; do "$@" && return 0; sleep $((n * 6)); done; return 1; }
+          # Runs of a workflow that have not started their work yet: a future tick.
+          queued() {
+            gh run list --repo "$GITHUB_REPOSITORY" --workflow "$1" --limit 30 --json databaseId,status \
+              --jq "[.[] | select(.status != \"completed\" and .status != \"in_progress\" and .databaseId != ${GITHUB_RUN_ID})] | length"
+          }
+
+          # 1. The hand-over. If the count cannot be read, hand over anyway:
+          #    a spare chain merges back, a missing one does not come back.
+          next=$(queued relay.yml); echo "relay ticks already queued: ${next:-unknown}"
+          if [ "${next:-0}" -eq 0 ]; then
+            retry gh workflow run relay.yml --repo "$GITHUB_REPOSITORY" --ref main \
+              || echo "::error::could not hand over to the next relay run"
           fi
+
+          # 2. The collection.
+          retry gh workflow run collect.yml --repo "$GITHUB_REPOSITORY" --ref main \
+            || echo "::warning::could not start a collection this tick"
+
+          # 3. Make sure the watchdog chain is alive.
+          dog=$(queued watchdog.yml); echo "watchdog ticks queued: ${dog:-unknown}"
+          if [ "${dog:-1}" -eq 0 ]; then
+            retry gh workflow run watchdog.yml --repo "$GITHUB_REPOSITORY" --ref main \
+              || echo "::warning::could not restart the watchdog"
+          fi
+          exit 0

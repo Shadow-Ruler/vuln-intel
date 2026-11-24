@@ -12,7 +12,13 @@ GitHub's `schedule` trigger did not fire at all in this repository after it was 
 2. It then starts a `collect` run and the next relay run, and finishes.
 3. The next relay run waits 14 minutes, and so on. Exactly one is ever waiting.
 
-If the chain breaks, it repairs itself: every `collect` run starts the relay when none is waiting. The cron line in `collect.yml` is kept as an hourly safety net for the day GitHub's trigger works. To restart everything by hand, run the `relay` workflow once from the Actions tab. Starting it twice is harmless; extra chains merge back into one.
+Three things keep the chain alive:
+
+- The hand-over to the next relay run comes first and is retried five times; starting the collection comes second and cannot stop the hand-over. On 24 November 2026 a single HTTP 502 from GitHub's API on the collection dispatch stopped the chain for almost ten hours, which is why the order matters.
+- `watchdog.yml` is a second, slower chain (30-minute timer). It restarts the relay if no relay tick is queued, and the relay restarts the watchdog. The pipeline stops only if both break within the same half hour.
+- Every `collect` run restarts either chain if no tick of it is queued. The cron line in `collect.yml` is an hourly safety net; GitHub fires it irregularly, a few times a day.
+
+To restart everything by hand, run the `relay` workflow once from the Actions tab. Starting it twice is harmless; extra chains merge back into one.
 
 After every second collection, the `notify-scorer` job pushes an empty commit to the `trigger` branch of the separate scoring repository, which starts a scoring run there about every 30 minutes. Its SSH key and the repository's name are secrets of the `scorer` environment, which only the `main` branch may use.
 

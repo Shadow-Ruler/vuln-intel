@@ -32,17 +32,27 @@ jobs:
     permissions:
       actions: write
     steps:
-      - name: Restart the relay if no run of it is waiting
+      - name: Restart the relay or the watchdog if no tick of it is queued
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          active=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow relay.yml --limit 30 \
-            --json status --jq '[.[] | select(.status != "completed")] | length')
-          echo "relay runs waiting: ${active}"
-          if [ "${active}" -eq 0 ]; then
-            gh workflow run relay.yml --repo "$GITHUB_REPOSITORY" --ref main
-            echo "relay restarted"
-          fi
+          set +e
+          # A relay run that is in the middle of its step does not count: it
+          # may be failing. Only a tick that is still queued proves the chain lives.
+          for chain in relay.yml watchdog.yml; do
+            queued=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow "$chain" --limit 30 \
+              --json status --jq '[.[] | select(.status != "completed" and .status != "in_progress")] | length')
+            echo "${chain}: ticks queued: ${queued:-unknown}"
+            if [ "${queued:-1}" -eq 0 ]; then
+              sleep 20   # give a hand-over that is happening right now time to land
+              queued=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow "$chain" --limit 30 \
+                --json status --jq '[.[] | select(.status != "completed" and .status != "in_progress")] | length')
+              if [ "${queued:-1}" -eq 0 ]; then
+                gh workflow run "$chain" --repo "$GITHUB_REPOSITORY" --ref main && echo "${chain} restarted"
+              fi
+            fi
+          done
+          exit 0
 
   collect:
     runs-on: ubuntu-24.04
