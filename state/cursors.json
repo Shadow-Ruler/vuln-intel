@@ -4,15 +4,15 @@
   "sha256": "9b53d7a681dff1af7dbe7a0a8242757b09d3d1bccaff3026b65a06fc83f09a1a"
  },
  "amazon-linux": {
-  "etag": "\"ff7981eb979beccba3e3836e27e6c98c\"",
-  "sha256": "cd8d4ae325fd9e0813cf298d4a1bb386bbf4ba8800c27e97152c070e9054669c"
+  "etag": "\"90bbc87e117eb7915bc903604c862639\"",
+  "sha256": "2a327e4fc1eb59cfab15829455fb8886d2cbbe36bc78669eb08f76ef47e427d2"
  },
  "archlinux": {
-  "sha256": "d162febfcad02d1f4ad1822ddf7a1d729ff492c07c4506fd46808f15fa6cf78d"
+  "sha256": "febda7a2a4415c0dfc8484461ef29ec4be8890a682182dc673ee0aa3da8632a2"
  },
  "bleepingcomputer": {
-  "etag": "a417eb312b84518d60cca26660339df7",
-  "sha256": "781d581d2a69c996876cb66f6e13cdba8bdbcc2b49fb81133793c26e625f58aa"
+  "etag": "12c78814e536705d651c3896a9e643cb",
+  "sha256": "8656eafeb547437c5d94b4093c93ccae3f5a8645abc0829e534de14cfb56e233"
  },
  "cert-fr": {
   "etag": "\"799b658519101d49aa53fd150fc2c58f\"",
@@ -31,7 +31,7 @@
   "sha256": "8ebf8b3668aac21f503da20b47bbf3dcbfa0f1c590baddd030f15845bd8ef7ff"
  },
  "cvelist": {
-  "fetch_time": "2026-11-25T11:38:43Z"
+  "fetch_time": "2026-11-25T12:43:01Z"
  },
  "debian": {
   "etag": "\"3fe9-6610e0b62e4bb;6610e54a5dfa3",
@@ -2688,29 +2688,29 @@
   }
  },
  "fortinet": {
-  "etag": "\"6b06d14a-c705\"",
-  "sha256": "2f169ad8749b1ad565ed3a7d2de4f283bd244f9e3952eca0d8b52cde3d11af01"
+  "etag": "\"6b06d853-c705\"",
+  "sha256": "ddbbd484032dec890d0f7d348cbbff8157fb02de4101dfde2e789a229d958ae2"
  },
  "ghsa": {
   "etag": "W/\"5dee43837ed06444dfe7ebb8aad40708994a2a3ffc6b4d10e03c8282c8436340\"",
   "sha256": "6ae6b339d17c25cb7ed79cf40d094b5feb4075b540ac5cb0c482033e99b0717a"
  },
  "hn-cve": {
-  "sha256": "bc1042686334d3f8f2b253738d3a8d4bda2396e6d5a921deae5b6027b19dbb0f"
+  "sha256": "7fdc4c59dd73c818ff2f0eaef385f84b06d12504e3b9d091ea6b087a2707a359"
  },
  "hn-rce": {
-  "sha256": "4e24a6e4f73ac30687983c66b6dddaa8705c552fe74c93aac3acaddbbc40efed"
+  "sha256": "d2b11388b918e95d6b4435feca45bf457eb7be88c72c9fc91002bdf62189ae38"
  },
  "hn-vuln": {
-  "sha256": "9021606810f20c5101f36bf5394250838c3a4e4b2be48ab7d888a39d0033b454"
+  "sha256": "21015173b67b9b5db988df6a4b5b16bd6365ee277eeedfdeaadf9c83101b512e"
  },
  "kev": {
   "etag": "W/\"caf3338de08668fc80651363db2a0aed83f65b85dddc5e15286fbe466e8001ca\"",
   "sha256": "17dfaace755c075c10757f20687eaa588181ed9663de80e82936a08ba08e8a1f"
  },
  "kubernetes": {
-  "etag": "W/\"234efdd8f8530b2d9c98388166cefa7e-ssl\"",
-  "sha256": "35a16d136c4d95b9a085b7df51538e55a496dba014ef5101debb18d05aa59f1f"
+  "etag": "W/\"7e9249b94c44c4aea1a4356e3e149d07-ssl\"",
+  "sha256": "24956145f07ac610cdd1996ed4eaf2d40417eb38b104819e5c7686f7578bdc75"
  },
  "metasploit": {
   "etag": "W/\"55a4cdd5ebf0ef4cfca33ab0dee9fc9aceb3e65ac51f9953f52c631c99bde2cf\"",
@@ -2733,19 +2733,19 @@
   "sha256": "c5e5399a5c847332ae48494d474befad28d1490a7f86ddc54c1e390a8bb70949"
  },
  "paloalto": {
-  "etag": "W/\"211c-1R71+100cPI41Fm879dpXWBG2w8\"",
-  "sha256": "b0d69a49c5bba53811a21f06333851848cfffd99f7939befabed5678c0081c55"
+  "etag": "W/\"212f-gHrw8z3ztT9KOKfS9McwCdvzkjA\"",
+  "sha256": "af64dd5fb2a7de064cfb0ef7617837d40a101d120fd8339097fcdfd1401879d2"
  },
  "php": {
   "etag": "W/\"172c8c-6610214552479\"",
   "sha256": "c1d1cf0cd685af53b9a5dc63afc1585bc4b881673a23b11a8d2e91a0c9b2aea6"
  },
  "rapid7": {
-  "sha256": "12ac64c1210ec30030559eb555946ec750724ee8d7a7d0cc2a9631c080c9f56a"
+  "sha256": "45384cdc857ce6a15ae987a8cb0852e71d9c61f3a1d77764e41a52afc8d0dd55"
  },
  "redhat": {
-  "etag": "W/\"291d77b6c6d88d40cc634bb8545d3aaa\"",
-  "sha256": "5daf052ebd085ddcea8a94c5d23325a3f441ff63f898c23652d58d43731e9521"
+  "etag": "W/\"ab38b88a0df198bd8f4fc1329d759f3c\"",
+  "sha256": "b8cb620b98fa3cded31b0a779e82bce23d23298f41436df693db93561e347b5f"
  },
  "sigma": {
   "etag": "W/\"bc58ec5a52f1ccf4f2dac18db7a159b715703e75defae06f647974562c83be98\"",
@@ -2759,7 +2759,7 @@
   "sha256": "d408bd92be7b27d667ab71e4d3fff62494b9a34b5809c94aa86024793c4cc164"
  },
  "ubuntu": {
-  "sha256": "0930e690193c0b532c8fa326f706f1c3ae0fdf71be11de6d4d6e3f39ae713979"
+  "sha256": "108dd6e6588033ac98971304f59718b01e7be31e8ec059479b1d71de9bba763b"
  },
  "unit42": {
   "etag": "\"bdfffc26fc0ac623555e06d02f2569e4-gzip\"",
@@ -2773,6 +2773,6 @@
   "sha256": "17df7f25cc00e41c3ec709b0ecf46e7c202ede0d4a94811cba7ee778b584424c"
  },
  "zdi": {
-  "sha256": "31ebe3c80155f99b5da3b84c810a30fde56c6b920be8b2e78c2b5da8c82848a7"
+  "sha256": "1d27ce340c1a40fa096679cf6647a29a58cac82ea66004a2ac42214128e88f32"
  }
 }
