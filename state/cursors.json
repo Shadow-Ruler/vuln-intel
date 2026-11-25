@@ -11,8 +11,8 @@
   "sha256": "e40a69d7a8ff2cbcc91a236823d12bcb5f090e6f33a121331516e5e11fec7dea"
  },
  "bleepingcomputer": {
-  "etag": "241fdfa3f0d9de2420ba19541d22aeaf",
-  "sha256": "6a5f4fa76d8bc6380415e5d762fe1c64f77fde9c3d2755b21494d3cf028a23ad"
+  "etag": "01503f49bb14a93355267dab2ebc42e0",
+  "sha256": "72fe1d2685a3928c5ff31aabae017228c8ffbfc10e5caf6336da73660c85d788"
  },
  "cert-fr": {
   "etag": "\"799b658519101d49aa53fd150fc2c58f\"",
@@ -42,8 +42,8 @@
   "sha256": "aa0eea46b200f11700d1bcca6e7944499ecc9614b06ca9dddbb3af84a044878d"
  },
  "epss": {
-  "etag": "\"484342beec75876e3f0b65aa3cd7d4fb\"",
-  "sha256": "bba0ae3392eedbb7a8658c9eac34d5c8b6a8ae3e84bb7c7b10769a82bd18545d"
+  "etag": "\"5d0ff01a4d386a881130db4eb3d29676\"",
+  "sha256": "cb462a38ca3321282a72caaf4cad4ee8414bee0d0aeefb7b63344fd57c1c48d0"
  },
  "et-open": {
   "etag": "W/\"6b05fb0b-2cbd767\"",
@@ -2696,13 +2696,13 @@
   "sha256": "6ae6b339d17c25cb7ed79cf40d094b5feb4075b540ac5cb0c482033e99b0717a"
  },
  "hn-cve": {
-  "sha256": "1c35215401f3306acfafdd274d7a582cd474dc8f6819543db95209966b3d106f"
+  "sha256": "f9257b984b277735d23472035fe2ec4cb2ac42d82a637f36be28c2923849880f"
  },
  "hn-rce": {
-  "sha256": "eb06c6c6a48fb7782db74c755d36ed981b41700204d3d348492b363d94799ab2"
+  "sha256": "4402bd410ff182430d45fc23d19a07ef7f161a87c64a801eedbd654b0b5e28e4"
  },
  "hn-vuln": {
-  "sha256": "a20f797d87928c17befb70c030a0ff638e0ddf05ed7f77583746935ee05301ac"
+  "sha256": "c4c9f03378f8b00d1351978a9f952bb2b32e2795a7f93878f7f867f524f28eba"
  },
  "kev": {
   "etag": "W/\"caf3338de08668fc80651363db2a0aed83f65b85dddc5e15286fbe466e8001ca\"",
@@ -2752,8 +2752,8 @@
   "sha256": "9335a0041c963ae334ffc8bb8b80f3930ef8e19fb1f248c9fc02a12b938bc86c"
  },
  "talos": {
-  "etag": "W/\"1172a6-keckircqZbqJx3cmF3ppRudFU6I\"",
-  "sha256": "63288011cd39747d0e39698b40c127ec32e2741ec45a5170ec620c2314b74426"
+  "etag": "W/\"11c5b4-jzk1hqoj5vkFC+L/fAGRUBRcWws\"",
+  "sha256": "e5617202bf496206690a7608275706196f9f250c7e1df2a2e6fdb60d321b82a0"
  },
  "thehackernews": {
   "sha256": "38ae8051be70f933a40e813b5178f4ef92655038fe0b37ca2ff45f86af526205"
