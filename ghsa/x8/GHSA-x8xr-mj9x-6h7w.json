@@ -1,0 +1,27 @@
+{
+ "cve": "",
+ "first_seen": "2026-11-25T15:39:33Z",
+ "id": "GHSA-x8xr-mj9x-6h7w",
+ "packages": [
+  {
+   "ecosystem": "pip",
+   "name": "vllm",
+   "patched": "",
+   "range": ">= 0.11.0, <= 0.23.0"
+  }
+ ],
+ "published": "2026-06-17T18:35:47Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-25T15:38:54Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "88a10daab3821bf072a0ca1747794375cc29243c2c6a1778e66e924e1a7baa8d",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Duplicate Advisory: image EXIF Rotation & PNG tRNS Transparency Not Normalized, Causing Mismatch Between Model Input and Expectations",
+ "type": "ghsa",
+ "updated": "2026-11-25T15:32:18Z",
+ "withdrawn": true
+}

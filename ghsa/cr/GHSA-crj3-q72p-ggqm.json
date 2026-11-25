@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2026-64670",
+ "first_seen": "2026-11-25T15:39:33Z",
+ "id": "GHSA-crj3-q72p-ggqm",
+ "packages": [
+  {
+   "ecosystem": "npm",
+   "name": "@waline/client",
+   "patched": "",
+   "range": "<= 3.16.2"
+  }
+ ],
+ "published": "2026-11-25T15:26:23Z",
+ "severity": "critical",
+ "src": {
+  "fetched_at": "2026-11-25T15:38:54Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "88a10daab3821bf072a0ca1747794375cc29243c2c6a1778e66e924e1a7baa8d",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "@waline/client vulnerable to stored XSS through unsanitized comment edit previews",
+ "type": "ghsa",
+ "updated": "2026-11-25T15:26:25Z",
+ "withdrawn": false
+}
