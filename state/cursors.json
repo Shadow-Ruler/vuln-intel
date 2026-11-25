@@ -11,8 +11,8 @@
   "sha256": "dd65176215cbbc6d669e21c298781e3d4999d361e3034a77c89927a63b79c6ab"
  },
  "bleepingcomputer": {
-  "etag": "2798ccc4dfc56d564e181e7e88bdab8e",
-  "sha256": "54b2178bd24bfc7836ced1cc9a2097f04d8ccba7ebf717b8aabcc23e19f4db9b"
+  "etag": "4e06ea8929ba4138770efb37690d6806",
+  "sha256": "357fa2b135720f46beeb1e7db0bd10be62119e35f2121a0f99ed728f398454a8"
  },
  "cert-fr": {
   "etag": "\"799b658519101d49aa53fd150fc2c58f\"",
@@ -2688,21 +2688,21 @@
   }
  },
  "fortinet": {
-  "etag": "\"6b06a398-c705\"",
-  "sha256": "b4b6a4771ab5bd546ec06c498e3dd96ba9f9149b346a79409672eddefb8f594a"
+  "etag": "\"6b06a71b-c705\"",
+  "sha256": "94aa2f64cd199c2147e18fc4fc5e2fc70da5ab47efc30bf7865a6d040e55c203"
  },
  "ghsa": {
   "etag": "W/\"5dee43837ed06444dfe7ebb8aad40708994a2a3ffc6b4d10e03c8282c8436340\"",
   "sha256": "6ae6b339d17c25cb7ed79cf40d094b5feb4075b540ac5cb0c482033e99b0717a"
  },
  "hn-cve": {
-  "sha256": "0e8b68bb88b5ba080ce5fbe261e390f9ad6cad01de9fd2b05ea7c15951756941"
+  "sha256": "9208c8ea0cdf20467cfa19bebbe6ac94c8ae016c31e3ea8a226f3097c8841816"
  },
  "hn-rce": {
-  "sha256": "345e94cbf7d86036e94458d7395dd472892dc2f39b734bc45a7d13cb86aed4f0"
+  "sha256": "35ce68b6d1b01c98f3dd8c62d687f687f2273e61b30c6d6e66321c68c6d8ef4f"
  },
  "hn-vuln": {
-  "sha256": "be5dbddec8c6bc87ecf6275725ee8954a8e956402f60b5404d8585fbe79283bb"
+  "sha256": "a0392a5ab6ddca58a44076c599bca06bd406b03dae0613a60a490d4e4db435f9"
  },
  "kev": {
   "etag": "W/\"caf3338de08668fc80651363db2a0aed83f65b85dddc5e15286fbe466e8001ca\"",
@@ -2741,7 +2741,7 @@
   "sha256": "c1d1cf0cd685af53b9a5dc63afc1585bc4b881673a23b11a8d2e91a0c9b2aea6"
  },
  "rapid7": {
-  "sha256": "64a7313c0b0d4b3ac3bc46550b19baf13f4729a4c426fbe9c512980e2e0b8e0c"
+  "sha256": "9093d0bbe05bcbac22ff0e632dc19cc207d5e865c8b1d74a8d9aba396a9fa09b"
  },
  "redhat": {
   "etag": "W/\"534bfed5475ac6f5d88ff4e144064383\"",
@@ -2759,7 +2759,7 @@
   "sha256": "6ec1933ab0369b45d49fef836d68d0ee68e2106c4b4821a6c75d8b4baf751033"
  },
  "ubuntu": {
-  "sha256": "90559932379643b945c6de43628e30dc97c67f7fa9a180f6c9ae1b4492390f86"
+  "sha256": "73e21658a1c92b41bbb25a0e06d0845972435a5a426eba73cc5681263f5d420a"
  },
  "unit42": {
   "etag": "\"bdfffc26fc0ac623555e06d02f2569e4-gzip\"",
