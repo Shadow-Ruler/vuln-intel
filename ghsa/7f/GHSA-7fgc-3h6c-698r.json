@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2026-65971",
+ "first_seen": "2026-11-25T20:25:50Z",
+ "id": "GHSA-7fgc-3h6c-698r",
+ "packages": [
+  {
+   "ecosystem": "composer",
+   "name": "power-components/livewire-powergrid",
+   "patched": "6.10.4",
+   "range": ">= 6.0.0, < 6.10.4"
+  }
+ ],
+ "published": "2026-11-25T19:44:57Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-25T20:24:58Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "79eba4ae84b0eb9b298367377db6a40db30fc4be2d2bbdc81dad6397976bc3b9",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "livewire-powergrid: SQL injection via sortDirection in naturalSort queries",
+ "type": "ghsa",
+ "updated": "2026-11-25T19:44:58Z",
+ "withdrawn": false
+}
