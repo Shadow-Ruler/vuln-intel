@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2026-69177",
+ "first_seen": "2026-11-25T22:19:54Z",
+ "id": "GHSA-mqg7-fw3f-mhp7",
+ "packages": [
+  {
+   "ecosystem": "composer",
+   "name": "tastyigniter/tastyigniter",
+   "patched": "4.3.1",
+   "range": "< 4.3.1"
+  }
+ ],
+ "published": "2026-11-25T21:52:15Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-25T22:19:09Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "b38db0e8778147cc16d8fd46d8b9aad7301822b5897d6234dcf73392de14a71c",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "TastyIgniter allows stored XSS via file upload",
+ "type": "ghsa",
+ "updated": "2026-11-25T21:52:16Z",
+ "withdrawn": false
+}
