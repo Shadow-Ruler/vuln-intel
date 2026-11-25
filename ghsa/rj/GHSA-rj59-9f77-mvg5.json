@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2026-69181",
+ "first_seen": "2026-11-25T23:16:49Z",
+ "id": "GHSA-rj59-9f77-mvg5",
+ "packages": [
+  {
+   "ecosystem": "composer",
+   "name": "tastyigniter/tastyigniter",
+   "patched": "4.3.1",
+   "range": "< 4.3.1"
+  }
+ ],
+ "published": "2026-11-25T22:54:30Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-25T23:16:03Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "4fee4126ce85346b911dce2f3266dd4009e8b0436c9391a1fd719f75548a4e70",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "TastyIgniter permits Path Traversal in Media Upload",
+ "type": "ghsa",
+ "updated": "2026-11-25T22:54:30Z",
+ "withdrawn": false
+}

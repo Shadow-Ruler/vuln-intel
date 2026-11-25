@@ -31,10 +31,10 @@
  "published": "2022-05-24T12:26:59Z",
  "severity": "medium",
  "src": {
-  "fetched_at": "2026-11-25T22:19:09Z",
+  "fetched_at": "2026-11-25T23:16:03Z",
   "origin": "ghsa",
   "role": "ecosystem",
-  "sha256": "b38db0e8778147cc16d8fd46d8b9aad7301822b5897d6234dcf73392de14a71c",
+  "sha256": "4fee4126ce85346b911dce2f3266dd4009e8b0436c9391a1fd719f75548a4e70",
   "source": "ghsa",
   "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
  },
