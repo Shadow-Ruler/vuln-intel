@@ -55,12 +55,14 @@
   "status": "missing"
  },
  "CVE-2026-123917": {
+  "checked": "2026-11-25T18:31:50Z",
   "since": "2026-11-25T17:34:53Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-123918": {
+  "checked": "2026-11-25T18:31:50Z",
   "since": "2026-11-25T17:34:53Z",
-  "status": "pending"
+  "status": "missing"
  },
  "CVE-2026-126961": {
   "checked": "2026-11-24T21:37:44Z",
