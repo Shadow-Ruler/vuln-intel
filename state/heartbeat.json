@@ -144,9 +144,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 720,
-   "last_attempt": "2026-11-26T11:36:52Z",
+   "last_attempt": "2026-11-26T14:17:20Z",
    "last_change": "2026-11-24T23:16:15Z",
-   "last_ok": "2026-11-26T11:36:52Z",
+   "last_ok": "2026-11-26T14:17:20Z",
    "role": "coverage",
    "status": "unchanged"
   },
@@ -421,5 +421,5 @@
    "status": "ok"
   }
  },
- "updated": "2026-11-26T14:17:05Z"
+ "updated": "2026-11-26T14:17:46Z"
 }
