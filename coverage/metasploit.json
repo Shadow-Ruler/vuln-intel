@@ -3096,6 +3096,7 @@
 "CVE-2026-102764":[["modules/exploits/linux/http/beyondtrust_rs_mrs_file_upload.rb","BeyondTrust Remote Support MRS Origin Validation File Upload","exploit, rank 600"]],
 "CVE-2026-10631":[["modules/auxiliary/gather/zimbra_ews_mailbox_access.rb","Zimbra EWS Cross-Mailbox FindItem Authorization Bypass","auxiliary, rank 300"]],
 "CVE-2026-119618":[["modules/auxiliary/scanner/http/apache_mod_http2_cve_2026_119618.rb","Apache HTTP Server mod_http2 CVE-2026-119618 Version Scanner","auxiliary, rank 300"]],
+"CVE-2026-123158":[["modules/exploits/linux/ssh/openssh_musl_crypt_bypass.rb","OpenSSH musl-libc crypt() Authentication Bypass","exploit, rank 600"]],
 "CVE-2026-1281":[["modules/exploits/linux/http/ivanti_epmm_rce.rb","Ivanti Endpoint Manager Mobile (EPMM) unauthenticated RCE","exploit, rank 600"]],
 "CVE-2026-1340":[["modules/exploits/linux/http/ivanti_epmm_rce.rb","Ivanti Endpoint Manager Mobile (EPMM) unauthenticated RCE","exploit, rank 600"]],
 "CVE-2026-15409":[["modules/exploits/linux/http/sonicwall_sma1000_wsproxy_rce.rb","SonicWall SMA1000 WorkPlace wsproxy SSRF Remote Command Execution","exploit, rank 600"]],
