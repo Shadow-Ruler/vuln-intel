@@ -94,9 +94,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 60,
-   "last_attempt": "2026-11-26T15:25:00Z",
-   "last_change": "2026-11-26T15:25:00Z",
-   "last_ok": "2026-11-26T15:25:00Z",
+   "last_attempt": "2026-11-26T15:43:02Z",
+   "last_change": "2026-11-26T15:43:02Z",
+   "last_ok": "2026-11-26T15:43:02Z",
    "role": "backbone",
    "status": "ok"
   },
@@ -421,5 +421,5 @@
    "status": "ok"
   }
  },
- "updated": "2026-11-26T15:39:41Z"
+ "updated": "2026-11-26T15:43:33Z"
 }
