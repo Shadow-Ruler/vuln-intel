@@ -4,11 +4,11 @@
   "sha256": "1173dfcb78e3e7056f6fe9dd282aece09cf2c97fe6d03ce9f98f10b0f108d641"
  },
  "amazon-linux": {
-  "etag": "\"69e2395aa42a46f1f1d36cbd76bf5cc8\"",
-  "sha256": "c75c679b7106698255baa464865da8d16d8e67663d81bb45253c2aa47d2fd2da"
+  "etag": "\"ec834daaef589587f22fa8061ed1c6a0\"",
+  "sha256": "9138a579808aed1fa3fa4f7186dc335e445c3d19053e23d0207e86863f70a15e"
  },
  "archlinux": {
-  "sha256": "7f5e89d4e30f99d563d79e57e856635ecc77dc73edeee7a7bc20afaa4086a21f"
+  "sha256": "19e842329cfa9251bb2fdc3466341052bd3ec28363884c4381429191e460751a"
  },
  "bleepingcomputer": {
   "etag": "f17b9910ff878dd2fcd6469ed0feec25",
@@ -31,7 +31,7 @@
   "sha256": "4e817a1981f0940e06e0bc0ccf75ab719d75c5e10c19f52dbb255a4abf145d0c"
  },
  "cvelist": {
-  "fetch_time": "2026-11-26T08:37:26Z"
+  "fetch_time": "2026-11-26T09:24:39Z"
  },
  "debian": {
   "etag": "\"3fe8-661222a0b9cb4;66122751bf78b",
@@ -2983,6 +2983,6 @@
   "sha256": "c1faf71ee37c201f23cb4a5a3e08166825c281f0084d9208c48549945572dc1d"
  },
  "zdi": {
-  "sha256": "fa334b4867a2b39f8fcbc851a9faabb84e65fda8fc45233cfc73d09e096d183d"
+  "sha256": "470f243d6fed0862eb3bb2cd21489f6d61dfc34bc53b710e5161be32263a8701"
  }
 }
