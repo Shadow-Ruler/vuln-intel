@@ -11,8 +11,8 @@
   "sha256": "843908fb078aedf6ad1bda4a018cf65db7e92e0983fb52ab24123f24184d9274"
  },
  "bleepingcomputer": {
-  "etag": "373fe8dcf7482a475112d307c97eccef",
-  "sha256": "2827ee92dd2b635545d7ea5c70241f1aba38cbb040fde6a9c19450c6d7f011f8"
+  "etag": "0480603c5fc6d0ba4ddd7082ba38c7eb",
+  "sha256": "3ccb3c74b2df9bb44b4bc501e07ffce490c86c7bdd08c76f4c9bf83ec078b086"
  },
  "cert-fr": {
   "etag": "\"a886d70dce7d1648d438e383e5b552b6\"",
@@ -2909,13 +2909,13 @@
   "sha256": "cf15d7064b71171c5960ac7c7855830528d2f7497a702953269580d482e58ddd"
  },
  "hn-cve": {
-  "sha256": "77eee609781481e4c5d50ab0e99e0d7e5b3c5de8b52c2745e3490fba50bd183a"
+  "sha256": "a9f65f16d155c27d344d47fd716d447d371b3e076a3e670dd1dffb373dbce55e"
  },
  "hn-rce": {
-  "sha256": "3af9094414affcc32c0abcbed17368675fb6b9b32f30dd612e0d80e4765236ae"
+  "sha256": "ca17bd280d9c029430f25e372be565f52f4fedabc10211d0ca85bf3cc82bce2f"
  },
  "hn-vuln": {
-  "sha256": "0f396093f2ad61e7744a82339cd4e97d5be27145b7b4462668b490a1f126c96b"
+  "sha256": "2aaa68c6cd44bc3e47bf0240ad4bc6a1721b8a7d60303297201ede4cd43df8f0"
  },
  "kev": {
   "etag": "W/\"6aaa61f28b8897cd263e8f731a008bc6ec42839c2f41a936461c5b847d535a4e\"",
@@ -2954,7 +2954,7 @@
   "sha256": "2ff41c144330fe7fbb741eae1a9a6e159705ee82dfdc6e56574420be0a7d6b20"
  },
  "rapid7": {
-  "sha256": "a719d7ad5467f96220d8ddc09104d4f16a3892f80ce58e4e4fa46652f55ebee4"
+  "sha256": "07048aac8cbfd78df8180bbc20c33f56bba27fb4459680d7ffca615222a6b5ce"
  },
  "redhat": {
   "etag": "W/\"0e200be0b5d4e05cac16a576faa810a8\"",
@@ -2969,7 +2969,7 @@
   "sha256": "13fde453efde8f352f4081fd2efd968e7cf72f456cb8b4b00ae83295e99a5915"
  },
  "thehackernews": {
-  "sha256": "ba950ac7f334cec6fb3ae14621db4ce922a735f44e4bff9a6123cdac133e9cf7"
+  "sha256": "b945ba8e3fa905084ff4392ed9fe48bb4e5656d6975c37f8f06e4efa675f7e0f"
  },
  "ubuntu": {
   "sha256": "67932f33b5e0e77dba728fe4eabc49f827f3dc3ddb4485bba1b2eb450fb01185"
