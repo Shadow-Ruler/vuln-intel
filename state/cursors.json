@@ -11,8 +11,8 @@
   "sha256": "4a1413fb9fa3b637ca775800c43ebce389da4ce72452e745c6b000d7c984b09b"
  },
  "bleepingcomputer": {
-  "etag": "61c37750d4d9c92f5007a7abbedda9f8",
-  "sha256": "100bb3d01d48c15001fba34129e22e55ca8df812518ff2a7e74a93ba6e28de69"
+  "etag": "0f7db8b2ba3c6a8f9b02338546f8bc2b",
+  "sha256": "4153686d19c38ba575c4123c0474ca05ef4025e39e47281eefc40981d56d30af"
  },
  "cert-fr": {
   "etag": "\"8552e372b21945e2d80d0819ab512a4d\"",
@@ -2903,13 +2903,13 @@
   "sha256": "79c87cb8e7f4f4a23a23bddd9f89a1bfcc3991eb9ccc73fc45a0c753e0f5555e"
  },
  "hn-cve": {
-  "sha256": "8441872f24df2af4a338a04331a0812dd38a530453d4052b7ab95307fda00e33"
+  "sha256": "75d4207761e0c9ca0886a6a5f996120f7988ca979baf4464bb8b866a2fbd6e74"
  },
  "hn-rce": {
-  "sha256": "ebdf6a3d371627fa007b999cb3212c3002b5cfcd53220d898bc3e85bda0296d4"
+  "sha256": "eec7d6a88d2e58b378a74e03cdd1aa951d816ebd66285965144f4939ad7b96b1"
  },
  "hn-vuln": {
-  "sha256": "73e43fb1551521114cdd6d6bb2d85911dc5b05d733785766fb754573b5cafbb6"
+  "sha256": "930a91babec9dd6f29dc184078133d48e29d9794cc1e1846b34e21787cadbba6"
  },
  "kev": {
   "etag": "W/\"6aaa61f28b8897cd263e8f731a008bc6ec42839c2f41a936461c5b847d535a4e\"",
@@ -2948,7 +2948,7 @@
   "sha256": "c1d1cf0cd685af53b9a5dc63afc1585bc4b881673a23b11a8d2e91a0c9b2aea6"
  },
  "rapid7": {
-  "sha256": "2a49074105c76a8c71b03ac758a1f50a750cae845fb896b51d0806ebda0f0797"
+  "sha256": "aa5fc7f5371abdf59ea1be23de5256d9717ae30abe5d5be91d07007ffa8b0019"
  },
  "redhat": {
   "etag": "W/\"cf911ee9ae2e62dca28aaafca0adc52d\"",
@@ -2963,7 +2963,7 @@
   "sha256": "350f9c0db482d3b793e0d6c5484c04aace64053ea05da4814c1338a1689899dd"
  },
  "thehackernews": {
-  "sha256": "93337377034f4038f0cea4ccb12c6e2b435fb070ef9bc8c5b9cbedda8f949f9c"
+  "sha256": "6486930a9c0a5185c70cfccaf5de8f9450e63c785f458649d560f631b7e275a3"
  },
  "ubuntu": {
   "sha256": "efb68ce2311cc04db827eaa6beffdc215e8ab5b53b5e0a0b1719c7ae96f54817"
@@ -2973,8 +2973,8 @@
   "sha256": "827b1bcc04f09eceaaa368c4c67426ec754b57147db24eca31220aa3ad45f47a"
  },
  "watchtowr": {
-  "etag": "W/\"80040-m+NNAGtqq5HVhtGuybk0zs1Tad0\"",
-  "sha256": "4665cf1fff068c07c658710b15447d9bdbbfbaf53e5b328fe17917fcc6d80360"
+  "etag": "W/\"80040-kNo/6YCJ2qpzg12VrqdhlWlsInQ\"",
+  "sha256": "1e8eab79966868fdd396116f1dbbaaa86726bf095c71e50f9b68b6ce20c9316a"
  },
  "wiz": {
   "sha256": "eefaffb3d1416db6e29ea0710d9c08582b149da65a03c4bffd0abfe6a2f38ed4"
