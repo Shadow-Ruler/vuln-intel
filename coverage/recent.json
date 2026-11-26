@@ -2862,6 +2862,7 @@
 "CVE-2026-119618":{"kinds":["metasploit"],"day":"2026-11-25","first_exploit":true},
 "CVE-2026-120413":{"kinds":["nuclei"],"day":"2026-11-25"},
 "CVE-2026-120735":{"kinds":["nuclei"],"day":"2026-11-25"},
+"CVE-2026-12122":{"kinds":["nuclei"],"day":"2026-11-26"},
 "CVE-2026-123698":{"kinds":["nuclei"],"day":"2026-11-25"},
 "CVE-2026-124426":{"kinds":["nuclei"],"day":"2026-11-25"},
 "CVE-2026-125444":{"kinds":["nuclei"],"day":"2026-11-24"},

@@ -4190,6 +4190,7 @@
 "CVE-2026-120597":[["http/cves/2026/CVE-2026-120597.yaml","WordPress Welcart e-Commerce < 2.12.7 - Cross-Site Scripting","medium"]],
 "CVE-2026-1207":[["http/cves/2026/CVE-2026-1207.yaml","Django RasterField - SQL Injection","high"]],
 "CVE-2026-120735":[["http/cves/2026/CVE-2026-120735.yaml","LatePoint <= 5.7.7 - Unauthenticated Invoice Disclosure via Access-Key Condition Injection","high"]],
+"CVE-2026-12122":[["http/cves/2026/CVE-2026-12122.yaml","Kirki - Unauthenticated Symbol Metadata Disclosure","medium"]],
 "CVE-2026-121853":[["http/cves/2026/CVE-2026-121853.yaml","AppPresser < 5.0.0 - Unauthenticated Installed Plugin Version Disclosure","medium"]],
 "CVE-2026-12227":[["http/cves/2026/CVE-2026-12227.yaml","Visual Composer <= 45.16.0 - Unauthenticated LFI","critical"]],
 "CVE-2026-123270":[["http/cves/2026/CVE-2026-123270.yaml","Redpanda Connect Streams API - Unauthenticated Remote Code Execution","critical"]],
