@@ -1,0 +1,33 @@
+{
+ "cve": "CVE-2024-45801",
+ "first_seen": "2026-11-27T16:06:27Z",
+ "id": "GHSA-mmhx-hmjr-r674",
+ "packages": [
+  {
+   "ecosystem": "npm",
+   "name": "dompurify",
+   "patched": "2.5.4",
+   "range": "< 2.5.4"
+  },
+  {
+   "ecosystem": "npm",
+   "name": "dompurify",
+   "patched": "3.1.3",
+   "range": ">= 3.0.0, < 3.1.3"
+  }
+ ],
+ "published": "2024-09-16T20:34:26Z",
+ "severity": "high",
+ "src": {
+  "fetched_at": "2026-11-27T16:05:50Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "5ade3db5c84cf1abcc7a98a35ea7ee90ba45a235bec38563c25d4e99ea00a4a3",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "DOMPurify allows tampering by prototype pollution",
+ "type": "ghsa",
+ "updated": "2026-11-27T15:32:32Z",
+ "withdrawn": false
+}

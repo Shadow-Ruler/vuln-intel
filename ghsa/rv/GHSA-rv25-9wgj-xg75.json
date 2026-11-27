@@ -1,0 +1,27 @@
+{
+ "cve": "CVE-2017-12614",
+ "first_seen": "2026-11-27T16:06:27Z",
+ "id": "GHSA-rv25-9wgj-xg75",
+ "packages": [
+  {
+   "ecosystem": "pip",
+   "name": "apache-airflow",
+   "patched": "1.9.0",
+   "range": "< 1.9.0"
+  }
+ ],
+ "published": "2022-05-14T02:57:27Z",
+ "severity": "medium",
+ "src": {
+  "fetched_at": "2026-11-27T16:05:50Z",
+  "origin": "ghsa",
+  "role": "ecosystem",
+  "sha256": "5ade3db5c84cf1abcc7a98a35ea7ee90ba45a235bec38563c25d4e99ea00a4a3",
+  "source": "ghsa",
+  "url": "https://api.github.com/advisories?per_page=100&type=reviewed&sort=updated&direction=desc"
+ },
+ "summary": "Apache Airflow Reflected Cross-site Scripting vulnerability in 404 Endpoint",
+ "type": "ghsa",
+ "updated": "2026-11-27T15:32:32Z",
+ "withdrawn": false
+}
