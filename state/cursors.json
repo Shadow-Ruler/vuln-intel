@@ -11,8 +11,8 @@
   "sha256": "f4e010b0be7a7c7b4d72a8ceac5d94de74402bb861bc3d0a0629e9a1d5e999a4"
  },
  "bleepingcomputer": {
-  "etag": "afec72349d8326a12311bb69ab17a9a1",
-  "sha256": "bd7a9ce9d2d835fa4a49070c7036b688552ecb302f4063dfced91bc19b78e0b9"
+  "etag": "a8f863f6424960ad03221b6e8b1b950d",
+  "sha256": "ae4bbab2ff8baf1c52824fd0c0c19df6b8589f4ed79d6ee6ae07be72a7e3eee7"
  },
  "cert-fr": {
   "etag": "\"a886d70dce7d1648d438e383e5b552b6\"",
@@ -3014,13 +3014,13 @@
   "sha256": "0312cae0e0d4b1a6e587b8a6d16f7fa956389f5eb4450571f9aab1950a88e08c"
  },
  "hn-cve": {
-  "sha256": "e647d15d0c344b8de8ba5a5a9cb425d40190f925fd3a8eba524c821a5e9f9cfa"
+  "sha256": "ed9499af953e48846e836298e59f935aca6753d22798ee305ac64f0b9fbe20e7"
  },
  "hn-rce": {
-  "sha256": "88137338623dae83ce9b8878ebb3be44874b877556c7d12a933a65a9079ce6ce"
+  "sha256": "0a40dfcdc88fc170647b7c3d43e1d31e15b428acdfa50429000f38d4aa8b07f5"
  },
  "hn-vuln": {
-  "sha256": "1deae86c1ba8698528b24eedc870944a8acfbfd7d14e637079b4cf5fc1a0fd1d"
+  "sha256": "add640660f0b03d2417d384cff5937c7f60195d7090eaee8db8f8add93ad8d64"
  },
  "kev": {
   "etag": "W/\"6aaa61f28b8897cd263e8f731a008bc6ec42839c2f41a936461c5b847d535a4e\"",
@@ -3047,8 +3047,8 @@
   "sha256": "6d4c0984dd5c0401908a129726cbac7ba5a28083fcee022f50cecdc2f785377c"
  },
  "oss-security": {
-  "etag": "\"3b7e-6613546a4178a\"",
-  "sha256": "1bb0b1d764e0fa45643abcbe7efb4f5e49687b63765b5340e93ca7c312e4846f"
+  "etag": "\"3d69-661386b534a00\"",
+  "sha256": "f96b0e1c650c83b12a11971bf7b3f2f53beb6eab41e0c9075d074b9ecd4dd2da"
  },
  "paloalto": {
   "etag": "W/\"211c-V2gkQbT2HqcU+QGxXxJSg0jN8eE\"",
