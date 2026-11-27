@@ -11,8 +11,8 @@
   "sha256": "e5059778217899d3d45c1a6062cf72758fb5bf1c919be203163dc0a1ce7774b8"
  },
  "bleepingcomputer": {
-  "etag": "2f55806f92821f7b1fc5d89e68dc2ba4",
-  "sha256": "64950cea319f314b03cd24fc3da8e3fe3db5989b2f21027e1463a23bd18be188"
+  "etag": "34f9ffd51bd204047349b1a5d09acc48",
+  "sha256": "37b1bcc5b2341fad960961ff23a12a5e2f86b7625925f78c3ce7414beb7bd676"
  },
  "cert-fr": {
   "etag": "\"273f718d6f30c30e795288e59248f8f7\"",
@@ -3080,13 +3080,13 @@
   "sha256": "5ade3db5c84cf1abcc7a98a35ea7ee90ba45a235bec38563c25d4e99ea00a4a3"
  },
  "hn-cve": {
-  "sha256": "ff71ca7d33dce0e4566815eed7c9a4b8ffd1318a19f89746584c108be2814a58"
+  "sha256": "5a0a2dd7bca78227b10d417570465138a4260787a8dc5acbfd15052a3d37daec"
  },
  "hn-rce": {
-  "sha256": "f8564f42ec265cf6e26e4d0d5c4e463d9beb028b8410e7aeb7df2a9a52bf11f0"
+  "sha256": "ead0cae858b561f920ade8bf517f1b10211fc1e7e33baafe6e1185f2aaf39ab9"
  },
  "hn-vuln": {
-  "sha256": "c2e5baa9a46ae8fe4dd4ace5db8b1c57c90e75bee2c02658d4ad639d16bba1ba"
+  "sha256": "897e03abc769783f8a9e1131c4c48dbca8823615778b26b5e30d538cb05881aa"
  },
  "kev": {
   "etag": "W/\"6aaa61f28b8897cd263e8f731a008bc6ec42839c2f41a936461c5b847d535a4e\"",
