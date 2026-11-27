@@ -4,15 +4,15 @@
   "sha256": "c22a7c6b42130b9a0a8b1b1dfc8eb7a886a921ad6c6c9572e572d8249820b2e9"
  },
  "amazon-linux": {
-  "etag": "\"db8208697cfe569beb8d42c65f63135f\"",
-  "sha256": "69c8c0bc8c484f814f0c04f53225d16042d1b4e29ddb8093921ec365c4eecee4"
+  "etag": "\"d426e306aac200777e0f680e17fe3e27\"",
+  "sha256": "22fa65b0b081c7fbca36138e7f03725c3a043ce51c5061c0cb8219a1c758ac8b"
  },
  "archlinux": {
-  "sha256": "bae61158f3f1437d00944bc7f4c94eab1cf84c43b93c912a17f5cc78e6cb3d08"
+  "sha256": "3d2459a7473217f73c01238af0baab7bdf717dcc7c7dfd0dc51fca65de5177b9"
  },
  "bleepingcomputer": {
-  "etag": "09d2d41298280c208b9e289e26fcb21a",
-  "sha256": "278d0f09f22b9a86c3e5ac8715d382965ce2879977c1e1d3a1470d37cc91417b"
+  "etag": "47d35153ca3c70de8e65edd17b9a9f46",
+  "sha256": "7bee010b66d7a676f8c0b97fa1f51c9640734658cce7e83f0669cfc571085f71"
  },
  "cert-fr": {
   "etag": "\"273f718d6f30c30e795288e59248f8f7\"",
@@ -38,8 +38,8 @@
   "sha256": "32d7ed869f25931171f87871a820381c1808c7c5edd221bd7889f6c24d600f2b"
  },
  "debian-lts": {
-  "etag": "\"3f30-6614056d9505a-gzip\"",
-  "sha256": "91cbb20799cc0dec10df9177fc9dd942f4ba3b1fff2649ca8e095769de324053"
+  "etag": "\"3f35-66143b0d088bd-gzip\"",
+  "sha256": "862ccb124c01aab5af84ef4ac09d7b00993e062eb7a790ee3d7c8d8c7c83e988"
  },
  "epss": {
   "etag": "\"e6d2d1efb17264c0abfb21551eb67a4f\"",
@@ -3072,21 +3072,21 @@
   }
  },
  "fortinet": {
-  "etag": "\"6b09b010-c705\"",
-  "sha256": "1f9d4440914b26db912da5145dc606f3f39c15da33f38db73405a28f6b0540cb"
+  "etag": "\"6b09b718-c705\"",
+  "sha256": "5368ed7f722457498fabdba1165db804be7bbe59d57267f84e1fb544032617d6"
  },
  "ghsa": {
   "etag": "W/\"b9d758bfd35224647cf1d1f1325e49c1bc20506e6b72cf4aceea1498c5c9c909\"",
   "sha256": "5ade3db5c84cf1abcc7a98a35ea7ee90ba45a235bec38563c25d4e99ea00a4a3"
  },
  "hn-cve": {
-  "sha256": "6a3de480da99fb3de4fe4452ebf7db5b556b03ec76f90ba0cac83b5fcdf210da"
+  "sha256": "d11ad4eb166a7c38cebfdc8a66bc58df15f9679a5a5723d206edcf5222c0fdca"
  },
  "hn-rce": {
-  "sha256": "1c1b3d40a3e997f67e26c0fea49eaef34d55d9b5cf5047df8d4067365fc6d4eb"
+  "sha256": "9a856e89267556d1083dc277f0aa3b30fe3a9ad8b20548a3bf1cfd47fcd4b3d0"
  },
  "hn-vuln": {
-  "sha256": "0f140acb571d9ed6b998c63a9a83d32085e2837a7c71be2b4119ef14d2b6a56b"
+  "sha256": "96908422d800759b88d6bd03a42ec1808b1ac3c85c4bad62db33626cf23841bb"
  },
  "kev": {
   "etag": "W/\"6aaa61f28b8897cd263e8f731a008bc6ec42839c2f41a936461c5b847d535a4e\"",
@@ -3117,8 +3117,8 @@
   "sha256": "b3dabd3829734ed2a49a307e3ee41760370db35e54d3b2e2529c336988d11a4d"
  },
  "paloalto": {
-  "etag": "W/\"211c-V2gkQbT2HqcU+QGxXxJSg0jN8eE\"",
-  "sha256": "9e668f11f7ff4ec0659d3bd5c90b94b92fba0dceaeb328c8d8764d7680047f83"
+  "etag": "W/\"211c-8nH48Bv/lIRL4cfFVVPukMgFDOY\"",
+  "sha256": "725d74268ae5e19723c511f6cc6d74f8593f154203fdd83b257ce28640957041"
  },
  "php": {
   "etag": "W/\"172c8c-6610214552479\"",
@@ -3140,10 +3140,10 @@
   "sha256": "13fde453efde8f352f4081fd2efd968e7cf72f456cb8b4b00ae83295e99a5915"
  },
  "thehackernews": {
-  "sha256": "61aea92c4b92b2503cd34257a6369fbec0a2fcfbcb2cdd338c483cde7484c96d"
+  "sha256": "3d350d09a63e444c8b8f0e172703e2df5f39e5a55b49f510f6dd251ce64e136c"
  },
  "ubuntu": {
-  "sha256": "3a5cb5827bd0a6732d3c6520c5770302cb8ab02186647ffee50bbe5879db43cf"
+  "sha256": "4386c1d09394ec9a270a168960853bf11205ee1a3ee61de7948255690b49d4b6"
  },
  "unit42": {
   "etag": "\"450099fedf072c17f134554798ae6faf-gzip\"",
@@ -3154,9 +3154,9 @@
   "sha256": "553e85412ad5c70a34ef6b7e4ec4d01646bb03c9ad66ed44b042a6e5b66c4c69"
  },
  "wiz": {
-  "sha256": "ffe6b33c2a690dd93317dd2fd4bbe87bc50015aa26b5f98b50ff5d64d08748aa"
+  "sha256": "6c92a6307b1b55342128454c13380efcc3a977552289e916dda9e82fd508d85f"
  },
  "zdi": {
-  "sha256": "b36a81ecf2d90e41fe39c3ae1de6c55fbb18f65f982177d3b0f76bf435d9be5e"
+  "sha256": "f1a62c40c4e1c91d96acc1443b3822429fb863d67f955a7b75fe894f3bc6fb73"
  }
 }
