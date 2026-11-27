@@ -8,11 +8,11 @@
   "sha256": "22fa65b0b081c7fbca36138e7f03725c3a043ce51c5061c0cb8219a1c758ac8b"
  },
  "archlinux": {
-  "sha256": "c9c4691409813ee2601f82160614cc6bfd292604ff16c5db5d3aeb44f12feb0d"
+  "sha256": "d70bd60fe74bff92df410125d4fde21cff93773f93025e4bfe1d6b58f6c7603a"
  },
  "bleepingcomputer": {
-  "etag": "753fd37a28dde1a3356bf668ef8a3b3c",
-  "sha256": "c12c71901003cf9b577b1c4bd13bd5d6a323d5bd65f43b60e976558d2231e6b7"
+  "etag": "09462d3e089f845c921eb49d8e5dae91",
+  "sha256": "c86d05e15619bb5dbe2770ecf6a8548ffcc486c32d87d698d05727a9d468ee94"
  },
  "cert-fr": {
   "etag": "\"a886d70dce7d1648d438e383e5b552b6\"",
@@ -38,8 +38,8 @@
   "sha256": "d1d4550136b1025321f1aa69643a516b1f046e2e9e049bc7ade363e2291576cb"
  },
  "debian-lts": {
-  "etag": "\"3d28-66132ecc29382-gzip\"",
-  "sha256": "84268ca6a72c79111759e63d32f37b40b29b1c5ef32fffb12a1697d32469d35a"
+  "etag": "\"3b20-66139a1828b6e-gzip\"",
+  "sha256": "68858ce90a1afda3d3703596bd11416085175cf25ac5faff47c224d4b5bcd42b"
  },
  "epss": {
   "etag": "\"099ebcacd730758b7780a07bcb0dd2dd\"",
@@ -3066,21 +3066,21 @@
   }
  },
  "fortinet": {
-  "etag": "\"6b090047-c705\"",
-  "sha256": "cdeb1b21b9857cb16e6ee43e5a8530c7d64a8cdc09113cf0385cd3358e877333"
+  "etag": "\"6b09074f-c705\"",
+  "sha256": "43aded8235133f81081987ba701966358160f0acac574e4e0173861e48923896"
  },
  "ghsa": {
   "etag": "W/\"4f6a8de4f2ce1def6dc043600fcd0d4869bbae2ddc58da8bae751845c98c9295\"",
   "sha256": "0312cae0e0d4b1a6e587b8a6d16f7fa956389f5eb4450571f9aab1950a88e08c"
  },
  "hn-cve": {
-  "sha256": "e325b2584b416f73eaf0b84f4644c61aa6e965b4c7cae9ba6040fabf2298a10e"
+  "sha256": "cb55e5a564afd7fba44f301f49b4ee219dae98675c96caf049af5159610f61bb"
  },
  "hn-rce": {
-  "sha256": "fb638a838476595c6624f9b01c017758a1473d5bb965e7d98788d0eb8f0db20e"
+  "sha256": "d8cb55dc09e8e67cae4df6904142cee12f852b111b7f3bfc9b893e67867d242e"
  },
  "hn-vuln": {
-  "sha256": "1c6e242c6a5cfc3569a6be6b76ec375cd9ad9bf33167035c15699d4972efd162"
+  "sha256": "a6de9ab3f440b47475c75bcbce5ccaac762ed51c12a7378277cbdefc9aa99ec7"
  },
  "kev": {
   "etag": "W/\"6aaa61f28b8897cd263e8f731a008bc6ec42839c2f41a936461c5b847d535a4e\"",
@@ -3111,19 +3111,19 @@
   "sha256": "f96b0e1c650c83b12a11971bf7b3f2f53beb6eab41e0c9075d074b9ecd4dd2da"
  },
  "paloalto": {
-  "etag": "W/\"211c-8nH48Bv/lIRL4cfFVVPukMgFDOY\"",
-  "sha256": "725d74268ae5e19723c511f6cc6d74f8593f154203fdd83b257ce28640957041"
+  "etag": "W/\"212f-gHrw8z3ztT9KOKfS9McwCdvzkjA\"",
+  "sha256": "af64dd5fb2a7de064cfb0ef7617837d40a101d120fd8339097fcdfd1401879d2"
  },
  "php": {
-  "etag": "W/\"172c8c-6610214552479\"",
-  "sha256": "c1d1cf0cd685af53b9a5dc63afc1585bc4b881673a23b11a8d2e91a0c9b2aea6"
+  "etag": "W/\"173a80-66139d1a247e5\"",
+  "sha256": "30bda2b8ce782bf50eadb1e535e3b383a5900450d86ae43f55c559f323822ff7"
  },
  "rapid7": {
   "sha256": "36c7efd7ed9b806c646dc32e80ad138c0fbb990bf2ff9b0428b323bf174d0e60"
  },
  "redhat": {
-  "etag": "W/\"c30395320ceb9af9d87d98780329c6b9\"",
-  "sha256": "ef351bb4c157a006fdc4c73af16eec1139468fd999424b25f66214e5b7c2eb8f"
+  "etag": "W/\"e32586cc606e8e7a1630a6eee13740e6\"",
+  "sha256": "e13426877df949093cd0fe959072e4225664ab2586be7f1afff204447b7d8499"
  },
  "sigma": {
   "etag": "W/\"e19844e165d0385d92d4e4755ddd3f22293aa608bc7407f018a99106ca21cd4e\"",
@@ -3134,10 +3134,10 @@
   "sha256": "13fde453efde8f352f4081fd2efd968e7cf72f456cb8b4b00ae83295e99a5915"
  },
  "thehackernews": {
-  "sha256": "b443f964cff4e86fa11a4b046037a0c49c4aaa3a2af466d3f76456d33b5b15f4"
+  "sha256": "ec8ab0956c4c743a2f07dfe67a408f5936691672b3008565154731bf1fc4a95d"
  },
  "ubuntu": {
-  "sha256": "8e28965c27577b6f79f179993e6e096f6f5a13a4a4dd0a22c890b4b483a57318"
+  "sha256": "b5eb44fac91c163a58d522df661eef416b5f2711d4401dc729bc00518f05acf0"
  },
  "unit42": {
   "etag": "\"450099fedf072c17f134554798ae6faf-gzip\"",
@@ -3151,6 +3151,6 @@
   "sha256": "15912e622a54821809c33e2170f9fc29607f808275fceb1bcf9c06c324b7fcb4"
  },
  "zdi": {
-  "sha256": "30745ad06c0dd88d552f0111b02e7bbc90a0013d524d06c7ee53e112bc40dfcc"
+  "sha256": "0b2ec3780e099317bbd2a174aa88f9d983b4a5121bd15ee2e859f4ef821baffb"
  }
 }
