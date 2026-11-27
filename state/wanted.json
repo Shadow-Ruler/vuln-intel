@@ -159,15 +159,67 @@
   "since": "2026-11-21T17:31:40Z",
   "status": "missing"
  },
+ "CVE-2026-46729": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-47360": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-48005": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
  "CVE-2026-48841": {
   "checked": "2026-11-21T17:33:02Z",
   "since": "2026-11-21T17:31:40Z",
   "status": "missing"
  },
+ "CVE-2026-56153": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-56154": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-56449": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-57941": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-58415": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-59797": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
  "CVE-2026-61580": {
   "checked": "2026-11-24T19:43:04Z",
   "since": "2026-11-24T18:46:59Z",
   "status": "missing"
+ },
+ "CVE-2026-63045": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-63292": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-63686": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-63718": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
  },
  "CVE-2026-71199": {
   "checked": "2026-11-25T22:19:54Z",
@@ -184,10 +236,26 @@
   "since": "2026-11-21T17:31:40Z",
   "status": "missing"
  },
+ "CVE-2026-73636": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-73637": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
+ "CVE-2026-79768": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
+ },
  "CVE-2026-85561": {
   "checked": "2026-11-26T11:37:34Z",
   "since": "2026-11-26T10:40:35Z",
   "status": "missing"
+ },
+ "CVE-2026-93546": {
+  "since": "2026-11-27T03:18:02Z",
+  "status": "pending"
  },
  "CVE-2026-97727": {
   "checked": "2026-11-21T17:31:40Z",
