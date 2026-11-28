@@ -4,15 +4,15 @@
   "sha256": "c22a7c6b42130b9a0a8b1b1dfc8eb7a886a921ad6c6c9572e572d8249820b2e9"
  },
  "amazon-linux": {
-  "etag": "\"a867f2445a7669964ada1978eb311652\"",
-  "sha256": "6b38dbdb75e941a76f0d1bc2feec4e14f172bf2ab7bd11590fb57aa3a6c688d9"
+  "etag": "\"a76dd4deef6b1ebb4e35e25dad551395\"",
+  "sha256": "87b5ae8b63f25ca99fc65dc9debd339d107716555d8fcef6936aad0bcbfa862c"
  },
  "archlinux": {
-  "sha256": "492e39f2a4eea983e93ab549ca2e21448eb0493e0bef7154396139dd72f2054b"
+  "sha256": "1c3bea5c3ed86a1f86fe31ecd29bc58d2d4b826ff5e66cdb2423cc7552fd6e71"
  },
  "bleepingcomputer": {
-  "etag": "a47c7347449f9765a114c5b698804e15",
-  "sha256": "1b8caab71d0dc6be497d99eab0ef19a98221d173c2e9185b4777f75e3f3402a9"
+  "etag": "caff7fc1ebcf4645af78339714c012fd",
+  "sha256": "87dc18571d201eded3c97bd273b0a883aa3949a373dd9d3b9eefa65e151271de"
  },
  "cert-fr": {
   "etag": "\"273f718d6f30c30e795288e59248f8f7\"",
@@ -3084,21 +3084,21 @@
   }
  },
  "fortinet": {
-  "etag": "\"6b0ad3dd-c705\"",
-  "sha256": "8b37b4f3cd8912349cefe977ab5adb480dccea1e19dbc4b425b58d92c5b5b25e"
+  "etag": "\"6b0adae5-c705\"",
+  "sha256": "dc27771bf9994f1d873d1307a72b69bd45c4253390577880bb861be75b1cc18f"
  },
  "ghsa": {
   "etag": "W/\"b9d758bfd35224647cf1d1f1325e49c1bc20506e6b72cf4aceea1498c5c9c909\"",
   "sha256": "5ade3db5c84cf1abcc7a98a35ea7ee90ba45a235bec38563c25d4e99ea00a4a3"
  },
  "hn-cve": {
-  "sha256": "302de25b6270fd238d9240c37fc9b952c48be5bda31328e2d82d47e75f77e438"
+  "sha256": "e14a0be467e0cc003819f41b63eba7cd48e9ff8bb3e9dc5b3fa00264a3c56a9d"
  },
  "hn-rce": {
-  "sha256": "d3535c08a4376bade7f5ef2e00dab1708fcbe3f3472c2f40484a004e8e9d7169"
+  "sha256": "515c75580f65b7e52afe5309a60e1d83995555fab1fca248567e72c2746ca839"
  },
  "hn-vuln": {
-  "sha256": "78af6c1622da1f6728a18d342f56c95180fd0e6328c2a30ca9216b94c2ca914a"
+  "sha256": "829c63f06856ea3b3188ba8ff471dbcd6ef0f788fa42ff8f1c784a608ac2aff7"
  },
  "kev": {
   "etag": "W/\"260ea390cacb9d341e4b8d1d4359dd3a117433f95815ce9c9643d862b09506f7\"",
@@ -3129,19 +3129,19 @@
   "sha256": "99aca2578c2c22a31d3a9e74ef85ac03e9b63038fc1c8d6090577b07b7fc96b1"
  },
  "paloalto": {
-  "etag": "W/\"212b-UZRR2jBvZQ1zmtTth+YiQTVf2cQ\"",
-  "sha256": "460a067859bdb065665988e412e40811b34a9279a70e2ebd1305db75e79327f1"
+  "etag": "W/\"211c-1R71+100cPI41Fm879dpXWBG2w8\"",
+  "sha256": "b0d69a49c5bba53811a21f06333851848cfffd99f7939befabed5678c0081c55"
  },
  "php": {
   "etag": "W/\"172c8c-6610214552479\"",
   "sha256": "c1d1cf0cd685af53b9a5dc63afc1585bc4b881673a23b11a8d2e91a0c9b2aea6"
  },
  "rapid7": {
-  "sha256": "e2348404d353ac08ffe232a6f44e61adce120f9eb47d7266061976278ab837db"
+  "sha256": "7a7b129773aa8541b0f134ce03856272ad6b5a5406c1fd494e677072b51a5d56"
  },
  "redhat": {
-  "etag": "W/\"4df35b949ba7c826a455eb881fa7cb0f\"",
-  "sha256": "bd8e089e9ef0d87caedad096679d2cbac040c49be05ce82afe72712228030825"
+  "etag": "W/\"c5abce9f86f6f0f6fe812c4b567e464d\"",
+  "sha256": "c6dbfe1bc8a09e792d39720e992266d908bb31eadc79539a9a0b02045ef041f7"
  },
  "sigma": {
   "etag": "W/\"9862d15d2d3ac382cffd2c03bce1c48ebf866107b91aca2333c7a6a80b0be409\"",
@@ -3152,10 +3152,10 @@
   "sha256": "13fde453efde8f352f4081fd2efd968e7cf72f456cb8b4b00ae83295e99a5915"
  },
  "thehackernews": {
-  "sha256": "3dbd4a07d902711a6361b03dc4e5eb5fb7661b25e96633c79cf65c59a01fd590"
+  "sha256": "db8dc3b999823c417f48f8c114ba174d0e5a118c47e6b875d2928926fcbf92be"
  },
  "ubuntu": {
-  "sha256": "095760aff58658972eae7b1b5df876560892cbc4fd178690f8c244ae2a658b84"
+  "sha256": "7814a6b1a211705a38708881158f8778a7a89b6fa23547b17dc6f67c90544e65"
  },
  "unit42": {
   "etag": "\"450099fedf072c17f134554798ae6faf-gzip\"",
@@ -3166,9 +3166,9 @@
   "sha256": "553e85412ad5c70a34ef6b7e4ec4d01646bb03c9ad66ed44b042a6e5b66c4c69"
  },
  "wiz": {
-  "sha256": "c2cf880c1ed4240d959a3f9228025310e74904ef5e71c19f059b2ad37056219e"
+  "sha256": "4bdefc78ba69106e173eeed0d2c5121c02f31bf27aa82cd844d1dd62566c60d8"
  },
  "zdi": {
-  "sha256": "58b9299bc473ce84591f6684b597e5fc44bfb1cf7046e308c985f7a6e5980348"
+  "sha256": "d3fe4120fb1f2c8a47397a9d4ee2000dc2d6f8a82c09ee9a743234d28044008a"
  }
 }
