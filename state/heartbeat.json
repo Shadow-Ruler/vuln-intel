@@ -34,9 +34,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-28T06:23:20Z",
-   "last_change": "2026-11-28T06:23:20Z",
-   "last_ok": "2026-11-28T06:23:20Z",
+   "last_attempt": "2026-11-28T06:37:37Z",
+   "last_change": "2026-11-28T06:37:37Z",
+   "last_ok": "2026-11-28T06:37:37Z",
    "role": "trend",
    "status": "ok"
   },
@@ -204,9 +204,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-28T06:23:20Z",
-   "last_change": "2026-11-28T06:23:20Z",
-   "last_ok": "2026-11-28T06:23:20Z",
+   "last_attempt": "2026-11-28T06:37:37Z",
+   "last_change": "2026-11-28T06:37:37Z",
+   "last_ok": "2026-11-28T06:37:37Z",
    "role": "trend",
    "status": "ok"
   },
@@ -214,9 +214,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-28T06:23:20Z",
-   "last_change": "2026-11-28T06:23:20Z",
-   "last_ok": "2026-11-28T06:23:20Z",
+   "last_attempt": "2026-11-28T06:37:37Z",
+   "last_change": "2026-11-28T06:37:37Z",
+   "last_ok": "2026-11-28T06:37:37Z",
    "role": "trend",
    "status": "ok"
   },
@@ -224,9 +224,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-28T06:23:20Z",
-   "last_change": "2026-11-28T06:23:20Z",
-   "last_ok": "2026-11-28T06:23:20Z",
+   "last_attempt": "2026-11-28T06:37:37Z",
+   "last_change": "2026-11-28T06:37:37Z",
+   "last_ok": "2026-11-28T06:37:37Z",
    "role": "trend",
    "status": "ok"
   },
@@ -294,9 +294,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-28T06:23:20Z",
+   "last_attempt": "2026-11-28T06:37:37Z",
    "last_change": "2026-11-27T22:47:58Z",
-   "last_ok": "2026-11-28T06:23:20Z",
+   "last_ok": "2026-11-28T06:37:37Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -324,9 +324,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-28T06:23:20Z",
+   "last_attempt": "2026-11-28T06:37:37Z",
    "last_change": "2026-11-28T03:32:19Z",
-   "last_ok": "2026-11-28T06:23:20Z",
+   "last_ok": "2026-11-28T06:37:37Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -354,9 +354,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-28T06:23:20Z",
+   "last_attempt": "2026-11-28T06:37:37Z",
    "last_change": "2026-11-26T10:39:56Z",
-   "last_ok": "2026-11-28T06:23:20Z",
+   "last_ok": "2026-11-28T06:37:37Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -364,11 +364,11 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-28T06:23:20Z",
-   "last_change": "2026-11-28T05:26:22Z",
-   "last_ok": "2026-11-28T06:23:20Z",
+   "last_attempt": "2026-11-28T06:37:37Z",
+   "last_change": "2026-11-28T06:37:37Z",
+   "last_ok": "2026-11-28T06:37:37Z",
    "role": "trend",
-   "status": "unchanged"
+   "status": "ok"
   },
   "ubuntu": {
    "consecutive_errors": 0,
@@ -384,9 +384,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-28T06:23:20Z",
+   "last_attempt": "2026-11-28T06:37:37Z",
    "last_change": "2026-11-25T15:10:34Z",
-   "last_ok": "2026-11-28T06:23:20Z",
+   "last_ok": "2026-11-28T06:37:37Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -394,9 +394,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-28T06:23:20Z",
+   "last_attempt": "2026-11-28T06:37:37Z",
    "last_change": "2026-11-26T10:25:40Z",
-   "last_ok": "2026-11-28T06:23:20Z",
+   "last_ok": "2026-11-28T06:37:37Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -404,9 +404,9 @@
    "consecutive_errors": 0,
    "detail": "",
    "every_minutes": 15,
-   "last_attempt": "2026-11-28T06:23:20Z",
+   "last_attempt": "2026-11-28T06:37:37Z",
    "last_change": "2026-11-28T05:54:49Z",
-   "last_ok": "2026-11-28T06:23:20Z",
+   "last_ok": "2026-11-28T06:37:37Z",
    "role": "trend",
    "status": "unchanged"
   },
@@ -421,5 +421,5 @@
    "status": "ok"
   }
  },
- "updated": "2026-11-28T06:23:53Z"
+ "updated": "2026-11-28T06:38:18Z"
 }
